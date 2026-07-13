@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/01.HP.WebApi/">
+    <Project Path="01.HP.WebApi/HP.Api/HP.Api.csproj" />
+  </Folder>
+  <Folder Name="/02.HP.Manager/">
+    <Project Path="02.HP.Manager/HP.Manager/HP.Manager.csproj" />
+  </Folder>
+  <Folder Name="/03.HP.Data/">
+    <Project Path="03.HP.Data/HP.Data/HP.Data.csproj" />
+  </Folder>
+  <Folder Name="/04.HP.Core/">
+    <Project Path="04.HP.Core/HP.Core/HP.Core.csproj" />
+  </Folder>
+  <Folder Name="/05.HP.Tests/" />
+</Solution>

@@ -1,0 +1,11 @@
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\bin\Debug\net10.0\HP.Core.deps.json
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\bin\Debug\net10.0\HP.Core.dll
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\bin\Debug\net10.0\HP.Core.pdb
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\obj\Debug\net10.0\HP.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\obj\Debug\net10.0\HP.Core.AssemblyInfoInputs.cache
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\obj\Debug\net10.0\HP.Core.AssemblyInfo.cs
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\obj\Debug\net10.0\HP.Core.csproj.CoreCompileInputs.cache
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\obj\Debug\net10.0\HP.Core.dll
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\obj\Debug\net10.0\refint\HP.Core.dll
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\obj\Debug\net10.0\HP.Core.pdb
+C:\Users\Suporte\Desktop\Hawks_Ponto\04.HP.Core\HP.Core\obj\Debug\net10.0\ref\HP.Core.dll

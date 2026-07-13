@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{31B8A663-7DC4-45B2-974E-01615B49AF24}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\desktop\\hawks_ponto\\01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31B8A663-7DC4-45B2-974E-01615B49AF24}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
+              "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
+              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T16:30:18.498Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
