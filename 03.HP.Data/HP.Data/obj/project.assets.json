@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
       "projectName": "HP.Data",
-      "projectPath": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
+      "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
       "packagesPath": "C:\\Users\\Suporte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\03.HP.Data\\HP.Data\\obj\\",
+      "outputPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

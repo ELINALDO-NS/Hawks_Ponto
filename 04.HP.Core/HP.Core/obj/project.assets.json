@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj",
       "projectName": "HP.Core",
-      "projectPath": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj",
+      "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj",
       "packagesPath": "C:\\Users\\Suporte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Suporte\\Desktop\\Hawks_Ponto\\04.HP.Core\\HP.Core\\obj\\",
+      "outputPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,6 +1,15 @@
 using HP.Api.Configuration;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+
+// 2. Substitua o logger padrão do .NET pelo Serilog
+builder.Host.UseSerilog();
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -12,6 +21,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddSwaggerConfiguration();
+builder.Services.AddSerilog();
 // Add services to the container.
 
 var app = builder.Build();
@@ -40,8 +50,20 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 });
 
-app.Run();
 
+try
+{
+    Log.Information("Iniciando a aplicação...");
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "A aplicação falhou ao iniciar.");
+}
+finally
+{
+    Log.CloseAndFlush(); // Garante que todos os logs salvos de forma assíncrona sejam gravados antes de fechar
+}
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
