@@ -50,6 +50,7 @@ C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\D
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\Debug\net10.0\Serilog.Extensions.Logging.dll
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\Debug\net10.0\Serilog.Formatting.Compact.dll
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\Debug\net10.0\Serilog.Settings.Configuration.dll
+C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\Debug\net10.0\Serilog.Sinks.Async.dll
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\Debug\net10.0\Serilog.Sinks.Console.dll
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\Debug\net10.0\Serilog.Sinks.File.dll
@@ -81,4 +82,3 @@ C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\D
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\Debug\net10.0\HP.Api.pdb
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\Debug\net10.0\HP.Api.genruntimeconfig.cache
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\Debug\net10.0\ref\HP.Api.dll
-C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\bin\Debug\net10.0\Serilog.Sinks.Async.dll

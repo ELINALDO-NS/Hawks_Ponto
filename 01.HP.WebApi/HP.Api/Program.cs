@@ -1,8 +1,15 @@
 using HP.Api.Configuration;
+using HP.Api.Middlewares;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using System.Diagnostics;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddProblemDetails();
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
@@ -19,12 +26,14 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
-
+builder.Services.AddExceptionHandler<ErrorHandlingMiddleware>();
+builder.Services.AddProblemDetails();
 builder.Services.AddSwaggerConfiguration();
 builder.Services.AddSerilog();
 // Add services to the container.
 
 var app = builder.Build();
+app.UseExceptionHandler();
 app.UseCors();
 app.UseSwaggerConfiguration();
 
@@ -39,6 +48,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
+    
     var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
@@ -47,7 +57,7 @@ app.MapGet("/weatherforecast", () =>
             summaries[Random.Shared.Next(summaries.Length)]
         ))
         .ToArray();
-    return forecast;
+    return Results.Ok(forecast); 
 });
 
 
@@ -67,4 +77,5 @@ finally
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+
 }
