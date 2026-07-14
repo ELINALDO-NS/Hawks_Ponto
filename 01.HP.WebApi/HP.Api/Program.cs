@@ -1,10 +1,6 @@
 using HP.Api.Configuration;
 using HP.Api.Middlewares;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 using Serilog;
-using System.Diagnostics;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +10,7 @@ Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 
-// 2. Substitua o logger padrão do .NET pelo Serilog
+
 builder.Host.UseSerilog();
 
 builder.Services.AddCors(options =>
@@ -26,6 +22,7 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+
 builder.Services.AddExceptionHandler<ErrorHandlingMiddleware>();
 builder.Services.AddProblemDetails();
 builder.Services.AddSwaggerConfiguration();
@@ -36,6 +33,7 @@ var app = builder.Build();
 app.UseExceptionHandler();
 app.UseCors();
 app.UseSwaggerConfiguration();
+app.UseDatabaseConfiguration();
 
 // Configure the HTTP request pipeline.
 
