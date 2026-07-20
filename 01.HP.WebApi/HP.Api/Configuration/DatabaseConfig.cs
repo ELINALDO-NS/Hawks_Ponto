@@ -17,7 +17,7 @@ namespace HP.Api.Configuration
             using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
             using var contex = serviceScope.ServiceProvider.GetService<HPContext>();
             contex.Database.Migrate();
-            contex.Database.EnsureCreated();
+            
         }
     }
 }

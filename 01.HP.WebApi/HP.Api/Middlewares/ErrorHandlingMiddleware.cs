@@ -7,14 +7,10 @@ namespace HP.Api.Middlewares;
 
 public class ErrorHandlingMiddleware : IExceptionHandler
 {
-    public async ValueTask<bool> TryHandleAsync(
-        HttpContext httpContext,
-        Exception exception,
-        CancellationToken cancellationToken)
+    public async ValueTask<bool> TryHandleAsync(HttpContext httpContext,Exception exception,CancellationToken cancellationToken)
     {
 
         var idErro = Activity.Current?.Id ?? httpContext.TraceIdentifier;
-
 
         if (exception is OperationCanceledException)
         {

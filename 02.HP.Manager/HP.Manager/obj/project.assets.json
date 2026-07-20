@@ -1,11 +1,30 @@
 {
   "version": 4,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "HP.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HP.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HP.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "HP.Core/1.0.0": {
+      "type": "project",
+      "path": "../../04.HP.Core/HP.Core/HP.Core.csproj",
+      "msbuildProject": "../../04.HP.Core/HP.Core/HP.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "HP.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Suporte\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj": {
+              "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -74,7 +97,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

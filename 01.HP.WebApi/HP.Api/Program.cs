@@ -1,18 +1,20 @@
 using HP.Api.Configuration;
 using HP.Api.Middlewares;
+using HP.Data.Repository;
+using HP.Manager.DTOs.Empresa;
+using HP.Manager.Implementation;
+using HP.Manager.Interfaces.Managers;
+using HP.Manager.Interfaces.Repository;
 using Serilog;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
 builder.Services.AddProblemDetails();
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 
-
 builder.Host.UseSerilog();
-
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -22,40 +24,43 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
-
 builder.Services.AddExceptionHandler<ErrorHandlingMiddleware>();
 builder.Services.AddProblemDetails();
-builder.Services.AddSwaggerConfiguration();
 builder.Services.AddSerilog();
+builder.Services.AddSwaggerConfiguration(builder.Environment);
+builder.Services.AddDatabaseConfiguration(builder.Configuration);
+builder.Services.AddScoped<IEmpresaRepository,EmpresaRepository>();
+builder.Services.AddScoped<IEmpresaManager, EmpresaManager>();
 // Add services to the container.
 
 var app = builder.Build();
 app.UseExceptionHandler();
 app.UseCors();
-app.UseSwaggerConfiguration();
 app.UseDatabaseConfiguration();
-
+app.UseSwaggerConfiguration();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+app.MapPost("/Empresa", async (AdicionaEmpresaDto novaempresa,IEmpresaManager manager,CancellationToken cancellationToken) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
+    var empresa = await manager.AdicionarAsync(novaempresa, cancellationToken);
+    return Results.Ok(empresa); 
+});
+app.MapGet("/Empresa", async ( IEmpresaManager manager, CancellationToken cancellationToken) =>
 {
-    
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return Results.Ok(forecast); 
+    var empresas = await manager.ObterTodosAsync(cancellationToken);
+    return Results.Ok(empresas);
+});
+app.MapPut("/Empresa", async (AtualizaEmpresaDto empresa, IEmpresaManager manager, CancellationToken cancellationToken) =>
+{
+    var empresaAtualizada = await manager.AtualizarAsync(empresa, cancellationToken);
+    return Results.Ok(empresaAtualizada);
+});
+app.MapDelete("/Empresa", async (int id, IEmpresaManager manager, CancellationToken cancellationToken) =>
+{
+    var empresa = await manager.RemoverAsync(id, cancellationToken);
+    return Results.Ok(empresa);
 });
 
 
@@ -71,9 +76,4 @@ catch (Exception ex)
 finally
 {
     Log.CloseAndFlush(); // Garante que todos os logs salvos de forma assíncrona sejam gravados antes de fechar
-}
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-
 }
