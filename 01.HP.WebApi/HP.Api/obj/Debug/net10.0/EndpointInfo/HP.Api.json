@@ -65,15 +65,17 @@
             "description": "OK"
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/Empresa/{id}": {
+      "get": {
         "tags": [
           "HP.Api"
         ],
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
@@ -86,10 +88,8 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/Empresa/{id}": {
-      "get": {
+      },
+      "delete": {
         "tags": [
           "HP.Api"
         ],

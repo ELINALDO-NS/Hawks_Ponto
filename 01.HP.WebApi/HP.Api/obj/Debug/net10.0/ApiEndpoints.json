@@ -61,9 +61,9 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
-    "RelativePath": "Empresa",
-    "HttpMethod": "DELETE",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
+    "RelativePath": "Empresa/{id:int}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
@@ -83,9 +83,9 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
     "RelativePath": "Empresa/{id:int}",
-    "HttpMethod": "GET",
+    "HttpMethod": "DELETE",
     "IsController": false,
     "Order": 0,
     "Parameters": [

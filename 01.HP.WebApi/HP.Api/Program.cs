@@ -18,10 +18,10 @@ Log.Logger = new LoggerConfiguration()
 
 // 1. Obtém as configurações globais do Mapster
 var config = TypeAdapterConfig.GlobalSettings;
-
 // 2. Procura automaticamente por todas as classes que implementam IRegister no projeto
 config.Scan(Assembly.GetExecutingAssembly());
 builder.Services.AddMapster();
+
 builder.Host.UseSerilog();
 builder.Services.AddCors(options =>
 {
@@ -37,8 +37,7 @@ builder.Services.AddProblemDetails();
 builder.Services.AddSerilog();
 builder.Services.AddSwaggerConfiguration(builder.Environment);
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
-builder.Services.AddScoped<IEmpresaRepository,EmpresaRepository>();
-builder.Services.AddScoped<IEmpresaManager, EmpresaManager>();
+builder.Services.UseDependencyInjectionConfiguration();
 // Add services to the container.
 
 var app = builder.Build();

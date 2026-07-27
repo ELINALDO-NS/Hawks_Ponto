@@ -33,11 +33,7 @@ public class ErrorHandlingMiddleware : IExceptionHandler
             Detail = "Inconsistência interna. Use o código identificador (traceId) para suporte com o administrador.",
             Instance = httpContext.Request.Path
         };
-
-
         problema.Extensions.Add("traceId", idErro);
-
-
         httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
         await httpContext.Response.WriteAsJsonAsync(problema, cancellationToken);
 
