@@ -55,6 +55,36 @@
           }
         }
       },
+      "Mapster/10.0.11": {
+        "dependencies": {
+          "Mapster.Core": "10.0.11"
+        },
+        "runtime": {
+          "lib/net10.0/Mapster.dll": {
+            "assemblyVersion": "10.0.11.0",
+            "fileVersion": "10.0.11.0"
+          }
+        }
+      },
+      "Mapster.Core/10.0.11": {
+        "runtime": {
+          "lib/netstandard2.0/Mapster.Core.dll": {
+            "assemblyVersion": "10.0.11.0",
+            "fileVersion": "10.0.11.0"
+          }
+        }
+      },
+      "Mapster.DependencyInjection/10.0.11": {
+        "dependencies": {
+          "Mapster": "10.0.11"
+        },
+        "runtime": {
+          "lib/net10.0/Mapster.DependencyInjection.dll": {
+            "assemblyVersion": "10.0.11.0",
+            "fileVersion": "10.0.11.0"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.10": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.19.2"
@@ -947,7 +977,9 @@
       },
       "HP.Manager/1.0.0": {
         "dependencies": {
-          "HP.Core": "1.0.0"
+          "HP.Core": "1.0.0",
+          "Mapster": "10.0.11",
+          "Mapster.DependencyInjection": "10.0.11"
         },
         "runtime": {
           "HP.Manager.dll": {
@@ -984,6 +1016,27 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "Mapster/10.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MesrjeIg4lyaxJKVFHysc1GH4TooIuuY/RJRCgBPoFwDD3D1tngF362cKBkxhxR/8EhpfMfGLeU4nzCEz6hPaQ==",
+      "path": "mapster/10.0.11",
+      "hashPath": "mapster.10.0.11.nupkg.sha512"
+    },
+    "Mapster.Core/10.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vpChY4hsk+CvIR3AFN/uQJkkP6gwYSUZFnuqgWBiTTbThbFEnB6chP7QUoSWZBcuPAnOjol09Ev7F1PVwECAIg==",
+      "path": "mapster.core/10.0.11",
+      "hashPath": "mapster.core.10.0.11.nupkg.sha512"
+    },
+    "Mapster.DependencyInjection/10.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rdvpA2xSZ8Eyd3hGedz/23oXl07tM+cmPgxlWOOAnAX1LmRl42qtbpu8LFCOEq5Hh66MjdIEg5rj4+HcajTO6w==",
+      "path": "mapster.dependencyinjection/10.0.11",
+      "hashPath": "mapster.dependencyinjection.10.0.11.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.10": {
       "type": "package",

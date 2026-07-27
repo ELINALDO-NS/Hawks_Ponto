@@ -6,39 +6,7 @@ namespace HP.Core
 {
     public class Empresa
     {
-        public Empresa() { }
-        public Empresa(int idEndrereco, int codigo, string razaoSocial, string cnpjCpf, string telefne, string? site, string? email, string tipoEmpresa, bool flPortaria1510, bool flPortaria671)
-        {
-            IdEndrereco = idEndrereco;
-            Codigo = codigo;
-            RazaoSocial = razaoSocial;
-            CnpjCpf = cnpjCpf;
-            Telefone = telefne;
-            Site = site;
-            DataCadastro = DateTime.UtcNow;
-            Email = email;
-            TipoEmpresa = tipoEmpresa;
-            Portaria1510 = flPortaria1510;
-            Portaria671 = flPortaria671;
-
-        }
-        public Empresa(int id, int idEndrereco, int codigo, string razaoSocial, string cnpjCpf, string telefne, string? site, string? email, string tipoEmpresa, bool portaria1510, bool portaria671)
-        {
-            Id = id;
-            IdEndrereco = idEndrereco;
-            Codigo = codigo;
-            RazaoSocial = razaoSocial;
-            CnpjCpf = cnpjCpf;
-            Telefone = telefne;
-            Site = site;           
-            DataUltAtualizacao = DateTime.UtcNow;
-            Email = email;
-            TipoEmpresa = tipoEmpresa;
-            Portaria1510 = portaria1510;
-            Portaria671 = portaria671;
-
-        }
-
+        public Empresa() { }   
         public int Id { get; set; }
         public int IdEndrereco { get; set; }
         public int Codigo { get; set; }

@@ -4,8 +4,5 @@ using System.Text;
 
 namespace HP.Manager.DTOs.Empresa
 {
-    public class RemoveEmpresaDto
-    {
-        public int Id { get; set; }
-    }
+    public record RemoveEmpresaDto(int Id);
 }

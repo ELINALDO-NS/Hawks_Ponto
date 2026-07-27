@@ -5,7 +5,9 @@ using HP.Manager.DTOs.Empresa;
 using HP.Manager.Implementation;
 using HP.Manager.Interfaces.Managers;
 using HP.Manager.Interfaces.Repository;
+using Mapster;
 using Serilog;
+using System.Reflection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,12 @@ Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 
+// 1. Obtém as configurações globais do Mapster
+var config = TypeAdapterConfig.GlobalSettings;
+
+// 2. Procura automaticamente por todas as classes que implementam IRegister no projeto
+config.Scan(Assembly.GetExecutingAssembly());
+builder.Services.AddMapster();
 builder.Host.UseSerilog();
 builder.Services.AddCors(options =>
 {
@@ -75,5 +83,5 @@ catch (Exception ex)
 }
 finally
 {
-    Log.CloseAndFlush(); // Garante que todos os logs salvos de forma assíncrona sejam gravados antes de fechar
+    Log.CloseAndFlush(); 
 }
