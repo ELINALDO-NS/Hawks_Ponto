@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\mappings\\empresa\\empresamapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\mappings\\empresa\\empresamapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\implementation\\empresamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\implementation\\empresamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmpresaMapping.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Mappings\\Empresa\\EmpresaMapping.cs",
-              "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Mappings\\Empresa\\EmpresaMapping.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Mappings\\Empresa\\EmpresaMapping.cs*",
-              "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Mappings\\Empresa\\EmpresaMapping.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T17:23:21.748Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -45,20 +28,20 @@
               "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Implementation\\EmpresaManager.cs",
               "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\EmpresaManager.cs",
               "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Implementation\\EmpresaManager.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAMwB8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAApwCMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T16:45:55.585Z",
+              "WhenOpened": "2026-07-27T17:30:59.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
               "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
-              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Program.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAtwD0AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs*",
+              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Program.cs*",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowD4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-15T18:12:21.449Z",
               "EditorCaption": ""

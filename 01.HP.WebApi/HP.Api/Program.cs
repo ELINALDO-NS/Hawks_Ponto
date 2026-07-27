@@ -60,12 +60,21 @@ app.MapGet("/Empresa", async ( IEmpresaManager manager, CancellationToken cancel
     var empresas = await manager.ObterTodosAsync(cancellationToken);
     return Results.Ok(empresas);
 });
+app.MapGet("/Empresa/{id:int}", async (int id, IEmpresaManager manager, CancellationToken cancellationToken) =>
+{
+    var empresa = await manager.ObterPorIdAsync(id,cancellationToken);
+    if (empresa is null)
+    {
+      return Results.NotFound();
+    }
+    return Results.Ok(empresa);
+});
 app.MapPut("/Empresa", async (AtualizaEmpresaDto empresa, IEmpresaManager manager, CancellationToken cancellationToken) =>
 {
     var empresaAtualizada = await manager.AtualizarAsync(empresa, cancellationToken);
     return Results.Ok(empresaAtualizada);
 });
-app.MapDelete("/Empresa", async (int id, IEmpresaManager manager, CancellationToken cancellationToken) =>
+app.MapDelete("/Empresa/{id:int}", async (int id, IEmpresaManager manager, CancellationToken cancellationToken) =>
 {
     var empresa = await manager.RemoverAsync(id, cancellationToken);
     return Results.Ok(empresa);

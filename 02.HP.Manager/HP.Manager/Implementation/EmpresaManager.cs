@@ -33,8 +33,11 @@ namespace HP.Manager.Implementation
 
         public async Task<EmpresaDto?> ObterPorIdAsync(int id, CancellationToken cancellationToken)
         {
-            var empresa = await _repository.ObterPorIdAsync(id, cancellationToken) ?? new();
-
+            var empresa = await _repository.ObterPorIdAsync(id, cancellationToken);
+            if (empresa is null)
+            {
+                return null;
+            }
             return _mapper.Map<EmpresaDto>(empresa);
         }
 
