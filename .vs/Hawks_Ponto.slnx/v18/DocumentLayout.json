@@ -7,7 +7,8 @@
       "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Consultorio\\Hawks_Consultorio\\HC.WebApi\\Configuration\\DependencyInjectionConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\endpoints\\empresaendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\endpoints\\empresaendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\implementation\\empresamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DependencyInjectionConfig.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Consultorio\\Hawks_Consultorio\\HC.WebApi\\Configuration\\DependencyInjectionConfig.cs",
-              "RelativeDocumentMoniker": "..\\Hawks_Consultorio\\Hawks_Consultorio\\HC.WebApi\\Configuration\\DependencyInjectionConfig.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Consultorio\\Hawks_Consultorio\\HC.WebApi\\Configuration\\DependencyInjectionConfig.cs",
-              "RelativeToolTip": "..\\Hawks_Consultorio\\Hawks_Consultorio\\HC.WebApi\\Configuration\\DependencyInjectionConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Title": "EmpresaEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Endpoints\\EmpresaEndpoints.cs",
+              "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Endpoints\\EmpresaEndpoints.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Endpoints\\EmpresaEndpoints.cs",
+              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Endpoints\\EmpresaEndpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T17:52:46.195Z",
+              "WhenOpened": "2026-07-27T18:06:05.815Z",
               "EditorCaption": ""
             },
             {
@@ -44,7 +45,7 @@
               "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Implementation\\EmpresaManager.cs",
               "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\EmpresaManager.cs",
               "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Implementation\\EmpresaManager.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAApwCMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAApwCMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-27T17:30:59.001Z",
               "EditorCaption": ""
@@ -55,9 +56,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
               "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs*",
-              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Program.cs*",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAzAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
+              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Program.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-15T18:12:21.449Z",
               "EditorCaption": ""

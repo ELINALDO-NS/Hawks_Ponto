@@ -15,11 +15,13 @@
     "version": "v1"
   },
   "paths": {
-    "/Empresa": {
+    "/empresa": {
       "post": {
         "tags": [
-          "HP.Api"
+          "Empresa"
         ],
+        "summary": "Adiciona uma nova empresa",
+        "description": "Recebe os dados cadastrais da empresa, valida o CNPJ e insere o registro na base de dados principal.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -31,25 +33,49 @@
           "required": true
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpresaDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "get": {
         "tags": [
-          "HP.Api"
+          "Empresa"
         ],
+        "summary": "Obtem todas as empresas.",
+        "description": "Retorna uma lista contendo todas as empresas cadastradas no sistema. Caso não existam registros, retorna uma lista vazia.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpresaDto"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "put": {
         "tags": [
-          "HP.Api"
+          "Empresa"
         ],
+        "summary": "Atualiza uma empresa",
+        "description": "Altera as informações de uma empresa existente com base nos dados fornecidos no corpo da requisição.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -62,16 +88,35 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/Empresa/{id}": {
+    "/empresa/{id}": {
       "get": {
         "tags": [
-          "HP.Api"
+          "Empresa"
         ],
+        "summary": "Obtem uma empresas por id",
+        "description": "Retorna uma empresa específica com base no identificador único informado.",
         "parameters": [
           {
             "name": "id",
@@ -85,14 +130,26 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpresaDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       },
       "delete": {
         "tags": [
-          "HP.Api"
+          "Empresa"
         ],
+        "summary": "Remove uma empresa",
+        "description": "Exclui o registro de uma empresa do sistema permanentemente a partir do seu identificador único.",
         "parameters": [
           {
             "name": "id",
@@ -106,7 +163,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
           }
         }
       }
@@ -205,6 +279,63 @@
           }
         },
         "additionalProperties": false
+      },
+      "EmpresaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idEndrereco": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "razaoSocial": {
+            "type": "string",
+            "nullable": true
+          },
+          "cnpjCpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoEmpresa": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataCadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "portaria1510": {
+            "type": "boolean"
+          },
+          "site": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataUltAtualizacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "portaria671": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
@@ -223,7 +354,7 @@
   ],
   "tags": [
     {
-      "name": "HP.Api"
+      "name": "Empresa"
     }
   ]
 }

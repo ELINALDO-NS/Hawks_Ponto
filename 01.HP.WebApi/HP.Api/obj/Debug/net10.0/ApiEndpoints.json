@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
-    "RelativePath": "Empresa",
+    "ContainingType": "HP.Api.Endpoints.EmpresaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmpresaEndpoints\u003Eb__0_0",
+    "RelativePath": "empresa/",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
@@ -15,32 +15,56 @@
     ],
     "ReturnTypes": [
       {
+        "Type": "HP.Manager.DTOs.Empresa.EmpresaDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
         "Type": "System.Void",
         "MediaTypes": [],
-        "StatusCode": 200
+        "StatusCode": 500
       }
-    ]
+    ],
+    "Tags": [
+      "Empresa"
+    ],
+    "Description": "Recebe os dados cadastrais da empresa, valida o CNPJ e insere o registro na base de dados principal.",
+    "Summary": "Adiciona uma nova empresa"
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_2",
-    "RelativePath": "Empresa",
+    "ContainingType": "HP.Api.Endpoints.EmpresaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmpresaEndpoints\u003Eb__0_1",
+    "RelativePath": "empresa/",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
+        "Type": "HP.Manager.DTOs.Empresa.EmpresaDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
         "Type": "System.Void",
         "MediaTypes": [],
-        "StatusCode": 200
+        "StatusCode": 204
       }
-    ]
+    ],
+    "Tags": [
+      "Empresa"
+    ],
+    "Description": "Retorna uma lista contendo todas as empresas cadastradas no sistema. Caso n\u00E3o existam registros, retorna uma lista vazia.",
+    "Summary": "Obtem todas as empresas."
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
-    "RelativePath": "Empresa",
+    "ContainingType": "HP.Api.Endpoints.EmpresaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmpresaEndpoints\u003Eb__0_3",
+    "RelativePath": "empresa/",
     "HttpMethod": "PUT",
     "IsController": false,
     "Order": 0,
@@ -53,16 +77,30 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
         "StatusCode": 200
+      },
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
       }
-    ]
+    ],
+    "Tags": [
+      "Empresa"
+    ],
+    "Description": "Altera as informa\u00E7\u00F5es de uma empresa existente com base nos dados fornecidos no corpo da requisi\u00E7\u00E3o.",
+    "Summary": "Atualiza uma empresa"
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
-    "RelativePath": "Empresa/{id:int}",
+    "ContainingType": "HP.Api.Endpoints.EmpresaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmpresaEndpoints\u003Eb__0_2",
+    "RelativePath": "empresa/{id:int}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
@@ -75,16 +113,28 @@
     ],
     "ReturnTypes": [
       {
+        "Type": "HP.Manager.DTOs.Empresa.EmpresaDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
         "Type": "System.Void",
         "MediaTypes": [],
-        "StatusCode": 200
+        "StatusCode": 404
       }
-    ]
+    ],
+    "Tags": [
+      "Empresa"
+    ],
+    "Description": "Retorna uma empresa espec\u00EDfica com base no identificador \u00FAnico informado.",
+    "Summary": "Obtem uma empresas por id"
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
-    "RelativePath": "Empresa/{id:int}",
+    "ContainingType": "HP.Api.Endpoints.EmpresaEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmpresaEndpoints\u003Eb__0_4",
+    "RelativePath": "empresa/{id:int}",
     "HttpMethod": "DELETE",
     "IsController": false,
     "Order": 0,
@@ -97,10 +147,24 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
         "StatusCode": 200
+      },
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
       }
-    ]
+    ],
+    "Tags": [
+      "Empresa"
+    ],
+    "Description": "Exclui o registro de uma empresa do sistema permanentemente a partir do seu identificador \u00FAnico.",
+    "Summary": "Remove uma empresa"
   }
 ]
