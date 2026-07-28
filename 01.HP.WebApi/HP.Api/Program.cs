@@ -37,9 +37,10 @@ builder.Services.AddProblemDetails();
 builder.Services.AddSerilog();
 builder.Services.AddSwaggerConfiguration(builder.Environment);
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
+builder.Services.AddFluentValidationConfiguration();
 builder.Services.UseDependencyInjectionConfiguration();
-// Add services to the container.
 
+// Add services to the container.
 var app = builder.Build();
 app.UseExceptionHandler();
 app.UseCors();
@@ -47,10 +48,8 @@ app.UseDatabaseConfiguration();
 app.UseSwaggerConfiguration();
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
-
 //Endpoints
 app.MapEmpresaEndpoints();
-
 try
 {
     Log.Information("Iniciando a aplicação...");

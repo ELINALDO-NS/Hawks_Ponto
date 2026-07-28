@@ -1,4 +1,5 @@
-﻿using HP.Manager.DTOs.Empresa;
+﻿using HP.Api.Configuration;
+using HP.Manager.DTOs.Empresa;
 using HP.Manager.Interfaces.Managers;
 
 namespace HP.Api.Endpoints
@@ -7,7 +8,7 @@ namespace HP.Api.Endpoints
     {
         public static void MapEmpresaEndpoints(this IEndpointRouteBuilder app)
         {
-            var group = app.MapGroup("/empresa")
+            var group = app.MapGroup("/empresa").AddEndpointFilter<ValidationFilter>()
                 .WithTags("Empresa");
 
             group.MapPost("/", async (AdicionaEmpresaDto novaempresa, IEmpresaManager manager, CancellationToken cancellationToken) =>

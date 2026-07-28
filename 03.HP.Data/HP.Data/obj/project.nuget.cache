@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "HAe0qDfd7eY=",
+  "dgSpecHash": "Sws2yX5TP58=",
   "success": true,
   "projectFilePath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Suporte\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Suporte\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
+    "C:\\Users\\Suporte\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\Suporte\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "C:\\Users\\Suporte\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Suporte\\.nuget\\packages\\mapster\\10.0.11\\mapster.10.0.11.nupkg.sha512",
     "C:\\Users\\Suporte\\.nuget\\packages\\mapster.core\\10.0.11\\mapster.core.10.0.11.nupkg.sha512",
