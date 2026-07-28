@@ -8,14 +8,17 @@ namespace HP.Api.Endpoints
     {
         public static void MapEmpresaEndpoints(this IEndpointRouteBuilder app)
         {
-            var group = app.MapGroup("/empresa").AddEndpointFilter<ValidationFilter>()
+            var group = app.MapGroup("/empresa").
+                AddEndpointFilter<ValidationFilter<AdicionaEmpresaDto>>().
+                AddEndpointFilter<ValidationFilter<AtualizaEmpresaDto>>()
                 .WithTags("Empresa");
+            
 
             group.MapPost("/", async (AdicionaEmpresaDto novaempresa, IEmpresaManager manager, CancellationToken cancellationToken) =>
             {
                 var empresa = await manager.AdicionarAsync(novaempresa, cancellationToken);
                 return Results.Ok(empresa);
-            })
+            }).AddEndpointFilter<ValidationFilter<EmpresaDto>>()
             .Produces<EmpresaDto>(StatusCodes.Status201Created)
              .Produces(StatusCodes.Status500InternalServerError)
              .WithSummary("Adiciona uma nova empresa")

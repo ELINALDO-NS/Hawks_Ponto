@@ -2,30 +2,30 @@
 
 namespace HP.Api.Configuration
 {
-        public class ValidationFilter : IEndpointFilter
+    public class ValidationFilter<T> : IEndpointFilter where T : class
+    {
+        public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
         {
-            public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
+            // 1. O .NET injeta diretamente o IValidator<T> sem Reflection
+            var validator = context.HttpContext.RequestServices.GetService<IValidator<T>>();
+
+            if (validator is not null)
             {
-                
-                foreach (var argument in context.Arguments)
+                // 2. Pega o DTO já convertido para o tipo correto T
+                var entity = context.Arguments.OfType<T>().FirstOrDefault();
+
+                if (entity is not null)
                 {
-                    if (argument is null) continue;
-                    
-                    var validatorType = typeof(IValidator<>).MakeGenericType(argument.GetType());
+                    var validationResult = await validator.ValidateAsync(entity);
 
-                    if (context.HttpContext.RequestServices.GetService(validatorType) is IValidator validator)
+                    if (!validationResult.IsValid)
                     {
-                        var validationContext = new ValidationContext<object>(argument);
-                        var validationResult = await validator.ValidateAsync(validationContext);
-
-                        if (!validationResult.IsValid)
-                        {
-                            return Results.ValidationProblem(validationResult.ToDictionary());
-                        }
+                        return Results.ValidationProblem(validationResult.ToDictionary());
                     }
                 }
-
-                return await next(context);
             }
+
+            return await next(context);
         }
+    }
 }
