@@ -11,5 +11,7 @@
   <Folder Name="/04.HP.Core/">
     <Project Path="04.HP.Core/HP.Core/HP.Core.csproj" />
   </Folder>
-  <Folder Name="/05.HP.Tests/" />
+  <Folder Name="/05.HP.Tests/">
+    <Project Path="05.HP.Tests/HP.Tests/HP.Tests.csproj" Id="a53b2755-bd1e-43fc-851c-be4db1611dd4" />
+  </Folder>
 </Solution>

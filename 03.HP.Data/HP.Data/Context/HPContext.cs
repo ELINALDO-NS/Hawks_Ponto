@@ -1,8 +1,6 @@
 ﻿using HP.Core;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace HP.Data.Context
 {
@@ -12,6 +10,7 @@ namespace HP.Data.Context
         {
         }
         public DbSet<Empresa> Empresa { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
         protected HPContext()
         {
         }

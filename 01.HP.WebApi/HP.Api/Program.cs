@@ -1,14 +1,8 @@
 using HP.Api.Configuration;
 using HP.Api.Endpoints;
 using HP.Api.Middlewares;
-using HP.Data.Repository;
-using HP.Manager.DTOs.Empresa;
-using HP.Manager.Implementation;
-using HP.Manager.Interfaces.Managers;
-using HP.Manager.Interfaces.Repository;
-using Mapster;
 using Serilog;
-using System.Reflection;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,10 +11,6 @@ Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 
-
-var config = TypeAdapterConfig.GlobalSettings;
-config.Scan(Assembly.GetExecutingAssembly());
-builder.Services.AddMapster();
 
 builder.Host.UseSerilog();
 builder.Services.AddCors(options =>
@@ -38,8 +28,8 @@ builder.Services.AddSerilog();
 builder.Services.AddSwaggerConfiguration(builder.Environment);
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
 builder.Services.AddFluentValidationConfiguration();
-builder.Services.UseDependencyInjectionConfiguration();
-
+builder.Services.AddMapsterConfiguration();
+builder.Services.AddDependencyInjectionConfiguration();
 // Add services to the container.
 var app = builder.Build();
 app.UseExceptionHandler();
@@ -49,7 +39,8 @@ app.UseSwaggerConfiguration();
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
 //Endpoints
-app.MapEmpresaEndpoints();
+app.MapEmpresaEndpoint();
+app.MapEnderecoEndpoint();
 try
 {
     Log.Information("Iniciando a aplicação...");

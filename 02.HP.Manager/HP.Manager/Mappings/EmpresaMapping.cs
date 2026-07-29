@@ -2,7 +2,7 @@
 using Mapster;
 
 
-namespace HP.Manager.Mappings.Empresa
+namespace HP.Manager.Mappings
 {
     public class EmpresaMapping : IRegister
     {

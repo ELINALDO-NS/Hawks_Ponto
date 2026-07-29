@@ -4,9 +4,9 @@ using HP.Manager.Interfaces.Managers;
 
 namespace HP.Api.Endpoints
 {
-    public static class EmpresaEndpoints
+    public static class EmpresaEndpoint
     {
-        public static void MapEmpresaEndpoints(this IEndpointRouteBuilder app)
+        public static void MapEmpresaEndpoint(this IEndpointRouteBuilder app)
         {
             var group = app.MapGroup("/empresa").
                 AddEndpointFilter<ValidationFilter<AdicionaEmpresaDto>>().
@@ -18,8 +18,7 @@ namespace HP.Api.Endpoints
             {
                 var empresa = await manager.AdicionarAsync(novaempresa, cancellationToken);
                 return Results.Ok(empresa);
-            }).AddEndpointFilter<ValidationFilter<EmpresaDto>>()
-            .Produces<EmpresaDto>(StatusCodes.Status201Created)
+            }).Produces<EmpresaDto>(StatusCodes.Status201Created)
              .Produces(StatusCodes.Status500InternalServerError)
              .WithSummary("Adiciona uma nova empresa")
              .WithDescription("Recebe os dados cadastrais da empresa, " +
