@@ -166,5 +166,171 @@
     ],
     "Description": "Exclui o registro de uma empresa do sistema permanentemente a partir do seu identificador \u00FAnico.",
     "Summary": "Remove uma empresa"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.EstruturaOrganizacionalEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEstruturaOrganizacionalEndpoint\u003Eb__0_0",
+    "RelativePath": "EstruturaOrganizacional/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novaEstrutura",
+        "Type": "HP.Manager.DTOs.EstruturaOrganizacional.AdicionaEstruturaOrganizacionalDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.EstruturaOrganizacional.EstruturaOrganizacionalDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Estrutura Organizacional"
+    ],
+    "Description": "Recebe os dados cadastrais da Estrutura Organizacional",
+    "Summary": "Adiciona uma nova Estrutura Organizacional"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.EstruturaOrganizacionalEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEstruturaOrganizacionalEndpoint\u003Eb__0_1",
+    "RelativePath": "EstruturaOrganizacional/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.EstruturaOrganizacional.EstruturaOrganizacionalDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
+    "Tags": [
+      "Estrutura Organizacional"
+    ],
+    "Description": "Retorna uma lista contendo todas as Estrutura Organizacional cadastradas na Empresa. Caso n\u00E3o existam registros, retorna uma lista vazia.",
+    "Summary": "Obtem todas as Estrutura Organizacional."
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.EstruturaOrganizacionalEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEstruturaOrganizacionalEndpoint\u003Eb__0_3",
+    "RelativePath": "EstruturaOrganizacional/",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estrutura",
+        "Type": "HP.Manager.DTOs.EstruturaOrganizacional.AtualizaEstruturaOrganizacionalDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.EstruturaOrganizacional.EstruturaOrganizacionalDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Estrutura Organizacional"
+    ],
+    "Description": "Altera as informa\u00E7\u00F5es de uma Estrutura Organizacional existente com base nos dados fornecidos no corpo da requisi\u00E7\u00E3o.",
+    "Summary": "Atualiza uma Estrutura Organizacional"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.EstruturaOrganizacionalEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEstruturaOrganizacionalEndpoint\u003Eb__0_2",
+    "RelativePath": "EstruturaOrganizacional/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.EstruturaOrganizacional.EstruturaOrganizacionalDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Estrutura Organizacional"
+    ],
+    "Description": "Retorna uma Estrutura Organizacional espec\u00EDfica com base no identificador \u00FAnico informado.",
+    "Summary": "Obtem uma Estrutura Organizacional por id"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.EstruturaOrganizacionalEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEstruturaOrganizacionalEndpoint\u003Eb__0_4",
+    "RelativePath": "EstruturaOrganizacional/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Estrutura Organizacional"
+    ],
+    "Description": "Exclui o registro de uma Estrutura Organizacional do sistema permanentemente a partir do seu identificador \u00FAnico.",
+    "Summary": "Remove uma Estrutura Organizacional"
   }
 ]

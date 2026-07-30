@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP.Data.Migrations
 {
     [DbContext(typeof(HPContext))]
-    [Migration("20260729183222_AdicionaRelacionamentoEnderecoEmpresa")]
-    partial class AdicionaRelacionamentoEnderecoEmpresa
+    [Migration("20260730171319_AdicionandoEmpresa-Endereco-EstruturaOrganizacional")]
+    partial class AdicionandoEmpresaEnderecoEstruturaOrganizacional
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace HP.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("HP.Core.Empresa", b =>
+            modelBuilder.Entity("HP.Core.Entities.Empresa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,7 +80,7 @@ namespace HP.Data.Migrations
                     b.ToTable("Empresa");
                 });
 
-            modelBuilder.Entity("HP.Core.Endereco", b =>
+            modelBuilder.Entity("HP.Core.Entities.Endereco", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -120,15 +120,60 @@ namespace HP.Data.Migrations
                     b.ToTable("Endereco");
                 });
 
-            modelBuilder.Entity("HP.Core.Empresa", b =>
+            modelBuilder.Entity("HP.Core.Entities.EstruturaOrganizacional", b =>
                 {
-                    b.HasOne("HP.Core.Endereco", "Endrereco")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Codigo")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataUltAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EstruturaPaiId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.ToTable("EstruturaOrganizacional");
+                });
+
+            modelBuilder.Entity("HP.Core.Entities.Empresa", b =>
+                {
+                    b.HasOne("HP.Core.Entities.Endereco", "Endrereco")
                         .WithMany()
                         .HasForeignKey("EndrerecoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Endrereco");
+                });
+
+            modelBuilder.Entity("HP.Core.Entities.EstruturaOrganizacional", b =>
+                {
+                    b.HasOne("HP.Core.Entities.Empresa", "Empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,7 +12,8 @@ namespace HP.Api.Configuration
             config.RequireExplicitMapping = true;
             config.Apply(                
                 new EmpresaMapping(),
-                new EnderecoMapping()
+                new EnderecoMapping(),
+                new EstruturaOrganizacionalMapping()
                 
             );
             config.Compile();

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\configuration\\dependencyinjectionconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\configuration\\dependencyinjectionconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Migrations\\20260730192416_Alterarando nomes de tabelas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:03.HP.Data\\HP.Data\\Migrations\\20260730192416_Alterarando nomes de tabelas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\repository\\estruturaorganizacionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\repository\\estruturaorganizacionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\repository\\empresarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\repository\\empresarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,27 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DependencyInjectionConfig.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Configuration\\DependencyInjectionConfig.cs",
-              "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Configuration\\DependencyInjectionConfig.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Configuration\\DependencyInjectionConfig.cs",
-              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Configuration\\DependencyInjectionConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "20260730192416_Alterarando nomes de tabelas.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Migrations\\20260730192416_Alterarando nomes de tabelas.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Migrations\\20260730192416_Alterarando nomes de tabelas.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Migrations\\20260730192416_Alterarando nomes de tabelas.cs",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Migrations\\20260730192416_Alterarando nomes de tabelas.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwAwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-30T13:14:25.604Z",
+              "WhenOpened": "2026-07-30T19:24:16.965Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "EstruturaOrganizacionalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\EstruturaOrganizacionalRepository.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Repository\\EstruturaOrganizacionalRepository.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\EstruturaOrganizacionalRepository.cs",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Repository\\EstruturaOrganizacionalRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwBIAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-30T19:23:09.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmpresaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\EmpresaRepository.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Repository\\EmpresaRepository.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\EmpresaRepository.cs",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Repository\\EmpresaRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAkwDcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-30T19:22:49.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
               "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Program.cs",
               "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
               "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Program.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAACoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-28T19:46:20.134Z",
+              "WhenOpened": "2026-07-30T17:36:00.929Z",
               "EditorCaption": ""
             }
           ]

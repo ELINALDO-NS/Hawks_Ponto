@@ -12,14 +12,14 @@ namespace HP.Data.Repository
 
         public async Task<Empresa> AdicionarAsync(Empresa empresa, CancellationToken cancellationToken)
         {
-            _context.Empresa.Add(empresa);
+            _context.Empresas.Add(empresa);
             await _context.SaveChangesAsync(cancellationToken);
             return empresa;
         }
 
         public async Task<Empresa?> AtualizarAsync(Empresa empresa, CancellationToken cancellationToken)
         {
-            var empresaAtual = await _context.Empresa.AsNoTracking().FirstOrDefaultAsync(x => x.Id == empresa.Id);
+            var empresaAtual = await _context.Empresas.AsNoTracking().FirstOrDefaultAsync(x => x.Id == empresa.Id);
 
             if (empresaAtual is null)
             {
@@ -28,14 +28,14 @@ namespace HP.Data.Repository
 
             empresa.DataCadastro = empresaAtual.DataCadastro;
             empresa.DataUltAtualizacao = DateTime.UtcNow;
-            _context.Empresa.Update(empresa);
+            _context.Empresas.Update(empresa);
             await _context.SaveChangesAsync(cancellationToken);
             return empresa;
         }
 
         public async Task<Empresa?> ObterPorIdAsync(int id, CancellationToken cancellationToken)
         {
-            var empresa = await _context.Empresa.Include(x => x.Endrereco).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            var empresa = await _context.Empresas.Include(x => x.Endrereco).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
             if (empresa == null) { return null; }
 
@@ -44,16 +44,16 @@ namespace HP.Data.Repository
 
         public async Task<IEnumerable<Empresa>> ObterTodosAsync(CancellationToken cancellationToken)
         {
-            var empresas = await _context.Empresa.Include(x => x.Endrereco).ToListAsync(cancellationToken);
+            var empresas = await _context.Empresas.Include(x => x.Endrereco).ToListAsync(cancellationToken);
             return empresas;
         }
 
         public async Task<bool> RemoverAsync(int id, CancellationToken cancellationToken)
         {
-            var empresa = _context.Empresa.Find(id);
+            var empresa = _context.Empresas.Find(id);
 
             if (empresa == null) { return false; }
-            _context.Empresa.Remove(empresa);
+            _context.Empresas.Remove(empresa);
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }

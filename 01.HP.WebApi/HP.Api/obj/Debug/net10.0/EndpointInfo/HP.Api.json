@@ -184,6 +184,169 @@
           }
         }
       }
+    },
+    "/EstruturaOrganizacional": {
+      "post": {
+        "tags": [
+          "Estrutura Organizacional"
+        ],
+        "summary": "Adiciona uma nova Estrutura Organizacional",
+        "description": "Recebe os dados cadastrais da Estrutura Organizacional",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdicionaEstruturaOrganizacionalDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstruturaOrganizacionalDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Estrutura Organizacional"
+        ],
+        "summary": "Obtem todas as Estrutura Organizacional.",
+        "description": "Retorna uma lista contendo todas as Estrutura Organizacional cadastradas na Empresa. Caso não existam registros, retorna uma lista vazia.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstruturaOrganizacionalDto"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Estrutura Organizacional"
+        ],
+        "summary": "Atualiza uma Estrutura Organizacional",
+        "description": "Altera as informações de uma Estrutura Organizacional existente com base nos dados fornecidos no corpo da requisição.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtualizaEstruturaOrganizacionalDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstruturaOrganizacionalDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/EstruturaOrganizacional/{id}": {
+      "get": {
+        "tags": [
+          "Estrutura Organizacional"
+        ],
+        "summary": "Obtem uma Estrutura Organizacional por id",
+        "description": "Retorna uma Estrutura Organizacional específica com base no identificador único informado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstruturaOrganizacionalDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Estrutura Organizacional"
+        ],
+        "summary": "Remove uma Estrutura Organizacional",
+        "description": "Exclui o registro de uma Estrutura Organizacional do sistema permanentemente a partir do seu identificador único.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -231,6 +394,29 @@
         },
         "additionalProperties": false
       },
+      "AdicionaEstruturaOrganizacionalDto": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "estruturaPaiId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "AtualizaEmpresaDto": {
         "type": "object",
         "properties": {
@@ -274,6 +460,33 @@
           },
           "portaria671": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AtualizaEstruturaOrganizacionalDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "estruturaPaiId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -367,6 +580,42 @@
           }
         },
         "additionalProperties": false
+      },
+      "EstruturaOrganizacionalDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "estruturaPai": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataCadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataUltAtualizacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
@@ -386,6 +635,9 @@
   "tags": [
     {
       "name": "Empresa"
+    },
+    {
+      "name": "Estrutura Organizacional"
     }
   ]
 }

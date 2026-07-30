@@ -40,6 +40,7 @@ app.UseSwaggerConfiguration();
 app.UseHttpsRedirection();
 //Endpoints
 app.MapEmpresaEndpoint();
+app.MapEstruturaOrganizacionalEndpoint();
 
 try
 {
