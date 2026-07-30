@@ -16,7 +16,7 @@ namespace HP.Manager.Validator.Empresa
             RuleFor(x => x.Codigo).NotEmpty().NotNull().GreaterThan(0);
             RuleFor(x => x.RazaoSocial).NotEmpty().NotNull().Length(3, 150).WithMessage("A Razão Social deve ter entre 3 e 150 caracteres.").Must(razao => TextoSemEspacosEmBranco(razao));
             RuleFor(x => x.Email).EmailAddress();
-            RuleFor(x => x.Endrereco).SetValidator(new AtualizaEnderecoValidator());
+            RuleFor(x => x.Endrereco).SetValidator(new NovoEnderecoValidator());
 
         }
 

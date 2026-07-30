@@ -12,8 +12,7 @@ namespace HP.Manager.Mappings
         public void Register(TypeAdapterConfig config)
         {
             config.NewConfig<EnderecoDto,Core.Endereco>().TwoWays();
-            config.NewConfig<AdicionaEnderecoDto, Core.Endereco>().TwoWays();
-            config.NewConfig<AtualizaEnderecoDto, Core.Endereco>().TwoWays();
+           
         }
     }
 }

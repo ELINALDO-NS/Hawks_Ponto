@@ -6,7 +6,7 @@ using System.Text;
 namespace HP.Manager.DTOs.Empresa
 {
     public record AdicionaEmpresaDto(
-        AdicionaEnderecoDto Endrereco,
+        EnderecoDto Endrereco,
         int Codigo,
         string RazaoSocial,
         string CnpjCpf,

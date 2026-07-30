@@ -11,8 +11,9 @@ namespace HP.Api.Configuration
             var config = TypeAdapterConfig.GlobalSettings;
             config.RequireExplicitMapping = true;
             config.Apply(                
-                new EmpresaMapping(),                
+                new EmpresaMapping(),
                 new EnderecoMapping()
+                
             );
             config.Compile();
             services.AddSingleton(config);

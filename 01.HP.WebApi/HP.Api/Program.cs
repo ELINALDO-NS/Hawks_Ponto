@@ -40,7 +40,7 @@ app.UseSwaggerConfiguration();
 app.UseHttpsRedirection();
 //Endpoints
 app.MapEmpresaEndpoint();
-app.MapEnderecoEndpoint();
+
 try
 {
     Log.Information("Iniciando a aplicação...");

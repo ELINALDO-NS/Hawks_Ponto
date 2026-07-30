@@ -4,7 +4,7 @@ using HP.Manager.DTOs.Endereco;
 
 namespace HP.Manager.Validator.Endereco
 {
-    public class NovoEnderecoValidator : AbstractValidator<AdicionaEnderecoDto>
+    public class NovoEnderecoValidator : AbstractValidator<EnderecoDto>
     {
         public NovoEnderecoValidator()
         {

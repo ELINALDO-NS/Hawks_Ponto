@@ -8,7 +8,7 @@ namespace HP.Manager.DTOs.Empresa
 {
     public record AtualizaEmpresaDto(
     int Id,
-    AtualizaEnderecoDto Endrereco,
+    EnderecoDto Endrereco,
     int Codigo,
     string RazaoSocial,
     string CnpjCpf,
