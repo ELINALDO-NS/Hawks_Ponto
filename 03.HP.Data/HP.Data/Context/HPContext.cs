@@ -1,4 +1,5 @@
 ﻿using HP.Core.Entities;
+using HP.Data.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -12,7 +13,11 @@ namespace HP.Data.Context
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<EstruturaOrganizacional> EstruturasOrganizacionais { get; set; }
 
-        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new EmpresaConfiguration());
+        }
 
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HP.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8847c5bec05eec8f86ab52a1b44229742df2ea6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4333a245bf42ead299f173b4b0d5a20fc2a3da2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("HP.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HP.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
