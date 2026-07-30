@@ -1,11 +1,12 @@
-﻿using System;
+﻿using HP.Manager.DTOs.Endereco;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HP.Manager.DTOs.Empresa
 {
     public record AdicionaEmpresaDto(
-        int IdEndrereco,
+        AdicionaEnderecoDto Endrereco,
         int Codigo,
         string RazaoSocial,
         string CnpjCpf,

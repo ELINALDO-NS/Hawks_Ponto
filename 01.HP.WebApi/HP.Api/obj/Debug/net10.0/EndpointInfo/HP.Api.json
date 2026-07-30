@@ -361,9 +361,8 @@
       "AdicionaEmpresaDto": {
         "type": "object",
         "properties": {
-          "idEndrereco": {
-            "type": "integer",
-            "format": "int32"
+          "endrereco": {
+            "$ref": "#/components/schemas/AdicionaEnderecoDto"
           },
           "codigo": {
             "type": "integer",
@@ -443,9 +442,8 @@
             "type": "integer",
             "format": "int32"
           },
-          "idEndrereco": {
-            "type": "integer",
-            "format": "int32"
+          "endrereco": {
+            "$ref": "#/components/schemas/AtualizaEnderecoDto"
           },
           "codigo": {
             "type": "integer",
@@ -529,10 +527,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "idEndrereco": {
-            "type": "integer",
-            "format": "int32"
-          },
           "codigo": {
             "type": "integer",
             "format": "int32"
@@ -559,6 +553,9 @@
           },
           "portaria1510": {
             "type": "boolean"
+          },
+          "endrereco": {
+            "$ref": "#/components/schemas/EnderecoDto"
           },
           "site": {
             "type": "string",

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HP.Manager.DTOs.Endereco;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace HP.Manager.DTOs.Empresa
 {
     public record EmpresaDto(
         int Id,
-        int IdEndrereco,
+      
         int Codigo,
         string RazaoSocial,
         string CnpjCpf,
@@ -14,6 +15,7 @@ namespace HP.Manager.DTOs.Empresa
         string TipoEmpresa,
         DateTime DataCadastro,
         bool Portaria1510,
+        EnderecoDto Endrereco,
         string? Site = null,
         string? Email = null,
         DateTime? DataUltAtualizacao = null,

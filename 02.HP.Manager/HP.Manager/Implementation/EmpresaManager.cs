@@ -27,7 +27,7 @@ namespace HP.Manager.Implementation
 
             await _repository.AtualizarAsync(empresaatualizada, cancellationToken);
 
-            return _mapper.Map<EmpresaDto>(empresa);
+            return _mapper.Map<EmpresaDto>(empresaatualizada);
 
         }
 

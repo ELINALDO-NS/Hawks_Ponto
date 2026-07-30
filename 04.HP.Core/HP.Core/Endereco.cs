@@ -7,6 +7,7 @@ namespace HP.Core
 {
     public class Endereco
     {
+        public Endereco() { }
         public int Id { get; set; }
         public string Cep { get; set; } = string.Empty;
         public string Logradouro

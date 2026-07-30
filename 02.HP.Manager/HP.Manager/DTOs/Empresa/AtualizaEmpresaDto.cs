@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HP.Manager.DTOs.Endereco;
+using HP.Manager.Validator.Endereco;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +8,7 @@ namespace HP.Manager.DTOs.Empresa
 {
     public record AtualizaEmpresaDto(
     int Id,
-    int IdEndrereco,
+    AtualizaEnderecoDto Endrereco,
     int Codigo,
     string RazaoSocial,
     string CnpjCpf,

@@ -4,8 +4,7 @@ using System.Text;
 
 namespace HP.Manager.DTOs.Endereco
 {
-    public record EnderecoDto(
-    int Id,
+    public record EnderecoDto(    
     string Cep,
     string Logradouro,
     string Numero,
