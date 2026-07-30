@@ -1,4 +1,4 @@
-﻿using HP.Core;
+﻿using HP.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 

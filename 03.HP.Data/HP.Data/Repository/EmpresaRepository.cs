@@ -1,11 +1,9 @@
-﻿using Azure.Core;
-using HP.Core;
+﻿
+using HP.Core.Entities;
 using HP.Data.Context;
-using HP.Manager.Interfaces.Repository;
+using HP.Core.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace HP.Data.Repository
 {

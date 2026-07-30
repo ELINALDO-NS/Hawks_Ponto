@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HP.Core
+namespace HP.Core.Entities
 {
     public class Empresa
     {

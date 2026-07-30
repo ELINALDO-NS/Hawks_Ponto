@@ -1,4 +1,5 @@
-﻿using HP.Manager.DTOs.Empresa;
+﻿using HP.Core.Entities;
+using HP.Manager.DTOs.Empresa;
 using Mapster;
 
 
@@ -8,9 +9,9 @@ namespace HP.Manager.Mappings
     {
         void IRegister.Register(TypeAdapterConfig config)
         {
-            config.NewConfig<Core.Empresa, EmpresaDto>().TwoWays();
-            config.NewConfig<AdicionaEmpresaDto,Core.Empresa>().TwoWays();
-            config.NewConfig<AtualizaEmpresaDto, Core.Empresa>().TwoWays();
+            config.NewConfig<Empresa, EmpresaDto>().TwoWays();
+            config.NewConfig<AdicionaEmpresaDto,Empresa>().TwoWays();
+            config.NewConfig<AtualizaEmpresaDto, Empresa>().TwoWays();
             
         }
     }

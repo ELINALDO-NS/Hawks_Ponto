@@ -1,7 +1,7 @@
-﻿using HP.Core;
+﻿using HP.Core.Entities;
 using HP.Manager.DTOs.Empresa;
 using HP.Manager.Interfaces.Managers;
-using HP.Manager.Interfaces.Repository;
+using HP.Core.Interfaces.Repository;
 using MapsterMapper;
 
 

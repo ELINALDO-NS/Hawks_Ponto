@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HP.Manager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59beb593caf859962460459472d742cfd7e0dac1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33cf0f2c0bcacfa8ed183c733549444e64944f1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("HP.Manager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HP.Manager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -191,9 +191,6 @@
       "AdicionaEmpresaDto": {
         "type": "object",
         "properties": {
-          "endrereco": {
-            "$ref": "#/components/schemas/EnderecoDto"
-          },
           "codigo": {
             "type": "integer",
             "format": "int32"
@@ -213,6 +210,9 @@
           "tipoEmpresa": {
             "type": "string",
             "nullable": true
+          },
+          "endrereco": {
+            "$ref": "#/components/schemas/EnderecoDto"
           },
           "site": {
             "type": "string",

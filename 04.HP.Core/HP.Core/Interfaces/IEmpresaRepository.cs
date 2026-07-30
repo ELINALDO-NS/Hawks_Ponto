@@ -1,10 +1,6 @@
-﻿using HP.Core;
-using HP.Manager.DTOs.Empresa;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using HP.Core.Entities;
 
-namespace HP.Manager.Interfaces.Repository
+namespace HP.Core.Interfaces.Repository
 {
     public interface IEmpresaRepository
     {

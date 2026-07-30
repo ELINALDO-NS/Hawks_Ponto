@@ -1,4 +1,5 @@
-﻿using HP.Manager.DTOs.Empresa;
+﻿using HP.Core.Entities;
+using HP.Manager.DTOs.Empresa;
 using HP.Manager.DTOs.Endereco;
 using Mapster;
 using System;
@@ -11,7 +12,7 @@ namespace HP.Manager.Mappings
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.NewConfig<EnderecoDto,Core.Endereco>().TwoWays();
+            config.NewConfig<EnderecoDto,Endereco>().TwoWays();
            
         }
     }
