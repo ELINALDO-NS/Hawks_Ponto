@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HP.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4333a245bf42ead299f173b4b0d5a20fc2a3da2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dd6e66658fe7d52bed17ee9a61273905b98d362")]
 [assembly: System.Reflection.AssemblyProductAttribute("HP.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HP.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

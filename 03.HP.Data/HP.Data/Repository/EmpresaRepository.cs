@@ -28,14 +28,15 @@ namespace HP.Data.Repository
 
             empresa.DataCadastro = empresaAtual.DataCadastro;
             empresa.DataUltAtualizacao = DateTime.UtcNow;
-            _context.Empresas.Update(empresa);
+           _context.Entry(empresaAtual).CurrentValues.SetValues(empresa);
+            _context.Update(empresaAtual);
             await _context.SaveChangesAsync(cancellationToken);
             return empresa;
         }
 
         public async Task<Empresa?> ObterPorIdAsync(int id, CancellationToken cancellationToken)
         {
-            var empresa = await _context.Empresas.Include(x => x.Endrereco).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            var empresa = await _context.Empresas.Include(x => x.Endereco).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
             if (empresa == null) { return null; }
 
@@ -44,7 +45,7 @@ namespace HP.Data.Repository
 
         public async Task<IEnumerable<Empresa>> ObterTodosAsync(CancellationToken cancellationToken)
         {
-            var empresas = await _context.Empresas.Include(x => x.Endrereco).ToListAsync(cancellationToken);
+            var empresas = await _context.Empresas.Include(x => x.Endereco).ToListAsync(cancellationToken);
             return empresas;
         }
 

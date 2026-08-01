@@ -11,22 +11,22 @@ namespace HP.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Empresa> builder)
         {
+            builder.Property(e => e.Codigo)
+                .IsRequired();
 
-            builder.Property(e => e.Codigo).IsRequired();
-
-
-            builder.HasIndex(e => e.Codigo).IsUnique();
+            builder.HasIndex(e => e.Codigo)
+                .IsUnique();
 
             builder.Property(e => e.RazaoSocial)
                 .IsRequired()
                 .HasMaxLength(150);
 
             builder.Property(e => e.CnpjCpf)
-             .IsRequired()
-             .HasMaxLength(14)
-             .IsUnicode(false);
+                .IsRequired()
+                .HasMaxLength(14)
+                .IsUnicode(false);
 
-           builder.HasIndex(e => e.CnpjCpf)
+            builder.HasIndex(e => e.CnpjCpf)
                 .IsUnique();
 
             builder.Property(e => e.Telefone)
@@ -42,6 +42,17 @@ namespace HP.Data.Configuration
             builder.Property(e => e.TipoEmpresa)
                 .IsRequired()
                 .HasMaxLength(50);
+
+            builder.Property(e => e.DataCadastro)
+                .IsRequired();
+
+            builder.Property(e => e.DataUltAtualizacao)
+                .IsRequired(false);
+
+            builder.HasOne(e => e.Endereco)
+                .WithOne()
+                .HasForeignKey<Endereco>(en => en.Id)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Property(e => e.Portaria1510)
                 .IsRequired()

@@ -12,7 +12,7 @@ namespace HP.Manager.DTOs.Empresa
         string CnpjCpf,
         string Telefone,
         string TipoEmpresa,
-        EnderecoDto Endrereco,
+        EnderecoDto Endereco,
         string? Site = null,
         string? Email = null,
         bool Portaria1510 = false,        

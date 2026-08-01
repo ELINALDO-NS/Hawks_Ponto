@@ -15,7 +15,7 @@ namespace HP.Manager.DTOs.Empresa
         string TipoEmpresa,
         DateTime DataCadastro,
         bool Portaria1510,
-        EnderecoDto Endrereco,
+        EnderecoDto Endereco,
         string? Site = null,
         string? Email = null,
         DateTime? DataUltAtualizacao = null,

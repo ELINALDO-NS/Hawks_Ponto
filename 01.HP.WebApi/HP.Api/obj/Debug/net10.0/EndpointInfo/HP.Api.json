@@ -374,7 +374,7 @@
             "type": "string",
             "nullable": true
           },
-          "endrereco": {
+          "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
           },
           "site": {
@@ -424,7 +424,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "endrereco": {
+          "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
           },
           "codigo": {
@@ -525,7 +525,7 @@
           "portaria1510": {
             "type": "boolean"
           },
-          "endrereco": {
+          "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
           },
           "site": {

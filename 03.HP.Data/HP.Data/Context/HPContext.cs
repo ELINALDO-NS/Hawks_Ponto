@@ -17,6 +17,8 @@ namespace HP.Data.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new EmpresaConfiguration());
+            modelBuilder.ApplyConfiguration(new EnderecoConfiguration());
+            modelBuilder.ApplyConfiguration(new EstruturaOrganizacionalConfiguration());
         }
 
     }
