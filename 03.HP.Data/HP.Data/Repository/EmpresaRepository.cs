@@ -31,7 +31,7 @@ namespace HP.Data.Repository
            _context.Entry(empresaAtual).CurrentValues.SetValues(empresa);
             _context.Update(empresaAtual);
             await _context.SaveChangesAsync(cancellationToken);
-            return empresa;
+            return empresaAtual;
         }
 
         public async Task<Empresa?> ObterPorIdAsync(int id, CancellationToken cancellationToken)

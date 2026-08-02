@@ -1,5 +1,171 @@
 [
   {
+    "ContainingType": "HP.Api.Endpoints.CargoEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCargoEndpoint\u003Eb__0_0",
+    "RelativePath": "Cargo/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoCargo",
+        "Type": "HP.Manager.DTOs.Cargo.AdicionaCargoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Cargo.CargoDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Cargo"
+    ],
+    "Description": "Recebe os dados cadastrais do Cargo",
+    "Summary": "Adiciona um novo Cargo"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.CargoEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCargoEndpoint\u003Eb__0_1",
+    "RelativePath": "Cargo/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Cargo.CargoDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
+    "Tags": [
+      "Cargo"
+    ],
+    "Description": "Retorna uma lista contendo todos os Cargos cadastrados na Empresa. Caso n\u00E3o existam registros, retorna uma lista vazia.",
+    "Summary": "Obtem todos os Cargos."
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.CargoEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCargoEndpoint\u003Eb__0_3",
+    "RelativePath": "Cargo/",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cargo",
+        "Type": "HP.Manager.DTOs.Cargo.AtualizaCargoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Cargo.CargoDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Cargo"
+    ],
+    "Description": "Altera as informa\u00E7\u00F5es de um Cargo existente com base nos dados fornecidos no corpo da requisi\u00E7\u00E3o.",
+    "Summary": "Atualiza um Cargo"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.CargoEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCargoEndpoint\u003Eb__0_2",
+    "RelativePath": "Cargo/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Cargo.CargoDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Cargo"
+    ],
+    "Description": "Retorna um Cargo espec\u00EDfica com base no identificador \u00FAnico informado.",
+    "Summary": "Obtem um Cargo por id"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.CargoEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCargoEndpoint\u003Eb__0_4",
+    "RelativePath": "Cargo/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Cargo"
+    ],
+    "Description": "Exclui o registro de um Cargo do sistema permanentemente a partir do seu identificador \u00FAnico.",
+    "Summary": "Remove um Cargo"
+  },
+  {
     "ContainingType": "HP.Api.Endpoints.EmpresaEndpoint\u002B\u003C\u003Ec",
     "Method": "\u003CMapEmpresaEndpoint\u003Eb__0_0",
     "RelativePath": "empresa/",

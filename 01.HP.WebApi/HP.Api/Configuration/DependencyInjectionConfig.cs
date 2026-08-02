@@ -12,10 +12,12 @@ namespace HP.Api.Configuration
         {
             services.AddScoped<IEmpresaRepository, EmpresaRepository>();
             services.AddScoped<IEstruturaOrganizacionalRepository, EstruturaOrganizacionalRepository>();
+            services.AddScoped<ICargoRepository, CargoRepository>();
 
            
             services.AddScoped<IEmpresaManager, EmpresaManager>();
             services.AddScoped<IEstruturaOrganizacionalManager, EstruturaOrganizacionalManager>();
+            services.AddScoped<ICargoManager, CargoManager>();
 
             
             

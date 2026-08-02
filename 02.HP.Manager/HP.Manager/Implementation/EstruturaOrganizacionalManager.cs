@@ -28,12 +28,12 @@ namespace HP.Manager.Implementation
 
         public async Task<EstruturaOrganizacionalDto?> ObterPorIdAsync(int id, CancellationToken cancellationToken)
         {
-            var empresa = await _repository.ObterPorIdAsync(id, cancellationToken);
-            if (empresa is null)
+            var estrutura = await _repository.ObterPorIdAsync(id, cancellationToken);
+            if (estrutura is null)
             {
                 return null;
             }
-            return _mapper.Map<EstruturaOrganizacionalDto>(empresa);
+            return _mapper.Map<EstruturaOrganizacionalDto>(estrutura);
         }
 
         public async Task<IEnumerable<EstruturaOrganizacionalDto>> ObterTodosAsync(CancellationToken cancellationToken)

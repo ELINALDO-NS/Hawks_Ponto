@@ -12,6 +12,7 @@ namespace HP.Data.Context
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<EstruturaOrganizacional> EstruturasOrganizacionais { get; set; }
+        public DbSet<Cargo> Cargos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,6 +20,7 @@ namespace HP.Data.Context
             modelBuilder.ApplyConfiguration(new EmpresaConfiguration());
             modelBuilder.ApplyConfiguration(new EnderecoConfiguration());
             modelBuilder.ApplyConfiguration(new EstruturaOrganizacionalConfiguration());
+            modelBuilder.ApplyConfiguration(new CargoConfiguration());
         }
 
     }

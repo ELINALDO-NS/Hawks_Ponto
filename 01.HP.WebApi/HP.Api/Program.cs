@@ -4,7 +4,6 @@ using HP.Api.Middlewares;
 using Serilog;
 
 
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddProblemDetails();
 Log.Logger = new LoggerConfiguration()
@@ -41,6 +40,7 @@ app.UseHttpsRedirection();
 //Endpoints
 app.MapEmpresaEndpoint();
 app.MapEstruturaOrganizacionalEndpoint();
+app.MapCargoEndpoint();
 
 try
 {
