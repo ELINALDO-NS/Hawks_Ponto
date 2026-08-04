@@ -52,7 +52,7 @@ namespace HP.Data.Migrations
                     b.HasIndex("EmpresaId", "Codigo")
                         .IsUnique();
 
-                    b.ToTable("Cargos");
+                    b.ToTable("Cargos", (string)null);
                 });
 
             modelBuilder.Entity("HP.Core.Entities.Empresa", b =>
@@ -119,7 +119,7 @@ namespace HP.Data.Migrations
                     b.HasIndex("Codigo")
                         .IsUnique();
 
-                    b.ToTable("Empresas");
+                    b.ToTable("Empresas", (string)null);
                 });
 
             modelBuilder.Entity("HP.Core.Entities.Endereco", b =>
@@ -165,7 +165,7 @@ namespace HP.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Enderecos");
+                    b.ToTable("Enderecos", (string)null);
                 });
 
             modelBuilder.Entity("HP.Core.Entities.EstruturaOrganizacional", b =>
@@ -203,7 +203,7 @@ namespace HP.Data.Migrations
                     b.HasIndex("EmpresaId", "Codigo")
                         .IsUnique();
 
-                    b.ToTable("EstruturasOrganizacionais");
+                    b.ToTable("EstruturasOrganizacionais", (string)null);
                 });
 
             modelBuilder.Entity("HP.Core.Entities.Cargo", b =>

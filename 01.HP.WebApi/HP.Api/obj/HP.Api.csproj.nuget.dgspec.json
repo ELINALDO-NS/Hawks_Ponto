@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\HP.Api.csproj": {}
+    "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\HP.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\HP.Api.csproj": {
+    "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\HP.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\HP.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\HP.Api.csproj",
         "projectName": "HP.Api",
-        "projectPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\HP.Api.csproj",
-        "packagesPath": "C:\\Users\\Elinaldo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\obj\\",
+        "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\HP.Api.csproj",
+        "packagesPath": "C:\\Users\\Suporte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Elinaldo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Suporte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,11 +33,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj": {
-                "projectPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj"
+              "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj": {
+                "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj"
               },
-              "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj": {
-                "projectPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj"
+              "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj": {
+                "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj"
               }
             }
           }
@@ -109,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -527,20 +527,20 @@
         }
       }
     },
-    "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj": {
+    "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj",
+        "projectUniqueName": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj",
         "projectName": "HP.Manager",
-        "projectPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj",
-        "packagesPath": "C:\\Users\\Elinaldo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\obj\\",
+        "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj",
+        "packagesPath": "C:\\Users\\Suporte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Elinaldo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Suporte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -556,8 +556,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj": {
-                "projectPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj"
+              "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj": {
+                "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj"
               }
             }
           }
@@ -608,7 +608,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -886,20 +886,20 @@
         }
       }
     },
-    "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj": {
+    "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
         "projectName": "HP.Data",
-        "projectPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
-        "packagesPath": "C:\\Users\\Elinaldo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\obj\\",
+        "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\HP.Data.csproj",
+        "packagesPath": "C:\\Users\\Suporte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Elinaldo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Suporte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -915,8 +915,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj": {
-                "projectPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj"
+              "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj": {
+                "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj"
               }
             }
           }
@@ -975,7 +975,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1253,20 +1253,20 @@
         }
       }
     },
-    "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj": {
+    "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj",
         "projectName": "HP.Core",
-        "projectPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj",
-        "packagesPath": "C:\\Users\\Elinaldo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\obj\\",
+        "projectPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\HP.Core.csproj",
+        "packagesPath": "C:\\Users\\Suporte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\04.HP.Core\\HP.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Elinaldo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Suporte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1316,7 +1316,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

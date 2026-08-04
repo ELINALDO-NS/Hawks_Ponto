@@ -19,17 +19,20 @@ namespace HP.Data.Repository
 
         public async Task<Empresa?> AtualizarAsync(Empresa empresa, CancellationToken cancellationToken)
         {
-            var empresaAtual = await _context.Empresas.AsNoTracking().FirstOrDefaultAsync(x => x.Id == empresa.Id);
+            var empresaAtual = await _context.Empresas.Include(x => x.Endereco)
+                .FirstOrDefaultAsync(x => x.Id == empresa.Id, cancellationToken);
 
-            if (empresaAtual is null)
-            {
-                return null;
-            }
+            if (empresaAtual is null){return null;}
 
             empresa.DataCadastro = empresaAtual.DataCadastro;
             empresa.DataUltAtualizacao = DateTime.UtcNow;
-           _context.Entry(empresaAtual).CurrentValues.SetValues(empresa);
-            _context.Update(empresaAtual);
+            if (empresa.Endereco is not null && empresaAtual.Endereco is not null)
+            {
+                empresa.Endereco.Id = empresaAtual.Endereco.Id;
+                _context.Entry(empresaAtual.Endereco).CurrentValues.SetValues(empresa.Endereco);
+            }
+            _context.Entry(empresaAtual).CurrentValues.SetValues(empresa);            
+
             await _context.SaveChangesAsync(cancellationToken);
             return empresaAtual;
         }
@@ -45,7 +48,7 @@ namespace HP.Data.Repository
 
         public async Task<IEnumerable<Empresa>> ObterTodosAsync(CancellationToken cancellationToken)
         {
-            var empresas = await _context.Empresas.Include(x => x.Endereco).ToListAsync(cancellationToken);
+            var empresas = await _context.Empresas.Include(x => x.Endereco).AsNoTracking().ToListAsync(cancellationToken);
             return empresas;
         }
 

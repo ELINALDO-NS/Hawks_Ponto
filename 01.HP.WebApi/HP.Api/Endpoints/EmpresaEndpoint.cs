@@ -10,8 +10,8 @@ namespace HP.Api.Endpoints
         {
             var group = app.MapGroup("/empresa").
                 AddEndpointFilter<ValidationFilter<AdicionaEmpresaDto>>().
-                AddEndpointFilter<ValidationFilter<AtualizaEmpresaDto>>()
-                .WithTags("Empresa");
+                AddEndpointFilter<ValidationFilter<AtualizaEmpresaDto>>().
+                WithTags("Empresa");
             
 
             group.MapPost("/", async (AdicionaEmpresaDto novaempresa, IEmpresaManager manager, CancellationToken cancellationToken) =>

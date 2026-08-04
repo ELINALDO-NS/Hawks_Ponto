@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "zCvOZ+0XhRQ=",
+  "dgSpecHash": "qqd5Wxakeeo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elinaldo\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj",
+  "projectFilePath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\HP.Manager.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Elinaldo\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
-    "C:\\Users\\Elinaldo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
-    "C:\\Users\\Elinaldo\\.nuget\\packages\\mapster\\10.0.11\\mapster.10.0.11.nupkg.sha512",
-    "C:\\Users\\Elinaldo\\.nuget\\packages\\mapster.core\\10.0.11\\mapster.core.10.0.11.nupkg.sha512",
-    "C:\\Users\\Elinaldo\\.nuget\\packages\\mapster.dependencyinjection\\10.0.11\\mapster.dependencyinjection.10.0.11.nupkg.sha512",
-    "C:\\Users\\Elinaldo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
+    "C:\\Users\\Suporte\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\Suporte\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
+    "C:\\Users\\Suporte\\.nuget\\packages\\mapster\\10.0.11\\mapster.10.0.11.nupkg.sha512",
+    "C:\\Users\\Suporte\\.nuget\\packages\\mapster.core\\10.0.11\\mapster.core.10.0.11.nupkg.sha512",
+    "C:\\Users\\Suporte\\.nuget\\packages\\mapster.dependencyinjection\\10.0.11\\mapster.dependencyinjection.10.0.11.nupkg.sha512",
+    "C:\\Users\\Suporte\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
   ],
   "logs": []
 }

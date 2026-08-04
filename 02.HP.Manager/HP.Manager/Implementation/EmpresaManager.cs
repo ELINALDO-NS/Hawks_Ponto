@@ -3,6 +3,7 @@ using HP.Manager.DTOs.Empresa;
 using HP.Manager.Interfaces.Managers;
 using HP.Core.Interfaces.Repository;
 using MapsterMapper;
+using HP.Core.Extentions;
 
 
 namespace HP.Manager.Implementation
@@ -13,9 +14,9 @@ namespace HP.Manager.Implementation
         {
 
             var novaempresa = _mapper.Map<Empresa>(empresa);
-
+            novaempresa.CnpjCpf = novaempresa.CnpjCpf.RemoveFormatacao();
             await _repository.AdicionarAsync(novaempresa, cancellationToken);
-
+            novaempresa.CnpjCpf = novaempresa.CnpjCpf.FormatarCPF_CNPJ();
             return _mapper.Map<EmpresaDto>(novaempresa);
 
         }
@@ -24,9 +25,9 @@ namespace HP.Manager.Implementation
         {
 
             var empresaatualizada = _mapper.Map<Empresa>(empresa);
-
+            empresaatualizada.CnpjCpf = empresaatualizada.CnpjCpf.RemoveFormatacao();
             await _repository.AtualizarAsync(empresaatualizada, cancellationToken);
-
+            empresaatualizada.CnpjCpf = empresaatualizada.CnpjCpf.FormatarCPF_CNPJ();
             return _mapper.Map<EmpresaDto>(empresaatualizada);
 
         }
@@ -38,6 +39,7 @@ namespace HP.Manager.Implementation
             {
                 return null;
             }
+            empresa.CnpjCpf = empresa.CnpjCpf.FormatarCPF_CNPJ();
             return _mapper.Map<EmpresaDto>(empresa);
         }
 
@@ -45,8 +47,9 @@ namespace HP.Manager.Implementation
         {
             var empresas = await _repository.ObterTodosAsync(cancellationToken);
 
-            var empresasDto = _mapper.Map<List<EmpresaDto>>(empresas);
-
+            var empresasDto = empresas.Select(x => {
+                x.CnpjCpf = x.CnpjCpf.FormatarCPF_CNPJ();
+              return  _mapper.Map<EmpresaDto>(x); }).ToList();
             return empresasDto;
         }
 
