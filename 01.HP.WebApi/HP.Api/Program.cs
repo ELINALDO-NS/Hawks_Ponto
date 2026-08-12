@@ -1,6 +1,5 @@
 using HP.Api.Configuration;
 using HP.Api.Endpoints;
-using HP.Api.Middlewares;
 using Serilog;
 
 
@@ -22,7 +21,14 @@ builder.Services.AddCors(options =>
     });
 });
 builder.Services.AddExceptionHandler<ErrorHandlingMiddleware>();
-builder.Services.AddProblemDetails();
+builder.Services.AddProblemDetails(options =>
+{
+    options.CustomizeProblemDetails = context =>
+    {
+        context.ProblemDetails.Extensions["traceId"] =
+            context.HttpContext.TraceIdentifier;
+    };
+});
 builder.Services.AddSerilog();
 builder.Services.AddSwaggerConfiguration(builder.Environment);
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
