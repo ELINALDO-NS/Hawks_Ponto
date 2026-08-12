@@ -1,6 +1,7 @@
 ﻿using HP.Core.Entities;
 using HP.Manager.DTOs.Cargo;
 using HP.Manager.DTOs.EstruturaOrganizacional;
+using HP.Manager.DTOs.Pessoa;
 using Mapster;
 using MapsterMapper;
 using System;
@@ -16,6 +17,7 @@ namespace HP.Manager.Mappings
             config.NewConfig<CargoDto, Cargo>().TwoWays();
             config.NewConfig<AdicionaCargoDto, Cargo>().TwoWays();
             config.NewConfig<AtualizaCargoDto, Cargo>().TwoWays();
+            config.NewConfig<CargoPessoaDto, Cargo>().TwoWays();
         }
     }
 }

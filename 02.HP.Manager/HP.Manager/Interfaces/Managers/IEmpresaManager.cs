@@ -1,8 +1,6 @@
-﻿using HP.Core;
+﻿
 using HP.Manager.DTOs.Empresa;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace HP.Manager.Interfaces.Managers
 {

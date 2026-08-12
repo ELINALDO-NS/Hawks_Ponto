@@ -14,7 +14,8 @@ namespace HP.Api.Configuration
                 new EmpresaMapping(),
                 new EnderecoMapping(),
                 new EstruturaOrganizacionalMapping(),
-                new CargoMapping()
+                new CargoMapping(),
+                new PessoaMapping()
                 
             );
             config.Compile();

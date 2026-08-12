@@ -38,6 +38,18 @@ namespace HP.Core.Extentions
 
             return Convert.ToUInt64(numeros).ToString(@"000\.000\.000\-00");
         }
+        public static string FormataPis(this string pis)
+        {
+            if (string.IsNullOrWhiteSpace(pis))
+                return string.Empty;
+
+            var numeros = ApenasNumerosRegex.Replace(pis, "");
+
+            if (numeros.Length != 11)
+                return pis; 
+
+            return $"{numeros.Substring(0, 3)}.{numeros.Substring(3, 5)}.{numeros.Substring(8, 2)}-{numeros.Substring(10, 1)}";
+        }
 
         private static string FormatarCNPJ(this string cnpj)
         {

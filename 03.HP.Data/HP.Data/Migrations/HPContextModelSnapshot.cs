@@ -52,7 +52,7 @@ namespace HP.Data.Migrations
                     b.HasIndex("EmpresaId", "Codigo")
                         .IsUnique();
 
-                    b.ToTable("Cargos", (string)null);
+                    b.ToTable("Cargos");
                 });
 
             modelBuilder.Entity("HP.Core.Entities.Empresa", b =>
@@ -81,6 +81,9 @@ namespace HP.Data.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
+
+                    b.Property<int>("EnderecoId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Portaria1510")
                         .ValueGeneratedOnAdd()
@@ -119,13 +122,19 @@ namespace HP.Data.Migrations
                     b.HasIndex("Codigo")
                         .IsUnique();
 
-                    b.ToTable("Empresas", (string)null);
+                    b.HasIndex("EnderecoId")
+                        .IsUnique();
+
+                    b.ToTable("Empresas");
                 });
 
             modelBuilder.Entity("HP.Core.Entities.Endereco", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Bairro")
                         .IsRequired()
@@ -165,7 +174,7 @@ namespace HP.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Enderecos", (string)null);
+                    b.ToTable("Enderecos");
                 });
 
             modelBuilder.Entity("HP.Core.Entities.EstruturaOrganizacional", b =>
@@ -203,7 +212,117 @@ namespace HP.Data.Migrations
                     b.HasIndex("EmpresaId", "Codigo")
                         .IsUnique();
 
-                    b.ToTable("EstruturasOrganizacionais", (string)null);
+                    b.ToTable("EstruturasOrganizacionais");
+                });
+
+            modelBuilder.Entity("HP.Core.Entities.Pessoa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<float>("BaseHoras")
+                        .HasColumnType("real");
+
+                    b.Property<int?>("CargoId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("ControlaPonto")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
+
+                    b.Property<DateTime>("DataAdmissao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataControlaPonto")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataDemissao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataNaoControlaPonto")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataNascimento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataUltAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EnderecoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EstruturaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Matricula")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Pis")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<string>("Rg")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Sexo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Telefone")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("TelefoneCelular")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CargoId");
+
+                    b.HasIndex("Cpf")
+                        .IsUnique()
+                        .HasFilter("[DataDemissao] IS NULL");
+
+                    b.HasIndex("EnderecoId");
+
+                    b.HasIndex("EstruturaId");
+
+                    b.HasIndex("Nome");
+
+                    b.HasIndex("Pis")
+                        .IsUnique()
+                        .HasFilter("[DataDemissao] IS NULL");
+
+                    b.HasIndex("EmpresaId", "Matricula")
+                        .IsUnique();
+
+                    b.ToTable("Pessoas");
                 });
 
             modelBuilder.Entity("HP.Core.Entities.Cargo", b =>
@@ -217,13 +336,15 @@ namespace HP.Data.Migrations
                     b.Navigation("Empresa");
                 });
 
-            modelBuilder.Entity("HP.Core.Entities.Endereco", b =>
+            modelBuilder.Entity("HP.Core.Entities.Empresa", b =>
                 {
-                    b.HasOne("HP.Core.Entities.Empresa", null)
-                        .WithOne("Endereco")
-                        .HasForeignKey("HP.Core.Entities.Endereco", "Id")
+                    b.HasOne("HP.Core.Entities.Endereco", "Endereco")
+                        .WithOne()
+                        .HasForeignKey("HP.Core.Entities.Empresa", "EnderecoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Endereco");
                 });
 
             modelBuilder.Entity("HP.Core.Entities.EstruturaOrganizacional", b =>
@@ -242,10 +363,37 @@ namespace HP.Data.Migrations
                     b.Navigation("Empresa");
                 });
 
-            modelBuilder.Entity("HP.Core.Entities.Empresa", b =>
+            modelBuilder.Entity("HP.Core.Entities.Pessoa", b =>
                 {
-                    b.Navigation("Endereco")
+                    b.HasOne("HP.Core.Entities.Cargo", "Cargo")
+                        .WithMany()
+                        .HasForeignKey("CargoId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("HP.Core.Entities.Empresa", "Empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("HP.Core.Entities.Endereco", "Endereco")
+                        .WithMany()
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("HP.Core.Entities.EstruturaOrganizacional", "Estrutura")
+                        .WithMany()
+                        .HasForeignKey("EstruturaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Cargo");
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Endereco");
+
+                    b.Navigation("Estrutura");
                 });
 #pragma warning restore 612, 618
         }

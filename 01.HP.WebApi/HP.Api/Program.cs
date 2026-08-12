@@ -41,6 +41,7 @@ app.UseHttpsRedirection();
 app.MapEmpresaEndpoint();
 app.MapEstruturaOrganizacionalEndpoint();
 app.MapCargoEndpoint();
+app.MapPessoaEndpoint();
 
 try
 {

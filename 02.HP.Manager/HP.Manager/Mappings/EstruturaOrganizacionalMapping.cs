@@ -1,5 +1,6 @@
 ﻿using HP.Core.Entities;
 using HP.Manager.DTOs.EstruturaOrganizacional;
+using HP.Manager.DTOs.Pessoa;
 using Mapster;
 
 namespace HP.Manager.Mappings
@@ -11,6 +12,7 @@ namespace HP.Manager.Mappings
             config.NewConfig<EstruturaOrganizacionalDto, EstruturaOrganizacional>().TwoWays();
             config.NewConfig<AdicionaEstruturaOrganizacionalDto, EstruturaOrganizacional>().TwoWays();
             config.NewConfig<AtualizaEstruturaOrganizacionalDto, EstruturaOrganizacional>().TwoWays();
+            config.NewConfig<EstruturaPessoaDto, EstruturaOrganizacional>().TwoWays();
 
         }
     }

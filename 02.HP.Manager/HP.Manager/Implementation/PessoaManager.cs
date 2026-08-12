@@ -1,0 +1,76 @@
+﻿using HP.Core.Entities;
+using HP.Core.Extentions;
+using HP.Core.Interfaces;
+using HP.Manager.DTOs.Pessoa;
+using HP.Manager.Interfaces.Managers;
+using MapsterMapper;
+
+
+namespace HP.Manager.Implementation
+{
+    public class PessoaManager(IPessoaRepository _repository,IMapper _mapper) : IPessoaManager
+    {
+        public async Task<PessoaDto> AdicionarAsync(AdicionaPessoaDto pessoa, CancellationToken cancellationToken)
+        {
+            var novapessoa = _mapper.Map<Pessoa>(pessoa);
+
+            novapessoa.Cpf = novapessoa.Cpf.RemoveFormatacao();
+            novapessoa.Pis = novapessoa.Pis.RemoveFormatacao();
+
+            await _repository.AdicionarAsync(novapessoa, cancellationToken);
+
+            novapessoa.Cpf = novapessoa.Cpf.FormatarCPF_CNPJ();
+            novapessoa.Pis = novapessoa.Pis.FormataPis();
+
+            return _mapper.Map<PessoaDto>(novapessoa);
+        }
+
+        public async Task<PessoaDto?> AtualizarAsync(AtualizaPessoaDto pessoa, CancellationToken cancellationToken)
+        {
+            var pessoadto = _mapper.Map<Pessoa>(pessoa);
+
+            pessoadto.Cpf = pessoadto.Cpf.RemoveFormatacao();
+            pessoadto.Pis = pessoadto.Pis.RemoveFormatacao();
+
+           var pessoaatualizada = await _repository.AtualizarAsync(pessoadto, cancellationToken);
+            if (pessoaatualizada is not null)
+            {
+                pessoaatualizada.Cpf = pessoaatualizada.Cpf.FormatarCPF_CNPJ();
+                pessoaatualizada.Pis = pessoaatualizada.Pis.FormatarCPF_CNPJ();
+
+                return _mapper.Map<PessoaDto>(pessoaatualizada);
+            }
+            return null;
+        }
+
+        public async Task<PessoaDto?> ObterPorIdAsync(int id, CancellationToken cancellationToken)
+        {
+            var pessoa = await _repository.ObterPorIdAsync(id, cancellationToken);
+            if (pessoa is null)
+            {
+                return null;
+            }
+            pessoa.Cpf = pessoa.Cpf.FormatarCPF_CNPJ();
+            pessoa.Pis = pessoa.Pis.FormataPis();
+            return _mapper.Map<PessoaDto>(pessoa);
+        }
+
+        public async Task<IEnumerable<PessoaDto>> ObterTodosAsync(CancellationToken cancellationToken)
+        {
+            var pessoas = await _repository.ObterTodosAsync(cancellationToken);
+
+            var pessoasDto = pessoas.Select(x => {
+                x.Cpf = x.Cpf.FormatarCPF_CNPJ();
+                x.Pis = x.Pis.FormataPis();
+                return _mapper.Map<PessoaDto>(x);
+            }).ToList();
+            return pessoasDto;
+        }
+
+        public async Task<bool> RemoverAsync(int id, CancellationToken cancellationToken)
+        {
+            var excluido = await _repository.RemoverAsync(id, cancellationToken);
+            return excluido;
+        }
+    }
+}

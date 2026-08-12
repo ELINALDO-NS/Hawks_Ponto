@@ -50,9 +50,10 @@ namespace HP.Data.Configuration
                 .IsRequired(false);
 
             builder.HasOne(e => e.Endereco)
-                .WithOne()
-                .HasForeignKey<Endereco>(en => en.Id)
-                .OnDelete(DeleteBehavior.Cascade);
+                 .WithOne()
+                 .HasForeignKey<Empresa>(e => e.EnderecoId)
+                 .IsRequired()
+                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.Property(e => e.Portaria1510)
                 .IsRequired()

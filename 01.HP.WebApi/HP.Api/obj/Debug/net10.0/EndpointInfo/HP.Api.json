@@ -510,6 +510,169 @@
           }
         }
       }
+    },
+    "/Pessoa": {
+      "post": {
+        "tags": [
+          "Pessoa"
+        ],
+        "summary": "Adiciona uma nova Pessoa",
+        "description": "Recebe os dados cadastrais da Pessoa",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdicionaPessoaDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PessoaDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Pessoa"
+        ],
+        "summary": "Obtem todas as Pessoas.",
+        "description": "Retorna uma lista contendo todas as Pessoas cadastrados na Empresa. Caso não existam registros, retorna uma lista vazia.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PessoaDto"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Pessoa"
+        ],
+        "summary": "Atualiza uma Pessoa",
+        "description": "Altera as informações de um Pessoa existente com base nos dados fornecidos no corpo da requisição.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtualizaPessoaDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PessoaDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/Pessoa/{id}": {
+      "get": {
+        "tags": [
+          "Pessoa"
+        ],
+        "summary": "Obtem uma Pessoa por id",
+        "description": "Retorna uma PEssoa específica com base no identificador único informado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PessoaDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Pessoa"
+        ],
+        "summary": "Remove uma Pessoa",
+        "description": "Exclui o registro de uma Pessoa do sistema permanentemente a partir do seu identificador único.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -592,6 +755,95 @@
             "nullable": true
           },
           "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AdicionaPessoaDto": {
+        "type": "object",
+        "properties": {
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matricula": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataAdmissao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataDemissao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endereco": {
+            "$ref": "#/components/schemas/EnderecoDto"
+          },
+          "rg": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "pis": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefoneCelular": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "controlaPonto": {
+            "type": "boolean"
+          },
+          "dataControlaPonto": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataNaoControlaPonto": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sexo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseHoras": {
+            "type": "number",
+            "format": "float"
+          },
+          "cargoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estruturaId": {
             "type": "integer",
             "format": "int32"
           }
@@ -694,6 +946,99 @@
         },
         "additionalProperties": false
       },
+      "AtualizaPessoaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matricula": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataAdmissao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataDemissao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endereco": {
+            "$ref": "#/components/schemas/EnderecoDto"
+          },
+          "rg": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "pis": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefoneCelular": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "controlaPonto": {
+            "type": "boolean"
+          },
+          "dataControlaPonto": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataNaoControlaPonto": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sexo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseHoras": {
+            "type": "number",
+            "format": "float"
+          },
+          "cargoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estruturaId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "CargoDto": {
         "type": "object",
         "properties": {
@@ -720,6 +1065,24 @@
           "dataUltAtualizacao": {
             "type": "string",
             "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CargoPessoaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -850,6 +1213,119 @@
           }
         },
         "additionalProperties": false
+      },
+      "EstruturaPessoaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "estruturaPai": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PessoaDto": {
+        "type": "object",
+        "properties": {
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matricula": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataAdmissao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataDemissao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endereco": {
+            "$ref": "#/components/schemas/EnderecoDto"
+          },
+          "rg": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "pis": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefoneCelular": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "controlaPonto": {
+            "type": "boolean"
+          },
+          "dataControlaPonto": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataNaoControlaPonto": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sexo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseHoras": {
+            "type": "number",
+            "format": "float"
+          },
+          "estrutura": {
+            "$ref": "#/components/schemas/EstruturaPessoaDto"
+          },
+          "cargo": {
+            "$ref": "#/components/schemas/CargoPessoaDto"
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
@@ -875,6 +1351,9 @@
     },
     {
       "name": "Estrutura Organizacional"
+    },
+    {
+      "name": "Pessoa"
     }
   ]
 }

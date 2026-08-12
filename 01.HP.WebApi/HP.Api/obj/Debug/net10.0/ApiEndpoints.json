@@ -498,5 +498,171 @@
     ],
     "Description": "Exclui o registro de uma Estrutura Organizacional do sistema permanentemente a partir do seu identificador \u00FAnico.",
     "Summary": "Remove uma Estrutura Organizacional"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PessoaEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPessoaEndpoint\u003Eb__0_0",
+    "RelativePath": "Pessoa/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novapessoa",
+        "Type": "HP.Manager.DTOs.Pessoa.AdicionaPessoaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Pessoa.PessoaDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Pessoa"
+    ],
+    "Description": "Recebe os dados cadastrais da Pessoa",
+    "Summary": "Adiciona uma nova Pessoa"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PessoaEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPessoaEndpoint\u003Eb__0_1",
+    "RelativePath": "Pessoa/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Pessoa.PessoaDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
+    "Tags": [
+      "Pessoa"
+    ],
+    "Description": "Retorna uma lista contendo todas as Pessoas cadastrados na Empresa. Caso n\u00E3o existam registros, retorna uma lista vazia.",
+    "Summary": "Obtem todas as Pessoas."
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PessoaEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPessoaEndpoint\u003Eb__0_3",
+    "RelativePath": "Pessoa/",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pessoa",
+        "Type": "HP.Manager.DTOs.Pessoa.AtualizaPessoaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Pessoa.PessoaDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Pessoa"
+    ],
+    "Description": "Altera as informa\u00E7\u00F5es de um Pessoa existente com base nos dados fornecidos no corpo da requisi\u00E7\u00E3o.",
+    "Summary": "Atualiza uma Pessoa"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PessoaEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPessoaEndpoint\u003Eb__0_2",
+    "RelativePath": "Pessoa/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Pessoa.PessoaDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Pessoa"
+    ],
+    "Description": "Retorna uma PEssoa espec\u00EDfica com base no identificador \u00FAnico informado.",
+    "Summary": "Obtem uma Pessoa por id"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PessoaEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPessoaEndpoint\u003Eb__0_4",
+    "RelativePath": "Pessoa/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Pessoa"
+    ],
+    "Description": "Exclui o registro de uma Pessoa do sistema permanentemente a partir do seu identificador \u00FAnico.",
+    "Summary": "Remove uma Pessoa"
   }
 ]
