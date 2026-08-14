@@ -1,7 +1,7 @@
 ﻿using HP.Core.Entities;
 using HP.Core.Interfaces;
 using HP.Manager.DTOs.Cargo;
-using HP.Manager.Interfaces.Managers;
+using HP.Manager.Interfaces;
 using MapsterMapper;
 
 

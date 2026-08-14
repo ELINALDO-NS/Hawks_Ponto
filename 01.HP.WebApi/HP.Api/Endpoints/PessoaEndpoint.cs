@@ -1,6 +1,6 @@
 ﻿using HP.Api.Configuration;
 using HP.Manager.DTOs.Pessoa;
-using HP.Manager.Interfaces.Managers;
+using HP.Manager.Interfaces;
 
 namespace HP.Api.Endpoints
 {

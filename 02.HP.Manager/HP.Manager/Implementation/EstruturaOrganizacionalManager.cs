@@ -1,7 +1,7 @@
 ﻿using HP.Core.Entities;
 using HP.Core.Interfaces;
 using HP.Manager.DTOs.EstruturaOrganizacional;
-using HP.Manager.Interfaces.Managers;
+using HP.Manager.Interfaces;
 using MapsterMapper;
 
 

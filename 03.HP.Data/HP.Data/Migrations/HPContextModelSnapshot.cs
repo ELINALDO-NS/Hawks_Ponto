@@ -215,6 +215,80 @@ namespace HP.Data.Migrations
                     b.ToTable("EstruturasOrganizacionais");
                 });
 
+            modelBuilder.Entity("HP.Core.Entities.Horario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataUltAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId", "Codigo")
+                        .IsUnique();
+
+                    b.ToTable("Horarios");
+                });
+
+            modelBuilder.Entity("HP.Core.Entities.Jornada", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DiaSemana")
+                        .HasColumnType("int");
+
+                    b.Property<TimeOnly>("Entrada1")
+                        .HasColumnType("time");
+
+                    b.Property<TimeOnly?>("Entrada2")
+                        .HasColumnType("time");
+
+                    b.Property<TimeOnly?>("Entrada3")
+                        .HasColumnType("time");
+
+                    b.Property<int>("HorarioId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeOnly>("Saida1")
+                        .HasColumnType("time");
+
+                    b.Property<TimeOnly?>("Saida2")
+                        .HasColumnType("time");
+
+                    b.Property<TimeOnly?>("Saida3")
+                        .HasColumnType("time");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HorarioId");
+
+                    b.ToTable("Jornadas");
+                });
+
             modelBuilder.Entity("HP.Core.Entities.Pessoa", b =>
                 {
                     b.Property<int>("Id")
@@ -363,6 +437,28 @@ namespace HP.Data.Migrations
                     b.Navigation("Empresa");
                 });
 
+            modelBuilder.Entity("HP.Core.Entities.Horario", b =>
+                {
+                    b.HasOne("HP.Core.Entities.Empresa", "Empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+                });
+
+            modelBuilder.Entity("HP.Core.Entities.Jornada", b =>
+                {
+                    b.HasOne("HP.Core.Entities.Horario", "Horario")
+                        .WithMany("Jornadas")
+                        .HasForeignKey("HorarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Horario");
+                });
+
             modelBuilder.Entity("HP.Core.Entities.Pessoa", b =>
                 {
                     b.HasOne("HP.Core.Entities.Cargo", "Cargo")
@@ -394,6 +490,11 @@ namespace HP.Data.Migrations
                     b.Navigation("Endereco");
 
                     b.Navigation("Estrutura");
+                });
+
+            modelBuilder.Entity("HP.Core.Entities.Horario", b =>
+                {
+                    b.Navigation("Jornadas");
                 });
 #pragma warning restore 612, 618
         }

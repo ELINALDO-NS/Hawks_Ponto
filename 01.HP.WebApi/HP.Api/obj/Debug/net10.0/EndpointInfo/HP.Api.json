@@ -511,6 +511,169 @@
         }
       }
     },
+    "/Horario": {
+      "post": {
+        "tags": [
+          "Horario"
+        ],
+        "summary": "Adiciona um novo Horario",
+        "description": "Recebe os dados cadastrais do Horario ",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdicionaHorarioDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HorarioDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Horario"
+        ],
+        "summary": "Obtem todos os Horarios.",
+        "description": "Retorna uma lista contendo todos os Horarios cadastrados na Empresa. Caso não existam registros, retorna uma lista vazia.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HorarioDto"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Horario"
+        ],
+        "summary": "Atualiza um Horario",
+        "description": "Altera as informações de um Horario existente com base nos dados fornecidos no corpo da requisição.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtualizaHorarioDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HorarioDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/Horario/{id}": {
+      "get": {
+        "tags": [
+          "Horario"
+        ],
+        "summary": "Obtem um Horario por id",
+        "description": "Retorna um Horario específica com base no identificador único informado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HorarioDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Horario"
+        ],
+        "summary": "Remove um Horario",
+        "description": "Exclui o registro de um Horario do sistema permanentemente a partir do seu identificador único.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/Pessoa": {
       "post": {
         "tags": [
@@ -761,6 +924,31 @@
         },
         "additionalProperties": false
       },
+      "AdicionaHorarioDto": {
+        "type": "object",
+        "properties": {
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "jornadas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JornadaDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AdicionaPessoaDto": {
         "type": "object",
         "properties": {
@@ -946,6 +1134,35 @@
         },
         "additionalProperties": false
       },
+      "AtualizaHorarioDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "jornadas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JornadaDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AtualizaPessoaDto": {
         "type": "object",
         "properties": {
@@ -1087,6 +1304,20 @@
           }
         },
         "additionalProperties": false
+      },
+      "DayOfWeek": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "description": "Dia da semana: 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday.",
+        "format": "int32"
       },
       "EmpresaDto": {
         "type": "object",
@@ -1237,6 +1468,87 @@
         },
         "additionalProperties": false
       },
+      "HorarioDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "jornadas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JornadaDto"
+            },
+            "nullable": true
+          },
+          "dataCadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataUltAtualizacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JornadaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "diaSemana": {
+            "$ref": "#/components/schemas/DayOfWeek"
+          },
+          "entrada1": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
+          },
+          "saida1": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
+          },
+          "entrada2": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
+          },
+          "saida2": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
+          },
+          "entrada3": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
+          },
+          "saida3": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
+          }
+        },
+        "additionalProperties": false
+      },
       "PessoaDto": {
         "type": "object",
         "properties": {
@@ -1351,6 +1663,9 @@
     },
     {
       "name": "Estrutura Organizacional"
+    },
+    {
+      "name": "Horario"
     },
     {
       "name": "Pessoa"

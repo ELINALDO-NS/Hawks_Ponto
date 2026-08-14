@@ -10,12 +10,14 @@ namespace HP.Api.Configuration
         {
             var config = TypeAdapterConfig.GlobalSettings;
             config.RequireExplicitMapping = true;
-            config.Apply(                
+            config.Apply(
                 new EmpresaMapping(),
                 new EnderecoMapping(),
                 new EstruturaOrganizacionalMapping(),
                 new CargoMapping(),
-                new PessoaMapping()
+                new PessoaMapping(),
+                new JornadaMapping(),
+                new HorarioMapping()
                 
             );
             config.Compile();

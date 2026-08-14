@@ -500,6 +500,172 @@
     "Summary": "Remove uma Estrutura Organizacional"
   },
   {
+    "ContainingType": "HP.Api.Endpoints.HorarioEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapHorarioEndpoint\u003Eb__0_0",
+    "RelativePath": "Horario/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoHorario",
+        "Type": "HP.Manager.DTOs.Horario.AdicionaHorarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Horario.HorarioDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Horario"
+    ],
+    "Description": "Recebe os dados cadastrais do Horario ",
+    "Summary": "Adiciona um novo Horario"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.HorarioEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapHorarioEndpoint\u003Eb__0_1",
+    "RelativePath": "Horario/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Horario.HorarioDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
+    "Tags": [
+      "Horario"
+    ],
+    "Description": "Retorna uma lista contendo todos os Horarios cadastrados na Empresa. Caso n\u00E3o existam registros, retorna uma lista vazia.",
+    "Summary": "Obtem todos os Horarios."
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.HorarioEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapHorarioEndpoint\u003Eb__0_3",
+    "RelativePath": "Horario/",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Horario",
+        "Type": "HP.Manager.DTOs.Horario.AtualizaHorarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Horario.HorarioDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Horario"
+    ],
+    "Description": "Altera as informa\u00E7\u00F5es de um Horario existente com base nos dados fornecidos no corpo da requisi\u00E7\u00E3o.",
+    "Summary": "Atualiza um Horario"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.HorarioEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapHorarioEndpoint\u003Eb__0_2",
+    "RelativePath": "Horario/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Horario.HorarioDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Horario"
+    ],
+    "Description": "Retorna um Horario espec\u00EDfica com base no identificador \u00FAnico informado.",
+    "Summary": "Obtem um Horario por id"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.HorarioEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapHorarioEndpoint\u003Eb__0_4",
+    "RelativePath": "Horario/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Horario"
+    ],
+    "Description": "Exclui o registro de um Horario do sistema permanentemente a partir do seu identificador \u00FAnico.",
+    "Summary": "Remove um Horario"
+  },
+  {
     "ContainingType": "HP.Api.Endpoints.PessoaEndpoint\u002B\u003C\u003Ec",
     "Method": "\u003CMapPessoaEndpoint\u003Eb__0_0",
     "RelativePath": "Pessoa/",

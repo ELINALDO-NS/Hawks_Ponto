@@ -35,23 +35,25 @@ builder.Services.AddDatabaseConfiguration(builder.Configuration);
 builder.Services.AddFluentValidationConfiguration();
 builder.Services.AddMapsterConfiguration();
 builder.Services.AddDependencyInjectionConfiguration();
-// Add services to the container.
+
 var app = builder.Build();
 app.UseExceptionHandler();
 app.UseCors();
 app.UseDatabaseConfiguration();
 app.UseSwaggerConfiguration();
-// Configure the HTTP request pipeline.
+
 app.UseHttpsRedirection();
+
 //Endpoints
 app.MapEmpresaEndpoint();
 app.MapEstruturaOrganizacionalEndpoint();
 app.MapCargoEndpoint();
 app.MapPessoaEndpoint();
+app.MapHorarioEndpoint();
 
 try
 {
-    Log.Information("Iniciando a aplicação...");
+    Log.Information("Iniciando a aplicação...");    
     app.Run();
 }
 catch (Exception ex)
@@ -60,5 +62,5 @@ catch (Exception ex)
 }
 finally
 {
-    Log.CloseAndFlush(); 
+    Log.CloseAndFlush();
 }

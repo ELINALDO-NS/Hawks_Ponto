@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\middlewares\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\middlewares\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\repository\\horariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\repository\\horariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,27 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ErrorHandlingMiddleware.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Middlewares\\ErrorHandlingMiddleware.cs",
-              "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Middlewares\\ErrorHandlingMiddleware.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Middlewares\\ErrorHandlingMiddleware.cs*",
-              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Middlewares\\ErrorHandlingMiddleware.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwDUAAAAzAAAAAAAAAA==",
+              "Title": "HorarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\HorarioRepository.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Repository\\HorarioRepository.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\HorarioRepository.cs",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Repository\\HorarioRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T14:43:47.031Z",
+              "WhenOpened": "2026-08-14T14:33:09.889Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PessoaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAcwC4AAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T14:44:59.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
               "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Program.cs",
               "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
               "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:58:50.136Z",
+              "WhenOpened": "2026-08-13T19:33:20.166Z",
               "EditorCaption": ""
             }
           ]

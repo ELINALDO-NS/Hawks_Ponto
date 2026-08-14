@@ -21,8 +21,7 @@ namespace HP.Data.Repository
         }
 
         public async Task<Pessoa?> AtualizarAsync(Pessoa pessoa, CancellationToken cancellationToken)
-        {
-            // 1. Busca a pessoa e já inclui os relacionamentos em uma ÚNICA consulta
+        {            
             var pessoaAtual = await _context.Pessoas
                 .Include(p => p.Estrutura)
                 .Include(p => p.Cargo)
@@ -33,16 +32,13 @@ namespace HP.Data.Repository
             {
                 return null;
             }
-
-            // 2. Preserva campos que não devem ser sobrescritos
+            
             pessoa.EnderecoId = pessoaAtual.EnderecoId;
             pessoa.DataCadastro = pessoaAtual.DataCadastro;
             pessoa.DataUltAtualizacao = DateTime.UtcNow;
-
-            // 3. Atualiza as propriedades escalares da Pessoa
+            
             _context.Entry(pessoaAtual).CurrentValues.SetValues(pessoa);
-
-            // 4. Trata a atualização ou inserção do Endereço com segurança
+            
             if (pessoa.Endereco is not null)
             {
                 if (pessoaAtual.Endereco is not null)
@@ -52,13 +48,13 @@ namespace HP.Data.Repository
                 }
                 else
                 {
-                    // Adiciona novo endereço caso a pessoa não tivesse um antes
+                    
                     pessoa.Endereco.Id = 0;
                     pessoaAtual.Endereco = pessoa.Endereco;
                 }
             }
 
-            // 5. Salva todas as alterações no banco de dados de uma vez
+            
             await _context.SaveChangesAsync(cancellationToken);
 
             return pessoaAtual;

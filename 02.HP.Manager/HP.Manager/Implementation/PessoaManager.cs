@@ -2,7 +2,7 @@
 using HP.Core.Extentions;
 using HP.Core.Interfaces;
 using HP.Manager.DTOs.Pessoa;
-using HP.Manager.Interfaces.Managers;
+using HP.Manager.Interfaces;
 using MapsterMapper;
 
 

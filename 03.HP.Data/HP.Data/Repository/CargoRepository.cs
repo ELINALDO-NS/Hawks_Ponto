@@ -42,7 +42,7 @@ namespace HP.Data.Repository
 
         public async Task<IEnumerable<Cargo>> ObterTodosAsync(CancellationToken cancellationToken)
         {
-            var cargos = await _context.Cargos.ToListAsync(cancellationToken);
+            var cargos = await _context.Cargos.AsNoTracking().ToListAsync(cancellationToken);
             return cargos;
         }
 

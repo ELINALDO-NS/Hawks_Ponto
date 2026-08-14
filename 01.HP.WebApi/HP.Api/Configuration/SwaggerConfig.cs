@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace HP.Api.Configuration
 {
@@ -8,7 +9,7 @@ namespace HP.Api.Configuration
         {
             var isEfTool = AppDomain.CurrentDomain.FriendlyName.Contains("ef", StringComparison.OrdinalIgnoreCase);
 
-            if (env.IsDevelopment()&&!isEfTool)
+            if (env.IsDevelopment() && !isEfTool)
             {
                 services.AddSwaggerGen(options =>
                 {
@@ -50,7 +51,8 @@ namespace HP.Api.Configuration
                             [schemeRef] = Array.Empty<string>().ToList()
                         };
                     });
-
+                    options.SchemaFilter<TimeOnlySchemaFilter>();
+                    options.SchemaFilter<DayOfWeekSchemaFilter>();
 
                 });
             }
@@ -64,6 +66,47 @@ namespace HP.Api.Configuration
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+        }
+    }
+}
+
+public class DayOfWeekSchemaFilter : ISchemaFilter
+{
+    private static readonly Dictionary<int, string> DiasEmPortugues = new()
+    {
+        [0] = "Sunday",
+        [1] = "Monday",
+        [2] = "Tuesday",
+        [3] = "Wednesday",
+        [4] = "Thursday",
+        [5] = "Friday",
+        [6] = "Saturday"
+    };
+
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+            return;
+
+        if (context.Type == typeof(DayOfWeek))
+        {
+            var legenda = string.Join(", ", DiasEmPortugues.Select(x => $"{x.Key} = {x.Value}"));
+            concreteSchema.Description = $"Dia da semana: {legenda}.";
+        }
+    }
+}
+public class TimeOnlySchemaFilter : ISchemaFilter
+{
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+            return;
+
+        if (context.Type == typeof(TimeOnly) || context.Type == typeof(TimeOnly?))
+        {
+            concreteSchema.Type = JsonSchemaType.String;
+            concreteSchema.Format = "time";
+            concreteSchema.Example = "11:29:00";
         }
     }
 }

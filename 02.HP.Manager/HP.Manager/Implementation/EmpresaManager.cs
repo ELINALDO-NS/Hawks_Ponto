@@ -1,9 +1,9 @@
 ﻿using HP.Core.Entities;
 using HP.Manager.DTOs.Empresa;
-using HP.Manager.Interfaces.Managers;
 using HP.Core.Interfaces.Repository;
 using MapsterMapper;
 using HP.Core.Extentions;
+using HP.Manager.Interfaces;
 
 
 namespace HP.Manager.Implementation
