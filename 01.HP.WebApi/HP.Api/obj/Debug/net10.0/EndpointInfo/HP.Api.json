@@ -1019,8 +1019,7 @@
             "nullable": true
           },
           "sexo": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/Sexo"
           },
           "baseHoras": {
             "type": "number",
@@ -1237,8 +1236,7 @@
             "nullable": true
           },
           "sexo": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/Sexo"
           },
           "baseHoras": {
             "type": "number",
@@ -1623,8 +1621,7 @@
             "nullable": true
           },
           "sexo": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/Sexo"
           },
           "baseHoras": {
             "type": "number",
@@ -1638,6 +1635,16 @@
           }
         },
         "additionalProperties": false
+      },
+      "Sexo": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "description": "Sexo: 1 = Masculino, 2 = Feminino, 3 = Outro.",
+        "format": "int32"
       }
     },
     "securitySchemes": {

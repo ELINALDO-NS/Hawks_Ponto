@@ -1,4 +1,5 @@
-﻿using Microsoft.OpenApi;
+﻿using HP.Core.Enums;
+using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace HP.Api.Configuration
@@ -53,6 +54,8 @@ namespace HP.Api.Configuration
                     });
                     options.SchemaFilter<TimeOnlySchemaFilter>();
                     options.SchemaFilter<DayOfWeekSchemaFilter>();
+                    options.SchemaFilter<EnumSexoSchemaFilter>();
+                    options.SchemaFilter<EnumTipoEmpresaSchemaFilter>();
 
                 });
             }
@@ -110,3 +113,50 @@ public class TimeOnlySchemaFilter : ISchemaFilter
         }
     }
 }
+public class EnumSexoSchemaFilter : ISchemaFilter
+{
+    private static readonly Dictionary<int, string> Sexo = new()
+    {
+        
+        [1] = "Masculino",
+        [2] = "Feminino",
+        [3] = "Outro"
+       
+    };
+
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+            return;
+
+        if (context.Type == typeof(Sexo))
+        {
+            var legenda = string.Join(", ", Sexo.Select(x => $"{x.Key} = {x.Value}"));
+            concreteSchema.Description = $"Sexo: {legenda}.";
+        }
+    }
+}
+public class EnumTipoEmpresaSchemaFilter : ISchemaFilter
+{
+    private static readonly Dictionary<int, string> Sexo = new()
+    {
+
+        [1] = "Matriz",
+        [2] = "Filial",
+        [3] = "Unidade"
+
+    };
+
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+            return;
+
+        if (context.Type == typeof(TipoEmpresa))
+        {
+            var legenda = string.Join(", ", Sexo.Select(x => $"{x.Key} = {x.Value}"));
+            concreteSchema.Description = $"Tipo: {legenda}.";
+        }
+    }
+}
+

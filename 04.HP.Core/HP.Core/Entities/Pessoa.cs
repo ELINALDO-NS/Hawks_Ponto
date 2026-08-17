@@ -1,4 +1,5 @@
 ﻿
+using HP.Core.Enums;
 using HP.Core.Extentions;
 
 namespace HP.Core.Entities
@@ -29,7 +30,7 @@ namespace HP.Core.Entities
         public bool ControlaPonto { get; set; } = true;
         public DateTime? DataControlaPonto { get; set; } = DateTime.UtcNow;
         public DateTime? DataNaoControlaPonto { get; set; }
-        public int Sexo { get; set; }
+        public Sexo Sexo { get; set; }
         public float BaseHoras { get; set; }
         public int EstruturaId { get; set; }
         public EstruturaOrganizacional Estrutura { get; set; } = null!;

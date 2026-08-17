@@ -80,7 +80,8 @@ namespace HP.Manager.Validator.Pessoa
                 .WithMessage("Data de encerramento do controle de ponto deve ser posterior à data de início.");
 
             RuleFor(x => x.Sexo)
-                .InclusiveBetween(1, 2).WithMessage("Sexo deve ser 1 (Masculino) ou 2 (Feminino).");
+            .IsInEnum()
+            .WithMessage("Sexo deve ser um valor válido: 1 (Masculino) , 2 (Feminino) 3 (Outro).");
 
             RuleFor(x => x.BaseHoras)
                 .GreaterThan(0).WithMessage("Base de horas deve ser maior que zero.");
