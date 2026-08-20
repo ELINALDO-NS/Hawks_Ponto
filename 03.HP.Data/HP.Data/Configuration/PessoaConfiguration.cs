@@ -81,8 +81,7 @@ namespace HP.Data.Configuration
             builder.Property(p => p.EstruturaId)
                 .IsRequired();
 
-            builder.Property(p => p.CargoId)
-                .IsRequired(false);
+           
 
 
             builder.HasOne(p => p.Empresa)
@@ -94,12 +93,7 @@ namespace HP.Data.Configuration
             builder.HasOne(p => p.Estrutura)
                 .WithMany()
                 .HasForeignKey(p => p.EstruturaId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            builder.HasOne(p => p.Cargo)
-                .WithMany()
-                .HasForeignKey(p => p.CargoId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict);            
 
             builder.HasIndex(p => new { p.EmpresaId, p.Matricula })
                 .IsUnique();

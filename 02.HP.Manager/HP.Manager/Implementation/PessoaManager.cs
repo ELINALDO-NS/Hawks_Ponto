@@ -8,16 +8,27 @@ using MapsterMapper;
 
 namespace HP.Manager.Implementation
 {
-    public class PessoaManager(IPessoaRepository _repository,IMapper _mapper) : IPessoaManager
+    public class PessoaManager(IPessoaRepository _repository, IMapper _mapper) : IPessoaManager
     {
         public async Task<PessoaDto> AdicionarAsync(AdicionaPessoaDto pessoa, CancellationToken cancellationToken)
         {
             var novapessoa = _mapper.Map<Pessoa>(pessoa);
-
+            if (pessoa.Cargo is not null)
+            {
+                novapessoa.Cargos = new List<CargoPessoa>
+                {
+                    new()
+                    {
+                        CargoId = pessoa.Cargo.Id,
+                        DataInicio = pessoa.Cargo.DataInicio,
+                    }
+                };
+            }
             novapessoa.Cpf = novapessoa.Cpf.RemoveFormatacao();
             novapessoa.Pis = novapessoa.Pis.RemoveFormatacao();
 
             await _repository.AdicionarAsync(novapessoa, cancellationToken);
+
 
             novapessoa.Cpf = novapessoa.Cpf.FormatarCPF_CNPJ();
             novapessoa.Pis = novapessoa.Pis.FormataPis();
@@ -31,8 +42,21 @@ namespace HP.Manager.Implementation
 
             pessoadto.Cpf = pessoadto.Cpf.RemoveFormatacao();
             pessoadto.Pis = pessoadto.Pis.RemoveFormatacao();
+            
+            if (pessoa.Cargo is not null)
+            {
 
-           var pessoaatualizada = await _repository.AtualizarAsync(pessoadto, cancellationToken);
+                pessoadto.Cargos.Add(
+
+                    new CargoPessoa()
+                    {
+                        CargoId = pessoa.Cargo.Id,
+                        DataInicio = pessoa.Cargo.DataInicio,
+                    });
+               
+            }
+
+            var pessoaatualizada = await _repository.AtualizarAsync(pessoadto, cancellationToken);
             if (pessoaatualizada is not null)
             {
                 pessoaatualizada.Cpf = pessoaatualizada.Cpf.FormatarCPF_CNPJ();
@@ -42,7 +66,6 @@ namespace HP.Manager.Implementation
             }
             return null;
         }
-
         public async Task<PessoaDto?> ObterPorIdAsync(int id, CancellationToken cancellationToken)
         {
             var pessoa = await _repository.ObterPorIdAsync(id, cancellationToken);
@@ -59,7 +82,8 @@ namespace HP.Manager.Implementation
         {
             var pessoas = await _repository.ObterTodosAsync(cancellationToken);
 
-            var pessoasDto = pessoas.Select(x => {
+            var pessoasDto = pessoas.Select(x =>
+            {
                 x.Cpf = x.Cpf.FormatarCPF_CNPJ();
                 x.Pis = x.Pis.FormataPis();
                 return _mapper.Map<PessoaDto>(x);

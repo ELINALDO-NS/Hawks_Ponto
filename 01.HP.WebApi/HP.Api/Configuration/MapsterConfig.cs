@@ -18,12 +18,22 @@ namespace HP.Api.Configuration
                 new PessoaMapping(),
                 new JornadaMapping(),
                 new HorarioMapping()
-                
+
             );
-            config.Compile();
+            try
+            {
+                config.Compile();
+            }
+            catch (CompileException ex)
+            {
+                var mensagemErro = ex.Message;
+                var erroInterno = ex.InnerException?.Message;
+                throw new InvalidOperationException(
+                $"Falha no mapeamento do Mapster.\nDetalhes: {mensagemErro}\nCausa: {erroInterno}", ex);
+            }
             services.AddSingleton(config);
             services.AddScoped<IMapper, ServiceMapper>();
-           
+
         }
     }
 }

@@ -4,6 +4,6 @@ using System.Text;
 
 namespace HP.Manager.DTOs.Pessoa
 {
-    public record CargoPessoaDto(int Id, int Codigo, string Descricao);
+    public record CargoPessoaDto(int Id, int Codigo, string Descricao, DateOnly DataInicio, DateOnly? DataFim);
 
 }

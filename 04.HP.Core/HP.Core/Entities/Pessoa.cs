@@ -34,11 +34,7 @@ namespace HP.Core.Entities
         public float BaseHoras { get; set; }
         public int EstruturaId { get; set; }
         public EstruturaOrganizacional Estrutura { get; set; } = null!;
-        public int? CargoId
-        {   get;
-            set => field = value == 0 ? null : value;
-        } = null;
-        public Cargo Cargo { get; set; } = null!;
+        public ICollection<CargoPessoa> Cargos { get; set; } = new List<CargoPessoa>();
 
     }
 }

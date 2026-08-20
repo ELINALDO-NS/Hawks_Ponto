@@ -15,9 +15,9 @@ namespace HP.Manager.Validator.Pessoa
               .GreaterThan(0).WithMessage("EstruturaId deve ser maior que zero.")
               .NotNull().WithMessage("EstruturaId não pode ser nulo.");
 
-            RuleFor(x => x.CargoId)
+            RuleFor(x => x.Cargo.Id)
                .GreaterThan(0).WithMessage("CargoId deve ser maior que zero.")
-               .When(x => x.CargoId is null);
+               .When(x => x.Cargo is not null);
 
             RuleFor(x => x.EmpresaId)
                 .GreaterThan(0).WithMessage("EmpresaId deve ser maior que zero.");
