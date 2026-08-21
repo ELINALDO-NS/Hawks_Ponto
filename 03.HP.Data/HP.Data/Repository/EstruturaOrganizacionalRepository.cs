@@ -24,7 +24,7 @@ namespace HP.Data.Repository
             }
 
             estruturaOrganizacional.DataCadastro = estruturaOrganizacionalAtual.DataCadastro;
-            estruturaOrganizacional.DataUltAtualizacao = DateTime.UtcNow;
+            estruturaOrganizacional.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime();
             _context.EstruturasOrganizacionais.Update(estruturaOrganizacional);
             await _context.SaveChangesAsync(cancellationToken);
             return estruturaOrganizacional;

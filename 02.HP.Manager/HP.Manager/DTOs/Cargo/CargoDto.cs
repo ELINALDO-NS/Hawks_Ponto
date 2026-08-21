@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HP.Manager.DTOs.Cargo
 {
-    public record CargoDto(int Id, int Codigo, string Descricao, int EmpresaId, DateTime DataCadastro, DateTime? DataUltAtualizacao);
+    public record CargoDto(int Id, int Codigo, string Descricao, int EmpresaId, DateTimeOffset DataCadastro, DateTimeOffset? DataUltAtualizacao);
 
 
 }

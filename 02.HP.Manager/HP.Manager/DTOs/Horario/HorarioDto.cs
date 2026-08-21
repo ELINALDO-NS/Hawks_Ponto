@@ -6,6 +6,6 @@ using System.Text;
 namespace HP.Manager.DTOs.Horario
 {
     public record HorarioDto(int Id, int EmpresaId, string Codigo, string Descricao,
-        ICollection<JornadaDto> Jornadas, DateTime DataCadastro, DateTime? DataUltAtualizacao);
+        ICollection<JornadaDto> Jornadas, DateTimeOffset DataCadastro, DateTimeOffset? DataUltAtualizacao);
     
 }

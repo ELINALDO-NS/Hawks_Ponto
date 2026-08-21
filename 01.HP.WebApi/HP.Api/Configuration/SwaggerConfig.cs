@@ -52,6 +52,7 @@ namespace HP.Api.Configuration
                             [schemeRef] = Array.Empty<string>().ToList()
                         };
                     });
+                    options.SchemaFilter<DateTimeOffsetSchemaFilter>();
                     options.SchemaFilter<TimeOnlySchemaFilter>();
                     options.SchemaFilter<DayOfWeekSchemaFilter>();
                     options.SchemaFilter<EnumSexoSchemaFilter>();
@@ -95,6 +96,21 @@ public class DayOfWeekSchemaFilter : ISchemaFilter
         {
             var legenda = string.Join(", ", DiasEmPortugues.Select(x => $"{x.Key} = {x.Value}"));
             concreteSchema.Description = $"Dia da semana: {legenda}.";
+        }
+    }
+}
+public class DateTimeOffsetSchemaFilter : ISchemaFilter
+{
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+            return;
+
+        if (context.Type == typeof(DateTimeOffset) || context.Type == typeof(DateTimeOffset?))
+        {
+            concreteSchema.Type = JsonSchemaType.String;
+            concreteSchema.Format = "date-time";
+            concreteSchema.Example = "2026-08-21T14:19:53-03:00";
         }
     }
 }

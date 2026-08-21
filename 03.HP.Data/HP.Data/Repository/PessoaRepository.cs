@@ -37,7 +37,7 @@ namespace HP.Data.Repository
 
             pessoa.EnderecoId = pessoaAtual.EnderecoId;
             pessoa.DataCadastro = pessoaAtual.DataCadastro;
-            pessoa.DataUltAtualizacao = DateTime.UtcNow;
+            pessoa.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime();
 
             _context.Entry(pessoaAtual).CurrentValues.SetValues(pessoa);
             AtualizarEndereco(pessoaAtual, pessoa.Endereco);

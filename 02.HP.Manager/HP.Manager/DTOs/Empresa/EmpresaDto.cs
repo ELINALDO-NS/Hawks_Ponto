@@ -13,12 +13,12 @@ namespace HP.Manager.DTOs.Empresa
         string CnpjCpf,
         string Telefone,
         string TipoEmpresa,
-        DateTime DataCadastro,
+        DateTimeOffset DataCadastro,
         bool Portaria1510,
         EnderecoDto Endereco,
         string? Site = null,
         string? Email = null,
-        DateTime? DataUltAtualizacao = null,
+        DateTimeOffset? DataUltAtualizacao = null,
         bool Portaria671 = true
     );
 }

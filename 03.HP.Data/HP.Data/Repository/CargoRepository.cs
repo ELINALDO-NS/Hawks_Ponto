@@ -24,7 +24,7 @@ namespace HP.Data.Repository
             }
 
             cargo.DataCadastro = cargoAtual.DataCadastro;
-            cargo.DataUltAtualizacao = DateTime.UtcNow;
+            cargo.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime();
             _context.Entry(cargoAtual).CurrentValues.SetValues(cargo);
             _context.Update(cargoAtual);
             await _context.SaveChangesAsync(cancellationToken);

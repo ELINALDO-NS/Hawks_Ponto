@@ -22,8 +22,8 @@ namespace HP.Core.Entities
         public string? Site { get; set; }
         public string? Email { get; set; }
         public string TipoEmpresa { get; set; } = null!;
-        public DateTime DataCadastro { get; set; } = DateTime.UtcNow;
-        public DateTime? DataUltAtualizacao { get; set; }
+        public DateTimeOffset DataCadastro { get; set; } = DateTimeOffset.Now.ToLocalTime();
+        public  DateTimeOffset? DataUltAtualizacao { get; set; }
         public int EnderecoId { get; set; }
         public Endereco Endereco { get; set; } = null!;
         public bool Portaria1510 { get; set; }

@@ -17,6 +17,7 @@ namespace HP.Data.Configuration
                 .HasColumnType("date");
 
             builder.Property(cp => cp.DataCadastro)
+                .HasColumnType("datetimeoffset(0)")
                 .IsRequired();
 
            

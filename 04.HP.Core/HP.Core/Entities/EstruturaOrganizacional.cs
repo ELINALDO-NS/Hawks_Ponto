@@ -15,9 +15,9 @@ namespace HP.Core.Entities
             get; set => field = value.ToTitleCase() ?? string.Empty;
         } = string.Empty;
         public int EmpresaId { get; set; }        
-        public Empresa Empresa { get; set; } = null!;        
-        public DateTime DataCadastro { get; set; } = DateTime.UtcNow;
-        public DateTime? DataUltAtualizacao { get; set; }
+        public Empresa Empresa { get; set; } = null!;
+        public DateTimeOffset DataCadastro { get; set; } = DateTimeOffset.Now.ToLocalTime();
+        public DateTimeOffset? DataUltAtualizacao { get; set; }
 
     }
 }

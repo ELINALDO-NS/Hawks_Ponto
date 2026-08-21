@@ -7,6 +7,6 @@ namespace HP.Manager.DTOs.EstruturaOrganizacional
     string Descricao,
     int? EstruturaPai,
     int EmpresaId,
-    DateTime DataCadastro,
-    DateTime? DataUltAtualizacao = null);
+    DateTimeOffset DataCadastro,
+    DateTimeOffset? DataUltAtualizacao = null);
 }

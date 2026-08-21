@@ -25,7 +25,7 @@ namespace HP.Data.Repository
             if (empresaAtual is null){return null;}
 
             empresa.DataCadastro = empresaAtual.DataCadastro;
-            empresa.DataUltAtualizacao = DateTime.UtcNow;
+            empresa.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime();
             if (empresa.Endereco is not null && empresaAtual.Endereco is not null)
             {
                 empresa.Endereco.Id = empresaAtual.Endereco.Id;

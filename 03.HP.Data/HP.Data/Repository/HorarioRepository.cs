@@ -27,7 +27,7 @@ namespace HP.Data.Repository
             }
             
             horario.DataCadastro = horarioAtual.DataCadastro;
-            horario.DataUltAtualizacao = DateTime.UtcNow;
+            horario.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime();
             _context.Entry(horarioAtual).CurrentValues.SetValues(horario);
 
             AtualizarJornadas(horarioAtual, horario.Jornadas);

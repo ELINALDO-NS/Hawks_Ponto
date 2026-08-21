@@ -21,9 +21,11 @@ namespace HP.Data.Configuration
                 .HasMaxLength(100);
 
             builder.Property(h => h.DataCadastro)
+                .HasColumnType("datetimeoffset(0)")
                 .IsRequired();
 
             builder.Property(h => h.DataUltAtualizacao)
+                .HasColumnType("datetimeoffset(0)")
                 .IsRequired(false);
 
             builder.HasOne(h => h.Empresa)

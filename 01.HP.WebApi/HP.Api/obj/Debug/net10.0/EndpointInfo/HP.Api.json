@@ -1285,12 +1285,13 @@
           },
           "dataCadastro": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataUltAtualizacao": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           }
         },
         "additionalProperties": false
@@ -1365,7 +1366,8 @@
           },
           "dataCadastro": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "portaria1510": {
             "type": "boolean"
@@ -1384,7 +1386,7 @@
           "dataUltAtualizacao": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "portaria671": {
             "type": "boolean"
@@ -1452,12 +1454,13 @@
           },
           "dataCadastro": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataUltAtualizacao": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           }
         },
         "additionalProperties": false
@@ -1513,12 +1516,13 @@
           },
           "dataCadastro": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataUltAtualizacao": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           }
         },
         "additionalProperties": false

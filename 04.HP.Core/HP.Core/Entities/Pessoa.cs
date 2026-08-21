@@ -17,8 +17,8 @@ namespace HP.Core.Entities
         public DateTime? DataNascimento { get; set; }
         public DateTime DataAdmissao { get; set; }
         public DateTime? DataDemissao { get; set; }
-        public DateTime DataCadastro { get; set; } = DateTime.UtcNow;
-        public DateTime? DataUltAtualizacao { get; set; }
+        public DateTimeOffset DataCadastro { get; set; } = DateTimeOffset.Now.ToLocalTime();
+        public DateTimeOffset? DataUltAtualizacao { get; set; }
         public int? EnderecoId { get; set; }
         public Endereco? Endereco { get; set; }
         public string? Rg { get; set; }

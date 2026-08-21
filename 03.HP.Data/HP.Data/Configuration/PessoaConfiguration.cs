@@ -31,10 +31,12 @@ namespace HP.Data.Configuration
 
 
             builder.Property(p => p.DataCadastro)
+                .HasColumnType("datetimeoffset(0)")
                 .IsRequired();
 
 
-            builder.Property(p => p.DataUltAtualizacao);
+            builder.Property(p => p.DataUltAtualizacao)
+                .HasColumnType("datetimeoffset(0)");
 
             builder
             .HasOne(p => p.Endereco)
