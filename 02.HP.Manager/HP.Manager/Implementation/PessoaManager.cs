@@ -13,6 +13,7 @@ namespace HP.Manager.Implementation
         public async Task<PessoaDto> AdicionarAsync(AdicionaPessoaDto pessoa, CancellationToken cancellationToken)
         {
             var novapessoa = _mapper.Map<Pessoa>(pessoa);
+
             if (pessoa.Cargo is not null)
             {
                 novapessoa.Cargos = new List<CargoPessoa>
@@ -47,24 +48,13 @@ namespace HP.Manager.Implementation
                 };
             }
 
-            novapessoa.Cpf = novapessoa.Cpf.RemoveFormatacao();
-            novapessoa.Pis = novapessoa.Pis.RemoveFormatacao();
-
             await _repository.AdicionarAsync(novapessoa, cancellationToken);
-
-
-            novapessoa.Cpf = novapessoa.Cpf.FormatarCPF_CNPJ();
-            novapessoa.Pis = novapessoa.Pis.FormataPis();
-
             return _mapper.Map<PessoaDto>(novapessoa);
         }
 
         public async Task<PessoaDto?> AtualizarAsync(AtualizaPessoaDto pessoa, CancellationToken cancellationToken)
         {
             var pessoadto = _mapper.Map<Pessoa>(pessoa);
-
-            pessoadto.Cpf = pessoadto.Cpf.RemoveFormatacao();
-            pessoadto.Pis = pessoadto.Pis.RemoveFormatacao();
 
             if (pessoa.Cargo is not null)
             {
@@ -101,9 +91,6 @@ namespace HP.Manager.Implementation
             var pessoaatualizada = await _repository.AtualizarAsync(pessoadto, cancellationToken);
             if (pessoaatualizada is not null)
             {
-                pessoaatualizada.Cpf = pessoaatualizada.Cpf.FormatarCPF_CNPJ();
-                pessoaatualizada.Pis = pessoaatualizada.Pis.FormatarCPF_CNPJ();
-
                 return _mapper.Map<PessoaDto>(pessoaatualizada);
             }
             return null;
@@ -115,8 +102,6 @@ namespace HP.Manager.Implementation
             {
                 return null;
             }
-            pessoa.Cpf = pessoa.Cpf.FormatarCPF_CNPJ();
-            pessoa.Pis = pessoa.Pis.FormataPis();
             return _mapper.Map<PessoaDto>(pessoa);
         }
 
