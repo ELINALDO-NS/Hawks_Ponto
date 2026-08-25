@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\configuration\\fluentevalidationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\configuration\\fluentevalidationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\implementation\\pessoamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\implementation\\pessoamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FluenteValidationConfig.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Configuration\\FluenteValidationConfig.cs",
-              "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Configuration\\FluenteValidationConfig.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Configuration\\FluenteValidationConfig.cs",
-              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Configuration\\FluenteValidationConfig.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAQwDUAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PessoaManager.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
+              "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
+              "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwEYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-21T17:39:33.363Z",
+              "WhenOpened": "2026-08-25T12:59:11.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PessoaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAA/wF8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T19:56:01.323Z",
               "EditorCaption": ""
             }
           ]

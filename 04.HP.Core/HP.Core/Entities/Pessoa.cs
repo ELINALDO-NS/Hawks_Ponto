@@ -32,8 +32,7 @@ namespace HP.Core.Entities
         public DateTime? DataNaoControlaPonto { get; set; }
         public Sexo Sexo { get; set; }
         public float BaseHoras { get; set; }
-        public int EstruturaId { get; set; }
-        public EstruturaOrganizacional Estrutura { get; set; } = null!;
+        public ICollection<EstruturaOrganizacionalPessoa> EstruturasOrganizacionais { get; set; } = null!;
         public ICollection<CargoPessoa> Cargos { get; set; } = new List<CargoPessoa>();
 
     }

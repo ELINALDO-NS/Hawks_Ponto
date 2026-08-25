@@ -400,4 +400,3 @@ C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\D
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\Debug\net10.0\HP.Api.pdb
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\Debug\net10.0\HP.Api.genruntimeconfig.cache
 C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\Debug\net10.0\ref\HP.Api.dll
-C:\Users\Suporte\Documents\Projetos\CSHARP\Hawks_Ponto\01.HP.WebApi\HP.Api\obj\Debug\net10.0\HP.Api.MvcApplicationPartsAssemblyInfo.cs

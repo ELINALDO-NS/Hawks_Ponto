@@ -77,25 +77,12 @@ namespace HP.Data.Configuration
                 .IsRequired();
 
             builder.Property(p => p.BaseHoras)
-                .IsRequired();
-
-
-            builder.Property(p => p.EstruturaId)
-                .IsRequired();
-
-           
-
+                .IsRequired();          
 
             builder.HasOne(p => p.Empresa)
                 .WithMany()
                 .HasForeignKey(p => p.EmpresaId)
                 .OnDelete(DeleteBehavior.Restrict);
-
-
-            builder.HasOne(p => p.Estrutura)
-                .WithMany()
-                .HasForeignKey(p => p.EstruturaId)
-                .OnDelete(DeleteBehavior.Restrict);            
 
             builder.HasIndex(p => new { p.EmpresaId, p.Matricula })
                 .IsUnique();

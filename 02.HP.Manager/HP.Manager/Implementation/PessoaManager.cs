@@ -24,6 +24,17 @@ namespace HP.Manager.Implementation
                     }
                 };
             }
+            if (pessoa.EstruturaOrganizacional is not null)
+            {
+                novapessoa.EstruturasOrganizacionais = new List<EstruturaOrganizacionalPessoa>
+                {
+                    new()
+                    {
+                        EstruturaOrganizacionalId = pessoa.EstruturaOrganizacional.Id,
+                        DataInicio = pessoa.EstruturaOrganizacional.DataInicio,
+                    }
+                };
+            }
             novapessoa.Cpf = novapessoa.Cpf.RemoveFormatacao();
             novapessoa.Pis = novapessoa.Pis.RemoveFormatacao();
 
@@ -55,7 +66,17 @@ namespace HP.Manager.Implementation
                     });
                
             }
-
+            if (pessoa.EstruturaOrganizacional is not null)
+            {
+                pessoadto.EstruturasOrganizacionais = new List<EstruturaOrganizacionalPessoa>
+                {
+                    new()
+                    {
+                        EstruturaOrganizacionalId = pessoa.EstruturaOrganizacional.Id,
+                        DataInicio = pessoa.EstruturaOrganizacional.DataInicio,
+                    }
+                };
+            }
             var pessoaatualizada = await _repository.AtualizarAsync(pessoadto, cancellationToken);
             if (pessoaatualizada is not null)
             {

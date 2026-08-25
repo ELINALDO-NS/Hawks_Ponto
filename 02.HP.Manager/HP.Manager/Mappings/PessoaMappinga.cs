@@ -1,6 +1,4 @@
 ﻿using HP.Core.Entities;
-using HP.Core.Extentions;
-using HP.Manager.DTOs.Cargo;
 using HP.Manager.DTOs.Pessoa;
 using Mapster;
 
@@ -14,7 +12,8 @@ namespace HP.Manager.Mappings
             config.NewConfig<PessoaDto, Pessoa>();
             config.NewConfig<AdicionaPessoaDto, Pessoa>().TwoWays();
             config.NewConfig<Pessoa, PessoaDto>()
-                .Map(dest => dest.Cargo, src => src.Cargos);
+                .Map(dest => dest.Cargo, src => src.Cargos)
+                .Map(dest => dest.EstruturaOrganizacional, src => src.EstruturasOrganizacionais);
             config.NewConfig<AtualizaPessoaDto, Pessoa>();
 
 

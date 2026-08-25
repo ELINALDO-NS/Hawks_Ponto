@@ -12,19 +12,28 @@ namespace HP.Data.Repository
         {
             _context.Pessoas.Add(pessoa);
             await _context.SaveChangesAsync(cancellationToken);
+
             await _context.Entry(pessoa)
                 .Collection(p => p.Cargos)
                 .Query()
                 .Include(cp => cp.Cargo)
+                .AsSplitQuery()
+                .LoadAsync(cancellationToken);
+
+            await _context.Entry(pessoa)
+                .Collection(p => p.EstruturasOrganizacionais)
+                .Query()
+                .Include(cp => cp.EstruturaOrganizacional)
+                .AsSplitQuery()
                 .LoadAsync(cancellationToken);
 
             return pessoa;
         }
-
         public async Task<Pessoa?> AtualizarAsync(Pessoa pessoa, CancellationToken cancellationToken)
         {
             var pessoaAtual = await _context.Pessoas
-                .Include(p => p.Estrutura)
+                .Include(p => p.EstruturasOrganizacionais)
+                .ThenInclude(cp => cp.EstruturaOrganizacional)
                 .Include(p => p.Cargos)
                 .ThenInclude(cp => cp.Cargo)
                 .Include(p => p.Endereco)
@@ -41,7 +50,8 @@ namespace HP.Data.Repository
 
             _context.Entry(pessoaAtual).CurrentValues.SetValues(pessoa);
             AtualizarEndereco(pessoaAtual, pessoa.Endereco);
-            AtualizarCargo(pessoaAtual, pessoa.Cargos);
+            await AtualizarCargo(pessoaAtual, pessoa.Cargos, cancellationToken);
+            await AtualizarEstrturaOrganizacional(pessoaAtual, pessoa.EstruturasOrganizacionais, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
 
             return pessoaAtual;
@@ -59,7 +69,7 @@ namespace HP.Data.Repository
                 pessoaAtual.Endereco = enderecoNovo;
             }
         }
-        private void AtualizarCargo(Pessoa pessoaAtual, ICollection<CargoPessoa> cargoNovo)
+        private async Task AtualizarCargo(Pessoa pessoaAtual, ICollection<CargoPessoa> cargoNovo, CancellationToken cancellationToken)
         {
             if (!cargoNovo.Any())
             {
@@ -67,6 +77,8 @@ namespace HP.Data.Repository
             }
             var cargo = cargoNovo.Single();
             var cargoVigente = pessoaAtual.Cargos.FirstOrDefault(c => c.DataFim is null);
+            var cargoDb = await _context.Cargos.FindAsync(cargo.CargoId, cancellationToken);
+
             if (cargoVigente is not null)
             {
                 cargoVigente.DataFim = cargo.DataInicio;
@@ -75,15 +87,38 @@ namespace HP.Data.Repository
             {
                 CargoId = cargo.CargoId,
                 DataInicio = cargo.DataInicio,
+                Cargo = cargoDb,
                 DataFim = null
             });
         }
+        private async Task AtualizarEstrturaOrganizacional(Pessoa pessoaAtual, ICollection<EstruturaOrganizacionalPessoa> EstruturaOrganizacionalNova, CancellationToken cancellationToken)
+        {
+            if (!EstruturaOrganizacionalNova.Any())
+            {
+                return;
+            }
+            var EstruturaOrganizacional = EstruturaOrganizacionalNova.Single();
+            var EstruturaOrganizacionalVigente = pessoaAtual.EstruturasOrganizacionais.FirstOrDefault(c => c.DataFim is null);
+            if (EstruturaOrganizacionalVigente is not null)
+            {
+                EstruturaOrganizacionalVigente.DataFim = EstruturaOrganizacional.DataInicio;
+            }
+            var estruturaDb = await _context.EstruturasOrganizacionais.FindAsync(EstruturaOrganizacional.EstruturaOrganizacionalId, cancellationToken);
 
+            pessoaAtual.EstruturasOrganizacionais.Add(new EstruturaOrganizacionalPessoa
+            {
+                EstruturaOrganizacionalId = EstruturaOrganizacional.EstruturaOrganizacionalId,
+                DataInicio = EstruturaOrganizacional.DataInicio,
+                EstruturaOrganizacional = estruturaDb!,
+                DataFim = null
+            });
+        }
         public async Task<Pessoa?> ObterPorIdAsync(int id, CancellationToken cancellationToken)
         {
             var Pessoa = await _context.Pessoas
                 .Include(x => x.Endereco)
-                .Include(x => x.Estrutura)
+                .Include(x => x.EstruturasOrganizacionais)
+                .ThenInclude(cp => cp.EstruturaOrganizacional)
                 .Include(x => x.Cargos)
                 .ThenInclude(cp => cp.Cargo)
                 .AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
@@ -92,12 +127,12 @@ namespace HP.Data.Repository
 
             return Pessoa;
         }
-
         public async Task<IEnumerable<Pessoa>> ObterTodosAsync(CancellationToken cancellationToken)
         {
             var Pessoas = await _context.Pessoas
                 .Include(x => x.Endereco)
-                .Include(x => x.Estrutura)
+                .Include(x => x.EstruturasOrganizacionais)
+                .ThenInclude(cp => cp.EstruturaOrganizacional)
                 .Include(x => x.Cargos)
                 .ThenInclude(cp => cp.Cargo)
                 .AsNoTracking().ToListAsync(cancellationToken);

@@ -938,6 +938,20 @@
         },
         "additionalProperties": false
       },
+      "AdicionaEstruturaOrganizacionalPessoaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataInicio": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
       "AdicionaHorarioDto": {
         "type": "object",
         "properties": {
@@ -1042,9 +1056,8 @@
           "cargo": {
             "$ref": "#/components/schemas/AdicionaCargoPessoaDto"
           },
-          "estruturaId": {
-            "type": "integer",
-            "format": "int32"
+          "estruturaOrganizacional": {
+            "$ref": "#/components/schemas/AdicionaEstruturaOrganizacionalPessoaDto"
           }
         },
         "additionalProperties": false
@@ -1257,9 +1270,8 @@
           "cargo": {
             "$ref": "#/components/schemas/AdicionaCargoPessoaDto"
           },
-          "estruturaId": {
-            "type": "integer",
-            "format": "int32"
+          "estruturaOrganizacional": {
+            "$ref": "#/components/schemas/AdicionaEstruturaOrganizacionalPessoaDto"
           }
         },
         "additionalProperties": false
@@ -1465,7 +1477,7 @@
         },
         "additionalProperties": false
       },
-      "EstruturaPessoaDto": {
+      "EstruturaOrganizacionalPessoaDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -1480,9 +1492,13 @@
             "type": "string",
             "nullable": true
           },
-          "estruturaPai": {
-            "type": "integer",
-            "format": "int32",
+          "dataInicio": {
+            "type": "string",
+            "format": "date"
+          },
+          "dataFim": {
+            "type": "string",
+            "format": "date",
             "nullable": true
           }
         },
@@ -1650,8 +1666,12 @@
             "type": "number",
             "format": "float"
           },
-          "estrutura": {
-            "$ref": "#/components/schemas/EstruturaPessoaDto"
+          "estruturaOrganizacional": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EstruturaOrganizacionalPessoaDto"
+            },
+            "nullable": true
           },
           "cargo": {
             "type": "array",
