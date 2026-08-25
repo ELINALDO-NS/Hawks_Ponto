@@ -35,6 +35,18 @@ namespace HP.Manager.Implementation
                     }
                 };
             }
+            if (pessoa.Horario is not null)
+            {
+                novapessoa.Horarios = new List<HorarioPessoa>
+                {
+                    new()
+                    {
+                        HorarioId = pessoa.Horario.Id,
+                        DataInicio = pessoa.Horario.DataInicio,
+                    }
+                };
+            }
+
             novapessoa.Cpf = novapessoa.Cpf.RemoveFormatacao();
             novapessoa.Pis = novapessoa.Pis.RemoveFormatacao();
 
@@ -53,10 +65,9 @@ namespace HP.Manager.Implementation
 
             pessoadto.Cpf = pessoadto.Cpf.RemoveFormatacao();
             pessoadto.Pis = pessoadto.Pis.RemoveFormatacao();
-            
+
             if (pessoa.Cargo is not null)
             {
-
                 pessoadto.Cargos.Add(
 
                     new CargoPessoa()
@@ -64,7 +75,6 @@ namespace HP.Manager.Implementation
                         CargoId = pessoa.Cargo.Id,
                         DataInicio = pessoa.Cargo.DataInicio,
                     });
-               
             }
             if (pessoa.EstruturaOrganizacional is not null)
             {
@@ -74,6 +84,17 @@ namespace HP.Manager.Implementation
                     {
                         EstruturaOrganizacionalId = pessoa.EstruturaOrganizacional.Id,
                         DataInicio = pessoa.EstruturaOrganizacional.DataInicio,
+                    }
+                };
+            }
+            if (pessoa.Horario is not null)
+            {
+                pessoadto.Horarios = new List<HorarioPessoa>
+                {
+                    new()
+                    {
+                        HorarioId = pessoa.Horario.Id,
+                        DataInicio = pessoa.Horario.DataInicio,
                     }
                 };
             }

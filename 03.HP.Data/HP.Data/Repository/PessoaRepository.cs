@@ -27,11 +27,20 @@ namespace HP.Data.Repository
                 .AsSplitQuery()
                 .LoadAsync(cancellationToken);
 
+            await _context.Entry(pessoa)
+               .Collection(p => p.Horarios)
+               .Query()
+               .Include(cp => cp.Horario)
+               .AsSplitQuery()
+               .LoadAsync(cancellationToken);
+
             return pessoa;
         }
         public async Task<Pessoa?> AtualizarAsync(Pessoa pessoa, CancellationToken cancellationToken)
         {
             var pessoaAtual = await _context.Pessoas
+                .Include(p => p.Horarios)
+                .ThenInclude(cp => cp.Horario)
                 .Include(p => p.EstruturasOrganizacionais)
                 .ThenInclude(cp => cp.EstruturaOrganizacional)
                 .Include(p => p.Cargos)
@@ -52,6 +61,7 @@ namespace HP.Data.Repository
             AtualizarEndereco(pessoaAtual, pessoa.Endereco);
             await AtualizarCargo(pessoaAtual, pessoa.Cargos, cancellationToken);
             await AtualizarEstrturaOrganizacional(pessoaAtual, pessoa.EstruturasOrganizacionais, cancellationToken);
+            await AtualizarHorario(pessoaAtual, pessoa.Horarios, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
 
             return pessoaAtual;
@@ -91,9 +101,31 @@ namespace HP.Data.Repository
                 DataFim = null
             });
         }
+        private async Task AtualizarHorario(Pessoa pessoaAtual, ICollection<HorarioPessoa> horarioNova, CancellationToken cancellationToken)
+        {
+            if (!horarioNova.Any())
+            {
+                return;
+            }
+            var horario = horarioNova.Single();
+            var HorarioVigente = pessoaAtual.Horarios.FirstOrDefault(c => c.DataFim is null);
+            if (HorarioVigente is not null)
+            {
+                HorarioVigente.DataFim = horario.DataInicio;
+            }
+            var horarioDb = await _context.Horarios.FindAsync(horario.HorarioId, cancellationToken);
+
+            pessoaAtual.Horarios.Add(new HorarioPessoa
+            {
+                HorarioId = horario.HorarioId,
+                DataInicio = horario.DataInicio,
+                Horario = horarioDb!,
+                DataFim = null
+            });
+        }
         private async Task AtualizarEstrturaOrganizacional(Pessoa pessoaAtual, ICollection<EstruturaOrganizacionalPessoa> EstruturaOrganizacionalNova, CancellationToken cancellationToken)
         {
-            if (!EstruturaOrganizacionalNova.Any())
+            if (EstruturaOrganizacionalNova is null || !EstruturaOrganizacionalNova.Any())
             {
                 return;
             }
@@ -117,6 +149,8 @@ namespace HP.Data.Repository
         {
             var Pessoa = await _context.Pessoas
                 .Include(x => x.Endereco)
+                .Include(x => x.Horarios)
+                .ThenInclude(cp => cp.Horario)
                 .Include(x => x.EstruturasOrganizacionais)
                 .ThenInclude(cp => cp.EstruturaOrganizacional)
                 .Include(x => x.Cargos)
@@ -131,6 +165,8 @@ namespace HP.Data.Repository
         {
             var Pessoas = await _context.Pessoas
                 .Include(x => x.Endereco)
+                .Include(x => x.Horarios)
+                .ThenInclude(cp => cp.Horario)
                 .Include(x => x.EstruturasOrganizacionais)
                 .ThenInclude(cp => cp.EstruturaOrganizacional)
                 .Include(x => x.Cargos)
@@ -138,7 +174,6 @@ namespace HP.Data.Repository
                 .AsNoTracking().ToListAsync(cancellationToken);
             return Pessoas;
         }
-
         public async Task<bool> RemoverAsync(int id, CancellationToken cancellationToken)
         {
             var Pessoa = await _context.Pessoas.Include(x => x.Endereco).FirstOrDefaultAsync(x => x.Id == id);

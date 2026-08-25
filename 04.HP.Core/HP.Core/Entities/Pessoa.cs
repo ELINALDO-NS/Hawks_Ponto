@@ -23,7 +23,7 @@ namespace HP.Core.Entities
         public Endereco? Endereco { get; set; }
         public string? Rg { get; set; }
         public string Cpf { get; set; } = null!;
-        public string Pis { get; set; } = null!;
+        public string? Pis { get; set; }
         public string? Telefone { get; set; }
         public string? TelefoneCelular { get; set; }
         public string? Email { get; set; }
@@ -32,6 +32,7 @@ namespace HP.Core.Entities
         public DateTime? DataNaoControlaPonto { get; set; }
         public Sexo Sexo { get; set; }
         public float BaseHoras { get; set; }
+        public ICollection<HorarioPessoa> Horarios { get; set; } = null!;
         public ICollection<EstruturaOrganizacionalPessoa> EstruturasOrganizacionais { get; set; } = null!;
         public ICollection<CargoPessoa> Cargos { get; set; } = new List<CargoPessoa>();
 

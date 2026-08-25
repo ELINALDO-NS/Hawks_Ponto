@@ -16,6 +16,11 @@ namespace HP.Manager.Validator.Pessoa
               .NotNull().WithMessage("EstruturaId não pode ser nulo.")
               .When(x => x.EstruturaOrganizacional is not null);
 
+            RuleFor(x => x.Horario.Id)
+              .GreaterThan(0).WithMessage("Horario.Id deve ser maior que zero.")
+              .NotNull().WithMessage("Horario.Id não pode ser nulo.")
+              .When(x => x.Horario is not null);
+
             RuleFor(x => x.Cargo.Id)
                .GreaterThan(0).WithMessage("CargoId deve ser maior que zero.")
                .When(x => x.Cargo is not null);

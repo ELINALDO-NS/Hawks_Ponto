@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
 using HP.Manager.DTOs.Pessoa;
-using HP.Manager.Validator.Cargo;
 using HP.Manager.Validator.Endereco;
-using HP.Manager.Validator.EstruturaOrganizacional;
+
 namespace HP.Manager.Validator.Pessoa
 {
     public class NovaPessoaValidator : AbstractValidator<AdicionaPessoaDto>
@@ -16,6 +15,11 @@ namespace HP.Manager.Validator.Pessoa
                .GreaterThan(0).WithMessage("EstruturaId deve ser maior que zero.")
                .NotNull().WithMessage("EstruturaId não pode ser nulo.")
                .When(x => x.EstruturaOrganizacional is not null);
+
+            RuleFor(x => x.Horario.Id)
+               .GreaterThan(0).WithMessage("Horario.Id deve ser maior que zero.")
+               .NotNull().WithMessage("Horario.Id não pode ser nulo.")
+               .When(x => x.Horario is not null);
 
             RuleFor(x => x.Cargo.Id)
                .GreaterThan(0).WithMessage("Cargo.Id deve ser maior que zero.")

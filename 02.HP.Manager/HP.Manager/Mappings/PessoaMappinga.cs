@@ -13,7 +13,8 @@ namespace HP.Manager.Mappings
             config.NewConfig<AdicionaPessoaDto, Pessoa>().TwoWays();
             config.NewConfig<Pessoa, PessoaDto>()
                 .Map(dest => dest.Cargo, src => src.Cargos)
-                .Map(dest => dest.EstruturaOrganizacional, src => src.EstruturasOrganizacionais);
+                .Map(dest => dest.EstruturaOrganizacional, src => src.EstruturasOrganizacionais)
+                .Map(dest => dest.Horario, src => src.Horarios);
             config.NewConfig<AtualizaPessoaDto, Pessoa>();
 
 

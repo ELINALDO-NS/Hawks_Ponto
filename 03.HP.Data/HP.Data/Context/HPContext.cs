@@ -18,6 +18,7 @@ namespace HP.Data.Context
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<CargoPessoa> CargoPessoa { get; set; }
         public DbSet<EstruturaOrganizacionalPessoa> EstruturaOrganizacionalPessoa { get; set; }
+        public DbSet<HorarioPessoa> HorarioPessoa { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +32,7 @@ namespace HP.Data.Context
             modelBuilder.ApplyConfiguration(new HorarioConfiguration());
             modelBuilder.ApplyConfiguration(new CargoPessoaConfiguration());
             modelBuilder.ApplyConfiguration(new EstruturaOrganizacionalPessoaConfiguration());
+            modelBuilder.ApplyConfiguration(new HorarioPessoaConfiguration());
         }
 
     }
