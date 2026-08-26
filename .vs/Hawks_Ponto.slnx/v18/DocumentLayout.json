@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\migrations\\20260826130542_alterandodataspessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\migrations\\20260826130542_alterandodataspessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20260826130542_AlterandoDatasPessoa.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Migrations\\20260826130542_AlterandoDatasPessoa.cs",
-              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Migrations\\20260826130542_AlterandoDatasPessoa.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Migrations\\20260826130542_AlterandoDatasPessoa.cs*",
-              "RelativeToolTip": "03.HP.Data\\HP.Data\\Migrations\\20260826130542_AlterandoDatasPessoa.cs*",
-              "ViewState": "AgIAADAAAAAAAAAAAAAQwEAAAAAMAAAAAAAAAA==",
+              "Title": "PessoaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs*",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs*",
+              "ViewState": "AgIAAJMAAAAAAAAAAAA/wLcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T13:12:20.172Z",
+              "WhenOpened": "2026-08-26T14:04:42.254Z",
               "EditorCaption": ""
             }
           ]

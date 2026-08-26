@@ -181,7 +181,8 @@ namespace HP.Data.Repository
             if (Pessoa == null) { return false; }
             if (Pessoa.Endereco is not null)
             {
-                _context.Enderecos.Remove(Pessoa.Endereco);
+               // _context.Enderecos.Remove(Pessoa.Endereco);
+                _context.Entry(Pessoa.Endereco).State = EntityState.Deleted;
             }
 
             _context.Pessoas.Remove(Pessoa);
