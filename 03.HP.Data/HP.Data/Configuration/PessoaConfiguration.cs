@@ -22,12 +22,15 @@ namespace HP.Data.Configuration
                 .HasMaxLength(200);
 
             builder.Property(p => p.DataNascimento)
+                 .HasColumnType("datetimeoffset(0)")
                 .IsRequired(false);
 
             builder.Property(p => p.DataAdmissao)
+                 .HasColumnType("datetimeoffset(0)")
                 .IsRequired();
 
-            builder.Property(p => p.DataDemissao);
+            builder.Property(p => p.DataDemissao)
+                 .HasColumnType("datetimeoffset(0)");
 
 
             builder.Property(p => p.DataCadastro)
@@ -69,9 +72,11 @@ namespace HP.Data.Configuration
                 .HasDefaultValue(true);
 
             builder.Property(p => p.DataControlaPonto)
+                 .HasColumnType("datetimeoffset(0)")
                 .IsRequired();
 
-            builder.Property(p => p.DataNaoControlaPonto);
+            builder.Property(p => p.DataNaoControlaPonto)
+                 .HasColumnType("datetimeoffset(0)");
 
             builder.Property(p => p.Sexo)
                 .IsRequired();

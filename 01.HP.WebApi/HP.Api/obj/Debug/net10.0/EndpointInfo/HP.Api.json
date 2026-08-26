@@ -1009,16 +1009,17 @@
           "dataNascimento": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataAdmissao": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataDemissao": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
@@ -1053,12 +1054,12 @@
           "dataControlaPonto": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataNaoControlaPonto": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "sexo": {
             "$ref": "#/components/schemas/Sexo"
@@ -1226,16 +1227,17 @@
           "dataNascimento": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataAdmissao": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataDemissao": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
@@ -1270,12 +1272,12 @@
           "dataControlaPonto": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataNaoControlaPonto": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "sexo": {
             "$ref": "#/components/schemas/Sexo"
@@ -1655,16 +1657,17 @@
           "dataNascimento": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataAdmissao": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataDemissao": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
@@ -1699,12 +1702,12 @@
           "dataControlaPonto": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "dataNaoControlaPonto": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
+            "example": "2026-08-21T14:19:53-03:00"
           },
           "sexo": {
             "$ref": "#/components/schemas/Sexo"

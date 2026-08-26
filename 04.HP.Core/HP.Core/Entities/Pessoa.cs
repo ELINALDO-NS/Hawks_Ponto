@@ -14,9 +14,9 @@ namespace HP.Core.Entities
         {
             get; set => field = value.ToTitleCase() ?? string.Empty;
         } = string.Empty;
-        public DateTime? DataNascimento { get; set; }
-        public DateTime DataAdmissao { get; set; }
-        public DateTime? DataDemissao { get; set; }
+        public DateTimeOffset? DataNascimento { get; set; }
+        public DateTimeOffset DataAdmissao { get; set; }
+        public DateTimeOffset? DataDemissao { get; set; }
         public DateTimeOffset DataCadastro { get; set; } = DateTimeOffset.Now.ToLocalTime();
         public DateTimeOffset? DataUltAtualizacao { get; set; }
         public int? EnderecoId { get; set; }
@@ -28,8 +28,8 @@ namespace HP.Core.Entities
         public string? TelefoneCelular { get; set; }
         public string? Email { get; set; }
         public bool ControlaPonto { get; set; } = true;
-        public DateTime? DataControlaPonto { get; set; } = DateTime.UtcNow;
-        public DateTime? DataNaoControlaPonto { get; set; }
+        public DateTimeOffset? DataControlaPonto { get; set; } = DateTimeOffset.Now.ToLocalTime();
+        public DateTimeOffset? DataNaoControlaPonto { get; set; }
         public Sexo Sexo { get; set; }
         public float BaseHoras { get; set; }
         public ICollection<HorarioPessoa> Horarios { get; set; } = null!;
