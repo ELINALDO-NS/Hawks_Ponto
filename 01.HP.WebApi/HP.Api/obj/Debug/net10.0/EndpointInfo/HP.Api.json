@@ -926,7 +926,7 @@
             "type": "string",
             "nullable": true
           },
-          "estruturaPaiId": {
+          "estruturaRelacionadaId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1163,7 +1163,7 @@
             "type": "string",
             "nullable": true
           },
-          "estruturaPaiId": {
+          "estruturaRelacionadaId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1475,7 +1475,7 @@
             "type": "string",
             "nullable": true
           },
-          "estruturaPai": {
+          "estruturaRelacionadaId": {
             "type": "integer",
             "format": "int32",
             "nullable": true

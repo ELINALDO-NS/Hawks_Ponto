@@ -29,14 +29,14 @@ namespace HP.Data.Configuration
                 .IsRequired(false);
             
             builder.HasOne(e => e.Empresa)
-                .WithMany() 
+                .WithMany()
                 .HasForeignKey(e => e.EmpresaId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             
-            builder.HasOne<EstruturaOrganizacional>()
+            builder.HasOne(e => e.EstruturaRelacionada)
                 .WithMany()
-                .HasForeignKey(e => e.EstruturaPaiId)
+                .HasForeignKey(e => e.EstruturaRelacionadaId)
                 .OnDelete(DeleteBehavior.Restrict); 
         }
     }

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\implementation\\pessoamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\implementation\\pessoamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Migrations\\20260826124100_CorrigindoEstruturaRelacionada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:03.HP.Data\\HP.Data\\Migrations\\20260826124100_CorrigindoEstruturaRelacionada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\mappings\\pessoamappinga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\mappings\\pessoamappinga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\configuration\\estruturaorganizacionalconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\configuration\\estruturaorganizacionalconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PessoaManager.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
-              "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs*",
-              "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs*",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwDUAAAAAAAAAAAAAAA==",
+              "Title": "20260826124100_CorrigindoEstruturaRelacionada.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Migrations\\20260826124100_CorrigindoEstruturaRelacionada.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Migrations\\20260826124100_CorrigindoEstruturaRelacionada.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Migrations\\20260826124100_CorrigindoEstruturaRelacionada.cs",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Migrations\\20260826124100_CorrigindoEstruturaRelacionada.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAACMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T19:12:28.46Z",
+              "WhenOpened": "2026-08-26T12:41:01.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PessoaMappinga.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Mappings\\PessoaMappinga.cs",
-              "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Mappings\\PessoaMappinga.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Mappings\\PessoaMappinga.cs",
-              "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Mappings\\PessoaMappinga.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABAAAABKAAAAAAAAAA==",
+              "Title": "EstruturaOrganizacionalConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Configuration\\EstruturaOrganizacionalConfiguration.cs",
+              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Configuration\\EstruturaOrganizacionalConfiguration.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Configuration\\EstruturaOrganizacionalConfiguration.cs",
+              "RelativeToolTip": "03.HP.Data\\HP.Data\\Configuration\\EstruturaOrganizacionalConfiguration.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T18:57:05.802Z",
+              "WhenOpened": "2026-08-26T12:36:35.046Z",
               "EditorCaption": ""
             }
           ]

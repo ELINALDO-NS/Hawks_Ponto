@@ -9,7 +9,8 @@ namespace HP.Core.Entities
     {
         public int Id { get; set; }
         public int Codigo { get; set; }
-        public int? EstruturaPaiId { get; set; }
+        public int? EstruturaRelacionadaId { get; set; }
+        public EstruturaOrganizacional? EstruturaRelacionada { get; set; }
         public string Descricao
         {
             get; set => field = value.ToTitleCase() ?? string.Empty;
