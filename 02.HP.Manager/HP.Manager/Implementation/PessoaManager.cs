@@ -105,6 +105,16 @@ namespace HP.Manager.Implementation
             return _mapper.Map<PessoaDto>(pessoa);
         }
 
+        public async Task<PessoaDto?> ObterPorMatriculaAsync(int Matricula, CancellationToken cancellationToken)
+        {
+            var pessoa = await _repository.ObterPorMatriculaAsync(Matricula, cancellationToken);
+            if (pessoa is null)
+            {
+                return null;
+            }
+            return _mapper.Map<PessoaDto>(pessoa);
+        }
+
         public async Task<IEnumerable<PessoaDto>> ObterTodosAsync(CancellationToken cancellationToken)
         {
             var pessoas = await _repository.ObterTodosAsync(cancellationToken);

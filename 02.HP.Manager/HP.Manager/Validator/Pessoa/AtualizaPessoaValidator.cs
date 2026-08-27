@@ -1,28 +1,45 @@
 ﻿using FluentValidation;
 using HP.Manager.DTOs.Pessoa;
+using HP.Manager.Interfaces;
 using HP.Manager.Validator.Endereco;
 
 namespace HP.Manager.Validator.Pessoa
 {
     public class AtualizaPessoaValidator : AbstractValidator<AtualizaPessoaDto>
     {
-        public AtualizaPessoaValidator()
+        private readonly IEstruturaOrganizacionalManager _Estrutura;
+        private readonly ICargoManager _Cargo;
+        private readonly IHorarioManager _Horario;
+        private readonly IPessoaManager _Pessoa;
+        private readonly IEmpresaManager _Empresa;
+        public AtualizaPessoaValidator(IEmpresaManager empresa, IPessoaManager pessoa, IEstruturaOrganizacionalManager estrutura, ICargoManager cargo, IHorarioManager horario)
         {
+            _Estrutura = estrutura;
+            _Cargo = cargo;
+            _Horario = horario;
+            _Pessoa = pessoa;
+            _Empresa = empresa;
+
             RuleFor(x => x.Id)
            .GreaterThan(0).WithMessage("Id deve ser maior que zero.");
 
             RuleFor(x => x.EstruturaOrganizacional.Id)
-              .GreaterThan(0).WithMessage("EstruturaId deve ser maior que zero.")
-              .NotNull().WithMessage("EstruturaId não pode ser nulo.")
-              .When(x => x.EstruturaOrganizacional is not null);
+              .GreaterThan(0).WithMessage("Id deve ser maior que zero.")
+              .NotNull().WithMessage("Estrutura não pode ser nulo.");
 
             RuleFor(x => x.Horario.Id)
               .GreaterThan(0).WithMessage("Horario.Id deve ser maior que zero.")
               .NotNull().WithMessage("Horario.Id não pode ser nulo.")
               .When(x => x.Horario is not null);
 
+            RuleFor(x => x.EstruturaOrganizacional)
+              .NotNull().WithMessage("EstruturaOrganizacional não pode ser nulo.");
+
+            RuleFor(x => x.Horario)
+                .NotNull().WithMessage("Horario não pode ser nulo.");
+
             RuleFor(x => x.Cargo.Id)
-               .GreaterThan(0).WithMessage("CargoId deve ser maior que zero.")
+               .GreaterThan(0).WithMessage("Cargo.Id deve ser maior que zero.")
                .When(x => x.Cargo is not null);
 
             RuleFor(x => x.EmpresaId)
@@ -30,6 +47,33 @@ namespace HP.Manager.Validator.Pessoa
 
             RuleFor(x => x.Matricula)
                 .GreaterThan(0).WithMessage("Matrícula deve ser maior que zero.");
+            RuleFor(x => x.EstruturaOrganizacional)
+                .MustAsync(async (estrutura, cancellationToken) =>
+                    await ValidaEstruturaOrganizacional(estrutura.Id, cancellationToken))
+                .WithMessage("EstruturaOrganizacional não cadastrada.")
+                .When(x => x.EstruturaOrganizacional is not null);
+
+            RuleFor(x => x.Cargo)
+                .MustAsync(async (cargo, cancellationToken) =>
+                    await ValidaEstruturaOrganizacional(cargo.Id, cancellationToken))
+                .WithMessage("Cargo não cadastrado.")
+                .When(x => x.Cargo is not null);
+
+            RuleFor(x => x.Horario)
+                 .MustAsync(async (horario, cancellationToken) =>
+                     await ValidaHorario(horario.Id, cancellationToken))
+                 .WithMessage("Horario não cadastrado.")
+                 .When(x => x.Horario is not null);
+
+            RuleFor(x => x.EmpresaId)
+                 .MustAsync(async (empresa, cancellationToken) =>
+                     await ValidaEmpresa(empresa, cancellationToken))
+                 .WithMessage("Empresa não encontrada.");
+
+            RuleFor(x => x.Matricula)
+                 .MustAsync(async (mat, cancellationToken) =>
+                     await ValidaMatricula(mat, cancellationToken))
+                 .WithMessage("A matrícula '{PropertyValue}' já está em uso no sistema.");
 
             RuleFor(x => x.Nome)
                 .NotEmpty().WithMessage("Nome é obrigatório.")
@@ -100,6 +144,38 @@ namespace HP.Manager.Validator.Pessoa
             RuleFor(x => x.Endereco)
                 .SetValidator(new NovoEnderecoValidator()!)
                 .When(x => x.Endereco != null);
+        }
+        public async Task<bool> ValidaEmpresa(int Id, CancellationToken cancellation)
+        {
+            var empresa = await _Empresa.ObterPorIdAsync(Id, cancellation);
+            return empresa is not null;
+        }
+        public async Task<bool> ValidaEstruturaOrganizacional(int Id, CancellationToken cancellation)
+        {
+            var estrutura = await _Estrutura.ObterPorIdAsync(Id, cancellation);
+            return estrutura is not null;
+        }
+
+        public async Task<bool> ValidaCargo(int Id, CancellationToken cancellation)
+        {
+            var cargo = await _Cargo.ObterPorIdAsync(Id, cancellation);
+            return cargo is not null;
+        }
+
+        public async Task<bool> ValidaHorario(int Id, CancellationToken cancellation)
+        {
+            var horario = await _Horario.ObterPorIdAsync(Id, cancellation);
+            return horario is not null;
+        }
+
+        public async Task<bool> ValidaMatricula(int Matricula, CancellationToken cancellation)
+        {
+            var matricula = await _Pessoa.ObterPorMatriculaAsync(Matricula, cancellation);
+            if (matricula is not null)
+            {
+                return false;
+            }
+            return true;
         }
 
     }

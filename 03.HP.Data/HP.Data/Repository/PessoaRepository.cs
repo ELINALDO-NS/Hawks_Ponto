@@ -181,7 +181,6 @@ namespace HP.Data.Repository
             if (Pessoa == null) { return false; }
             if (Pessoa.Endereco is not null)
             {
-               // _context.Enderecos.Remove(Pessoa.Endereco);
                 _context.Entry(Pessoa.Endereco).State = EntityState.Deleted;
             }
 
@@ -190,6 +189,14 @@ namespace HP.Data.Repository
             return true;
         }
 
+        public async Task<Pessoa?> ObterPorMatriculaAsync(int Matricula, CancellationToken cancellationToken)
+        {
+            var Pessoa = await _context.Pessoas
+                 .AsNoTracking().FirstOrDefaultAsync(x => x.Matricula == Matricula);
 
+            if (Pessoa == null) { return null; }
+
+            return Pessoa;
+        }
     }
 }
