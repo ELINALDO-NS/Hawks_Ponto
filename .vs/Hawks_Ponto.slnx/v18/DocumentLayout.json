@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\validator\\pessoa\\novapessoavalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\validator\\pessoa\\novapessoavalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\endpoints\\marcacaoendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\endpoints\\marcacaoendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6C7E64A-8943-A6DF-1BF8-AC84A6D6F833}|01.HP.WebApi\\HP.Api\\HP.Api.csproj|solutionrelative:01.hp.webapi\\hp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NovaPessoaValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Validator\\Pessoa\\NovaPessoaValidator.cs",
-              "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Validator\\Pessoa\\NovaPessoaValidator.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Validator\\Pessoa\\NovaPessoaValidator.cs*",
-              "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Validator\\Pessoa\\NovaPessoaValidator.cs*",
-              "ViewState": "AgIAACYAAAAAAAAAAAAswDgAAAAcAAAAAAAAAA==",
+              "Title": "MarcacaoEndpoint.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Endpoints\\MarcacaoEndpoint.cs",
+              "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Endpoints\\MarcacaoEndpoint.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Endpoints\\MarcacaoEndpoint.cs",
+              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Endpoints\\MarcacaoEndpoint.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-27T18:26:51.163Z",
+              "WhenOpened": "2026-08-28T19:50:14.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
+              "RelativeDocumentMoniker": "01.HP.WebApi\\HP.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\01.HP.WebApi\\HP.Api\\Program.cs",
+              "RelativeToolTip": "01.HP.WebApi\\HP.Api\\Program.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T19:48:32.29Z",
               "EditorCaption": ""
             }
           ]

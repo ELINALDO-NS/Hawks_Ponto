@@ -50,6 +50,7 @@ app.MapEstruturaOrganizacionalEndpoint();
 app.MapCargoEndpoint();
 app.MapPessoaEndpoint();
 app.MapHorarioEndpoint();
+app.MapMarcacaoEndpoint();
 
 try
 {

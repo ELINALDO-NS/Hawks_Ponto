@@ -57,6 +57,8 @@ namespace HP.Api.Configuration
                     options.SchemaFilter<DayOfWeekSchemaFilter>();
                     options.SchemaFilter<EnumSexoSchemaFilter>();
                     options.SchemaFilter<EnumTipoEmpresaSchemaFilter>();
+                    options.SchemaFilter<EnumOrigemMarcacaoSchemaFilter>();
+                    options.SchemaFilter<EnumTipoMarcacaoSchemaFilter>();
 
                 });
             }
@@ -149,6 +151,55 @@ public class EnumSexoSchemaFilter : ISchemaFilter
         {
             var legenda = string.Join(", ", Sexo.Select(x => $"{x.Key} = {x.Value}"));
             concreteSchema.Description = $"Sexo: {legenda}.";
+        }
+    }
+}
+public class EnumOrigemMarcacaoSchemaFilter : ISchemaFilter
+{
+    private static readonly Dictionary<int, string> Sexo = new()
+    {
+        
+        [1] = "REPC",
+        [2] = "REPP",
+        [3] = "REPA",
+        [4] = "ImportacaoTxt",
+        [5] = "Manual"
+
+    };
+
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+            return;
+
+        if (context.Type == typeof(OrigemMarcacao))
+        {
+            var legenda = string.Join(", ", Sexo.Select(x => $"{x.Key} = {x.Value}"));
+            concreteSchema.Description = $"Origem Marcacao: {legenda}.";
+        }
+    }
+}
+public class EnumTipoMarcacaoSchemaFilter : ISchemaFilter
+{
+    private static readonly Dictionary<int, string> Sexo = new()
+    {
+
+        [0] = "Original",
+        [1] = "Editada",
+        [2] = "Indevida",
+        [3] = "Automatica"
+
+    };
+
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+            return;
+
+        if (context.Type == typeof(TipoMarcacao))
+        {
+            var legenda = string.Join(", ", Sexo.Select(x => $"{x.Key} = {x.Value}"));
+            concreteSchema.Description = $"Tipo Marcacao: {legenda}.";
         }
     }
 }

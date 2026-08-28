@@ -674,6 +674,112 @@
         }
       }
     },
+    "/Marcacao": {
+      "post": {
+        "tags": [
+          "Marcacao"
+        ],
+        "summary": "Adiciona uma nova Marcação",
+        "description": "Recebe os dados cadastrais da Marcação",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdicionaMarcacaoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarcacaoDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/Marcacao/Marcacoes": {
+      "post": {
+        "tags": [
+          "Marcacao"
+        ],
+        "summary": "Obtem Marcações de uma pessoa por periodo",
+        "description": "Retorna uma lista contendo todas as Marcaçoes no periodo informado",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ObterPorCpfEPeriodoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MarcacaoDto"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/Marcacao/{id}": {
+      "get": {
+        "tags": [
+          "Marcacao"
+        ],
+        "summary": "Obtem uma marcação por id",
+        "description": "Retorna uma marcação específica com base no identificador único informado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarcacaoDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/Pessoa": {
       "post": {
         "tags": [
@@ -987,6 +1093,41 @@
           "dataInicio": {
             "type": "string",
             "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AdicionaMarcacaoDto": {
+        "type": "object",
+        "properties": {
+          "dataHora": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
+          },
+          "relogioId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoMarcacao": {
+            "$ref": "#/components/schemas/TipoMarcacao"
+          },
+          "nsr": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "origemMarcacao": {
+            "$ref": "#/components/schemas/OrigemMarcacao"
+          },
+          "justificativa": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1635,6 +1776,82 @@
         },
         "additionalProperties": false
       },
+      "MarcacaoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "dataPersistencia": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
+          },
+          "dataHora": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
+          },
+          "relogioId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoMarcacao": {
+            "$ref": "#/components/schemas/TipoMarcacao"
+          },
+          "nsr": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "origemMarcacao": {
+            "$ref": "#/components/schemas/OrigemMarcacao"
+          },
+          "justificativa": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObterPorCpfEPeriodoDto": {
+        "type": "object",
+        "properties": {
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "inicio": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
+          },
+          "fim": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrigemMarcacao": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "description": "Origem Marcacao: 1 = REPC, 2 = REPP, 3 = REPA, 4 = ImportacaoTxt, 5 = Manual.",
+        "format": "int32"
+      },
       "PessoaDto": {
         "type": "object",
         "properties": {
@@ -1749,6 +1966,17 @@
         "type": "integer",
         "description": "Sexo: 1 = Masculino, 2 = Feminino, 3 = Outro.",
         "format": "int32"
+      },
+      "TipoMarcacao": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "description": "Tipo Marcacao: 0 = Original, 1 = Editada, 2 = Indevida, 3 = Automatica.",
+        "format": "int32"
       }
     },
     "securitySchemes": {
@@ -1777,6 +2005,9 @@
     },
     {
       "name": "Horario"
+    },
+    {
+      "name": "Marcacao"
     },
     {
       "name": "Pessoa"
