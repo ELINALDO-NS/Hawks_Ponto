@@ -1114,6 +1114,10 @@
             "type": "string",
             "nullable": true
           },
+          "pis": {
+            "type": "string",
+            "nullable": true
+          },
           "tipoMarcacao": {
             "$ref": "#/components/schemas/TipoMarcacao"
           },
@@ -1829,13 +1833,11 @@
           },
           "inicio": {
             "type": "string",
-            "format": "date-time",
-            "example": "2026-08-21T14:19:53-03:00"
+            "format": "date"
           },
           "fim": {
             "type": "string",
-            "format": "date-time",
-            "example": "2026-08-21T14:19:53-03:00"
+            "format": "date"
           }
         },
         "additionalProperties": false

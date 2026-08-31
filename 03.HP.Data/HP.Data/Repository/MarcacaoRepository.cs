@@ -25,8 +25,12 @@ namespace HP.Data.Repository
 
         public async Task<List<Marcacao>> ObterPorCpfEPeriodoAsync(string cpf, DateTimeOffset inicio, DateTimeOffset fim, CancellationToken cancellationToken)
         {
+            var inicioAjustado = new DateTimeOffset(inicio.Year, inicio.Month, inicio.Day, 0, 0, 0, inicio.Offset);
+                        
+            var fimAjustado = new DateTimeOffset(fim.Year, fim.Month, fim.Day, 23, 59, 59, 999, fim.Offset);
+
             return await _context.Marcacoes.AsNoTracking()
-                .Where(x => x.CPF == cpf && x.DataHora >= inicio && x.DataHora <= fim)
+                .Where(x => x.CPF == cpf && x.DataHora >= inicioAjustado && x.DataHora <= fimAjustado)
                 .OrderBy(x => x.DataHora)
                 .ToListAsync(cancellationToken);
 

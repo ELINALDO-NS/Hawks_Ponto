@@ -40,7 +40,7 @@ namespace HP.Data.Configuration
                 .IsRequired();
 
             builder.Property(m => m.Justificativa)
-                .HasMaxLength(100);
+             .HasMaxLength(100);
 
             builder.HasIndex(m => new { m.RelogioId, m.NSR })
                    .IsUnique()
@@ -48,7 +48,7 @@ namespace HP.Data.Configuration
 
             builder.HasIndex(m => new { m.CPF, m.DataHora })
                    .IsUnique();
-          
+
             builder.HasIndex(m => m.DataHora);
             builder.HasIndex(m => m.NSR);
         }

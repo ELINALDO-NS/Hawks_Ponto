@@ -6,9 +6,9 @@ using HP.Manager.Validator.Pessoa;
 
 namespace HP.Manager.Validator.Marcacao
 {
-    public class AdicionaMarcacaMapping : AbstractValidator<AdicionaMarcacaoDto>
+    public class AdicionaMarcacaValidator : AbstractValidator<AdicionaMarcacaoDto>
     {
-        public AdicionaMarcacaMapping()
+        public AdicionaMarcacaValidator()
         {
             RuleFor(x => x.CPF)
             .NotEmpty().WithMessage("CPF é obrigatório.")
@@ -33,13 +33,17 @@ namespace HP.Manager.Validator.Marcacao
                 .When(x => x.NSR.HasValue)
                 .WithMessage("NSR inválido.");
 
-            
             RuleFor(x => x.Justificativa)
-                .NotEmpty()
-                .When(x => x.OrigemMarcacao == OrigemMarcacao.Manual)
-                .WithMessage("Justificativa é obrigatória para marcação manual.");
+                        .NotEmpty()
+                        .WithMessage("A justificativa é obrigatória para marcações Editadas.")
+                        .When(x => x.TipoMarcacao == TipoMarcacao.Editada);
 
-            
+            RuleFor(x => x.Justificativa)
+                        .NotEmpty()
+                        .WithMessage("A justificativa é obrigatória para marcações manuais.")
+                        .When(x => x.OrigemMarcacao == OrigemMarcacao.Manual);
+
+
             RuleFor(x => x.RelogioId)
                 .NotNull()
                 .When(x => x.OrigemMarcacao == OrigemMarcacao.REPC)

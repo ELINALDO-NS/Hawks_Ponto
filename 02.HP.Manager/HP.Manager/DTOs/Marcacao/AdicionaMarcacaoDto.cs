@@ -2,5 +2,5 @@
 
 namespace HP.Manager.DTOs.Marcacao
 {
-    public record AdicionaMarcacaoDto(DateTimeOffset DataHora, int? RelogioId, string CPF, TipoMarcacao TipoMarcacao, long? NSR, OrigemMarcacao OrigemMarcacao, string? Justificativa);
+    public record AdicionaMarcacaoDto(DateTimeOffset DataHora, int? RelogioId, string CPF, string PIS, TipoMarcacao TipoMarcacao, long? NSR, OrigemMarcacao OrigemMarcacao, string? Justificativa);
 }

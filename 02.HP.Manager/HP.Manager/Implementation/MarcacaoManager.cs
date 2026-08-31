@@ -1,4 +1,5 @@
 ﻿using HP.Core.Entities;
+using HP.Core.Extensions;
 using HP.Core.Interfaces;
 using HP.Manager.DTOs.Marcacao;
 using HP.Manager.Interfaces;
@@ -25,7 +26,9 @@ namespace HP.Manager.Implementation
         public async Task<List<MarcacaoDto>> ObterPorCpfEPeriodoAsync(ObterPorCpfEPeriodoDto obterPorCpfEPeriodoDto, CancellationToken cancellationToken)
         {
             var marcacoes = await _repository.ObterPorCpfEPeriodoAsync(cpf: obterPorCpfEPeriodoDto.cpf,
-            inicio: obterPorCpfEPeriodoDto.inicio, fim: obterPorCpfEPeriodoDto.fim, cancellationToken);
+            inicio: obterPorCpfEPeriodoDto.inicio.ToDateTimeOffset(),
+            fim: obterPorCpfEPeriodoDto.fim.ToDateTimeOffset(), cancellationToken);
+            
             return _mapper.Map<List<MarcacaoDto>>(marcacoes);
         }
 

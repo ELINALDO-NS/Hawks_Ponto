@@ -7,7 +7,6 @@ namespace HP.Core.Entities
     {
         public long Id { get; set; }
         public DateTimeOffset DataPersistencia { get; set; } = DateTimeOffset.Now.ToLocalTime();
-
         public int? RelogioId { get; set; }
         public TipoMarcacao TipoMarcacao { get; set; }
         public long? NSR { get; set; }
