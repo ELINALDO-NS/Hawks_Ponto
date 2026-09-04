@@ -14,7 +14,7 @@ namespace HP.Core.Entities
         {
             get; set => field = value.ToTitleCase() ?? string.Empty;
         } = string.Empty;
-        public DateTimeOffset? DataNascimento { get; set; }
+        public DateOnly? DataNascimento { get; set; }
         public DateTimeOffset DataAdmissao { get; set; }
         public DateTimeOffset? DataDemissao { get; set; }
         public DateTimeOffset DataCadastro { get; set; } = DateTimeOffset.Now.ToLocalTime();

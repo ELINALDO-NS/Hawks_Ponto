@@ -22,7 +22,6 @@ namespace HP.Data.Configuration
                 .HasMaxLength(200);
 
             builder.Property(p => p.DataNascimento)
-                 .HasColumnType("datetimeoffset(0)")
                 .IsRequired(false);
 
             builder.Property(p => p.DataAdmissao)

@@ -1153,8 +1153,8 @@
           },
           "dataNascimento": {
             "type": "string",
-            "format": "date-time",
-            "example": "2026-08-21T14:19:53-03:00"
+            "format": "date",
+            "nullable": true
           },
           "dataAdmissao": {
             "type": "string",
@@ -1371,8 +1371,8 @@
           },
           "dataNascimento": {
             "type": "string",
-            "format": "date-time",
-            "example": "2026-08-21T14:19:53-03:00"
+            "format": "date",
+            "nullable": true
           },
           "dataAdmissao": {
             "type": "string",
@@ -1875,8 +1875,8 @@
           },
           "dataNascimento": {
             "type": "string",
-            "format": "date-time",
-            "example": "2026-08-21T14:19:53-03:00"
+            "format": "date",
+            "nullable": true
           },
           "dataAdmissao": {
             "type": "string",

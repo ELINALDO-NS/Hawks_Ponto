@@ -71,24 +71,24 @@ namespace HP.Manager.Validator.Pessoa
                  .WithMessage("Empresa não encontrada.");
 
             RuleFor(x => x.Matricula)
-                 .MustAsync(async (mat, cancellationToken) =>
-                     await ValidaMatricula(mat, cancellationToken))
-                 .WithMessage("A matrícula '{PropertyValue}' já está em uso no sistema.");
+                .MustAsync(async (dto, matricula, cancellationToken) =>
+                    await ValidaMatricula(matricula, dto.Id, cancellationToken))
+                .WithMessage("A matrícula '{PropertyValue}' já está em uso no sistema.");
 
             RuleFor(x => x.Nome)
                 .NotEmpty().WithMessage("Nome é obrigatório.")
                 .MaximumLength(150).WithMessage("Nome deve ter no máximo 150 caracteres.");
 
             RuleFor(x => x.DataNascimento)
-                .LessThan(DateTime.Now).WithMessage("Data de nascimento deve ser anterior à data atual.")
+                .LessThan(DateOnly.FromDateTime(DateTime.Now)).WithMessage("Data de nascimento deve ser anterior à data atual.")
                 .When(x => x.DataNascimento.HasValue);
 
             RuleFor(x => x.DataAdmissao)
-                .NotEmpty().WithMessage("Data de admissão é obrigatória.")
-                .LessThanOrEqualTo(DateTime.Now.AddDays(5)).WithMessage("Data de admissão não pode maior 5 dias somados a data atual.")
-                .GreaterThan(x => x.DataNascimento!.Value)
-                .When(x => x.DataNascimento.HasValue)
-                .WithMessage("Data de admissão deve ser posterior à data de nascimento.");
+                  .NotEmpty().WithMessage("Data de admissão é obrigatória.")
+                  .LessThanOrEqualTo(DateTime.Today.AddDays(5)).WithMessage("Data de admissão não pode maior 5 dias somados a data atual.")
+                  .GreaterThan(x => x.DataNascimento!.Value.ToDateTime(TimeOnly.MinValue))
+                  .When(x => x.DataNascimento.HasValue)
+                  .WithMessage("Data de admissão deve ser posterior à data de nascimento.");
 
             RuleFor(x => x.DataDemissao)
                 .GreaterThanOrEqualTo(x => x.DataAdmissao)
@@ -168,14 +168,14 @@ namespace HP.Manager.Validator.Pessoa
             return horario is not null;
         }
 
-        public async Task<bool> ValidaMatricula(int Matricula, CancellationToken cancellation)
+        public async Task<bool> ValidaMatricula(int Matricula, int pessoaIdAtual, CancellationToken cancellation)
         {
-            var matricula = await _Pessoa.ObterPorMatriculaAsync(Matricula, cancellation);
-            if (matricula is not null)
+            var pessoaEncontrada = await _Pessoa.ObterPorMatriculaAsync(Matricula, cancellation);
+            if (pessoaEncontrada is null)
             {
-                return false;
+                return true;
             }
-            return true;
+            return pessoaEncontrada.Id == pessoaIdAtual;
         }
 
     }

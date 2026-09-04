@@ -84,15 +84,15 @@ namespace HP.Manager.Validator.Pessoa
                 .MaximumLength(150).WithMessage("Nome deve ter no máximo 150 caracteres.");
 
             RuleFor(x => x.DataNascimento)
-                .LessThan(DateTime.Now).WithMessage("Data de nascimento deve ser anterior à data atual.")
+                .LessThan(DateOnly.FromDateTime(DateTime.Now)).WithMessage("Data de nascimento deve ser anterior à data atual.")
                 .When(x => x.DataNascimento.HasValue);
 
             RuleFor(x => x.DataAdmissao)
-                .NotEmpty().WithMessage("Data de admissão é obrigatória.")
-                .LessThanOrEqualTo(DateTime.Now.AddDays(5)).WithMessage("Data de admissão não pode maior 5 dias somados a data atual.")
-                .GreaterThan(x => x.DataNascimento!.Value)
-                .When(x => x.DataNascimento.HasValue)
-                .WithMessage("Data de admissão deve ser posterior à data de nascimento.");
+                  .NotEmpty().WithMessage("Data de admissão é obrigatória.")
+                  .LessThanOrEqualTo(DateTime.Today.AddDays(5)).WithMessage("Data de admissão não pode maior 5 dias somados a data atual.")
+                  .GreaterThan(x => x.DataNascimento!.Value.ToDateTime(TimeOnly.MinValue))
+                  .When(x => x.DataNascimento.HasValue)
+                  .WithMessage("Data de admissão deve ser posterior à data de nascimento.");
 
             RuleFor(x => x.DataDemissao)
                 .GreaterThanOrEqualTo(x => x.DataAdmissao)
