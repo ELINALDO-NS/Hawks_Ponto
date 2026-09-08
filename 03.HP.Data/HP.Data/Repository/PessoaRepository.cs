@@ -6,47 +6,57 @@ using HP.Core.Interfaces;
 
 namespace HP.Data.Repository
 {
-    public class PessoaRepository(HPContext _context) : IPessoaRepository
+    public class PessoaRepository(HPContext _context, IDiaApontamentoRepository _apontamentoRepository) : IPessoaRepository
     {
         public async Task<Pessoa> AdicionarAsync(Pessoa pessoa, CancellationToken cancellationToken)
         {
-            _context.Pessoas.Add(pessoa);
-            await _context.SaveChangesAsync(cancellationToken);
+            var estrategia = _context.Database.CreateExecutionStrategy();
 
-            await _context.Entry(pessoa)
+            return await estrategia.ExecuteAsync(async () =>
+            {
+                await using var transaction = await _context.Database.BeginTransactionAsync(cancellationToken);
+
+                _context.Pessoas.Add(pessoa);
+                await _context.SaveChangesAsync(cancellationToken);
+                await AdicionaDiaApontamentoAsync(pessoa, cancellationToken);
+                await transaction.CommitAsync(cancellationToken);
+
+                await _context.Entry(pessoa)
                 .Collection(p => p.Cargos)
                 .Query()
                 .Include(cp => cp.Cargo)
                 .AsSplitQuery()
                 .LoadAsync(cancellationToken);
 
-            await _context.Entry(pessoa)
-                .Collection(p => p.EstruturasOrganizacionais)
-                .Query()
-                .Include(cp => cp.EstruturaOrganizacional)
-                .AsSplitQuery()
-                .LoadAsync(cancellationToken);
+                await _context.Entry(pessoa)
+                    .Collection(p => p.EstruturasOrganizacionais)
+                    .Query()
+                    .Include(cp => cp.EstruturaOrganizacional)
+                    .AsSplitQuery()
+                    .LoadAsync(cancellationToken);
 
-            await _context.Entry(pessoa)
-               .Collection(p => p.Horarios)
-               .Query()
-               .Include(cp => cp.Horario)
-               .AsSplitQuery()
-               .LoadAsync(cancellationToken);
+                await _context.Entry(pessoa)
+                   .Collection(p => p.Horarios)
+                   .Query()
+                   .Include(cp => cp.Horario)
+                   .AsSplitQuery()
+                   .LoadAsync(cancellationToken);
 
-            return pessoa;
+                return pessoa;
+
+            });
         }
         public async Task<Pessoa?> AtualizarAsync(Pessoa pessoa, CancellationToken cancellationToken)
         {
             var pessoaAtual = await _context.Pessoas
-                .Include(p => p.Horarios)
-                .ThenInclude(cp => cp.Horario)
-                .Include(p => p.EstruturasOrganizacionais)
-                .ThenInclude(cp => cp.EstruturaOrganizacional)
-                .Include(p => p.Cargos)
-                .ThenInclude(cp => cp.Cargo)
-                .Include(p => p.Endereco)
-                .FirstOrDefaultAsync(x => x.Id == pessoa.Id, cancellationToken);
+                 .Include(p => p.Horarios)
+                 .ThenInclude(cp => cp.Horario)
+                 .Include(p => p.EstruturasOrganizacionais)
+                 .ThenInclude(cp => cp.EstruturaOrganizacional)
+                 .Include(p => p.Cargos)
+                 .ThenInclude(cp => cp.Cargo)
+                 .Include(p => p.Endereco)
+                 .FirstOrDefaultAsync(x => x.Id == pessoa.Id, cancellationToken);
 
             if (pessoaAtual is null)
             {
@@ -62,10 +72,48 @@ namespace HP.Data.Repository
             await AtualizarCargo(pessoaAtual, pessoa.Cargos, cancellationToken);
             await AtualizarEstrturaOrganizacional(pessoaAtual, pessoa.EstruturasOrganizacionais, cancellationToken);
             await AtualizarHorario(pessoaAtual, pessoa.Horarios, cancellationToken);
+            await AdicionaDiaApontamentoAsync(pessoa, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
 
             return pessoaAtual;
+            
         }
+        private async Task AdicionaDiaApontamentoAsync(Pessoa pessoa, CancellationToken cancellationToken)
+        {
+            var dataAdmissao = DateOnly.FromDateTime(pessoa.DataAdmissao.Date);
+            var dataAtual = DateOnly.FromDateTime(DateTime.Now.Date);
+
+            var datasExistentes = await _apontamentoRepository
+                .ObterPorPessoaIdAsync(pessoa.Id, cancellationToken);
+
+            var dias = new List<DiaApontamento>();
+
+            var diasDelete = datasExistentes?.Where(x => x < dataAdmissao);
+
+            for (var data = dataAdmissao; data <= dataAtual; data = data.AddDays(1))
+            {
+                if (datasExistentes.Contains(data))
+                    continue;
+
+                dias.Add(new DiaApontamento
+                {
+                    PessoaId = pessoa.Id,
+                    DataApontamento = data
+                });
+            }
+
+            if (diasDelete.Any())
+            {
+                await _apontamentoRepository.RemoverAsync(pessoa.Id, diasDelete, cancellationToken);
+            }
+
+            if (dias.Count > 0)
+            {
+                await _apontamentoRepository.AdicionarDiasAsync(dias, cancellationToken);
+            }
+
+        }
+
         private void AtualizarEndereco(Pessoa pessoaAtual, Endereco? enderecoNovo)
         {
             if (pessoaAtual.Endereco is not null && enderecoNovo is not null)

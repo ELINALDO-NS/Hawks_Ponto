@@ -35,6 +35,7 @@ namespace HP.Core.Entities
         public ICollection<HorarioPessoa> Horarios { get; set; } = null!;
         public ICollection<EstruturaOrganizacionalPessoa> EstruturasOrganizacionais { get; set; } = null!;
         public ICollection<CargoPessoa> Cargos { get; set; } = new List<CargoPessoa>();
+        public ICollection<DiaApontamento>? Apontamentos { get; set; }
 
     }
 }

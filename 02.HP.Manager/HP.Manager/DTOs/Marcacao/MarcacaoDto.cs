@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HP.Manager.DTOs.Marcacao
 {
-    public record MarcacaoDto(long Id, DateTimeOffset DataPersistencia, DateTimeOffset DataHora, int? RelogioId, string CPF, TipoMarcacao TipoMarcacao, long? NSR, OrigemMarcacao OrigemMarcacao, string? Justificativa);
+    public record MarcacaoDto(long Id, DateTimeOffset DataPersistencia, DateTimeOffset DataHora, int? RelogioId, string CPF, string PIS, TipoMarcacao TipoMarcacao, long? NSR, OrigemMarcacao OrigemMarcacao, string? Justificativa);
     
     
     

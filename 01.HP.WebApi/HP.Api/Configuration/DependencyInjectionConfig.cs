@@ -16,6 +16,7 @@ namespace HP.Api.Configuration
             services.AddScoped<IPessoaRepository, PessoaRepository>();
             services.AddScoped<IHorarioRepository, HorarioRepository>();
             services.AddScoped<IMarcacaoRepository, MarcacaoRepository>();
+            services.AddScoped<IDiaApontamentoRepository, DiaApontamentoRepository>();
 
 
             services.AddScoped<IEmpresaManager, EmpresaManager>();

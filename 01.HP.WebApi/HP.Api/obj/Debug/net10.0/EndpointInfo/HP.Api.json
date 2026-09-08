@@ -1032,14 +1032,14 @@
             "type": "string",
             "nullable": true
           },
+          "empresaId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "estruturaRelacionadaId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
-          },
-          "empresaId": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1803,6 +1803,10 @@
             "nullable": true
           },
           "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "pis": {
             "type": "string",
             "nullable": true
           },
