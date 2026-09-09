@@ -98,6 +98,8 @@ namespace HP.Manager.Implementation
         {
             var pessoa = await _repository.ObterPorIdAsync(id, cancellationToken);
             var inicio = new DateTimeOffset(new DateTime(2026, 09, 01), TimeSpan.FromHours(-3));           
+            var fim = new DateTimeOffset(new DateTime(2026, 09, 09), TimeSpan.FromHours(-3));
+           await _calculaFaltas.CalculaDias(inicio,fim,pessoa,cancellationToken);
             if (pessoa is null)
             {
                 return null;

@@ -1073,6 +1073,11 @@
             "type": "string",
             "nullable": true
           },
+          "inicioFimDia": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
+          },
           "jornadas": {
             "type": "array",
             "items": {
@@ -1339,6 +1344,11 @@
           "descricao": {
             "type": "string",
             "nullable": true
+          },
+          "inicioFimDia": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
           },
           "jornadas": {
             "type": "array",
@@ -1689,6 +1699,11 @@
           "descricao": {
             "type": "string",
             "nullable": true
+          },
+          "inicioFimDia": {
+            "type": "string",
+            "format": "time",
+            "example": "11:29:00"
           },
           "jornadas": {
             "type": "array",

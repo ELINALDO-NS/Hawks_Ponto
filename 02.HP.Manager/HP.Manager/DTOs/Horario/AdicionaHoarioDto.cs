@@ -2,7 +2,7 @@
 
 namespace HP.Manager.DTOs.Horario
 {
-    public record AdicionaHorarioDto(int EmpresaId, string Codigo, string Descricao,
+    public record AdicionaHorarioDto(int EmpresaId, string Codigo, string Descricao, TimeOnly InicioFimDia,
         ICollection<JornadaDto> Jornadas);
 
 }
