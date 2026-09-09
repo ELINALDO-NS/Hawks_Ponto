@@ -25,6 +25,7 @@ namespace HP.Api.Configuration
             services.AddScoped<IPessoaManager, PessoaManager>();
             services.AddScoped<IHorarioManager, HorarioManager>();
             services.AddScoped<IMarcacaoManager, MarcacaoManager>();
+            services.AddScoped<ICalculaAtrasosExtraFaltasManager, CalculaAtrasosExtraFaltasManager>();
 
             
             

@@ -4,6 +4,7 @@ using HP.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HP.Data.Migrations
 {
     [DbContext(typeof(HPContext))]
-    partial class HPContextModelSnapshot : ModelSnapshot
+    [Migration("20260908163031_AdicionandoMinutosCargaHoraria")]
+    partial class AdicionandoMinutosCargaHoraria
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,9 +110,6 @@ namespace HP.Data.Migrations
                     b.Property<DateTimeOffset?>("DataUltAtualizacao")
                         .HasColumnType("datetimeoffset(0)");
 
-                    b.Property<int?>("HorarioId")
-                        .HasColumnType("int");
-
                     b.Property<int>("MinutosAdicionalNoturno")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -156,8 +156,6 @@ namespace HP.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DataApontamento");
-
-                    b.HasIndex("HorarioId");
 
                     b.HasIndex("PessoaId");
 
@@ -668,16 +666,10 @@ namespace HP.Data.Migrations
 
             modelBuilder.Entity("HP.Core.Entities.DiaApontamento", b =>
                 {
-                    b.HasOne("HP.Core.Entities.Horario", "Horario")
-                        .WithMany()
-                        .HasForeignKey("HorarioId");
-
                     b.HasOne("HP.Core.Entities.Pessoa", "Pessoa")
                         .WithMany("Apontamentos")
                         .HasForeignKey("PessoaId")
                         .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Horario");
 
                     b.Navigation("Pessoa");
                 });

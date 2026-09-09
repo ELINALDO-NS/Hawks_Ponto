@@ -34,6 +34,12 @@ namespace HP.Data.Configuration
 
             builder.Property(j => j.Saida3)
                 .IsRequired(false);
+
+            builder.Property(j => j.MinutosCargaHoraria)
+        .HasComputedColumnSql(
+            "DATEDIFF(MINUTE, Entrada1, Saida1) + ISNULL(DATEDIFF(MINUTE, Entrada2, Saida2), 0) + ISNULL(DATEDIFF(MINUTE, Entrada3, Saida3), 0)",
+            stored: true 
+        );
         }
     }
 }

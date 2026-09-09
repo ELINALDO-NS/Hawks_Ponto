@@ -1776,6 +1776,10 @@
             "type": "string",
             "format": "time",
             "example": "11:29:00"
+          },
+          "minutosCargaHoraria": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

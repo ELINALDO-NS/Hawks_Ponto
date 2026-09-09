@@ -10,6 +10,7 @@ namespace HP.Core.Interfaces
         Task AdicionarAsync(DiaApontamento diaApontamento, CancellationToken cancellationToken);
         Task AdicionarDiasAsync(IEnumerable<DiaApontamento> diaApontamento, CancellationToken cancellationToken);
         Task AtualizarAsync(DiaApontamento diaApontamento, CancellationToken cancellationToken);
+        Task AtualizarDiasAsync(IReadOnlyCollection<DiaApontamento> diasApontamentos, CancellationToken cancellationToken);
         Task<bool> RemoverAsync(int PessoaId, IEnumerable<DateOnly> DiasDelete, CancellationToken cancellationToken);
         Task<DiaApontamento?> ObterPorIdAsync(long id, CancellationToken cancellationToken);
         Task<HashSet<DateOnly>?> ObterPorPessoaIdAsync(int PessoaId, CancellationToken cancellationToken);

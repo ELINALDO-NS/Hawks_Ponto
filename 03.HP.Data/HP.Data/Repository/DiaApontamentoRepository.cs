@@ -13,13 +13,11 @@ namespace HP.Data.Repository
             _context.DiaApontamentos.Add(diaApontamento);
             await _context.SaveChangesAsync();
         }
-
         public async Task AdicionarDiasAsync(IEnumerable<DiaApontamento> diaApontamento, CancellationToken cancellationToken)
         {
             await _context.AddRangeAsync(diaApontamento, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
         }
-
         public async Task AtualizarAsync(DiaApontamento diaApontamento, CancellationToken cancellationToken)
         {
             var diaApontamentoAtual = await _context.DiaApontamentos.AsNoTracking().FirstOrDefaultAsync(x => x.Id == diaApontamento.Id);
@@ -27,12 +25,17 @@ namespace HP.Data.Repository
             {
                 return;
             }
-            diaApontamento.DataUltAtualizacao = diaApontamentoAtual.DataUltAtualizacao;
+            diaApontamento.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime();
             _context.Entry(diaApontamentoAtual).CurrentValues.SetValues(diaApontamento);
             _context.Update(diaApontamentoAtual);
             await _context.SaveChangesAsync(cancellationToken);
         }
-
+        public async Task AtualizarDiasAsync(IReadOnlyCollection< DiaApontamento> diasApontamentos, CancellationToken cancellationToken)
+        {
+            diasApontamentos.ToList().ForEach(d => d.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime());            
+            _context.UpdateRange(diasApontamentos);
+            await _context.SaveChangesAsync(cancellationToken);
+        }
         public async Task<DiaApontamento?> ObterPorIdAsync(long id, CancellationToken cancellationToken)
         {
             var diaApontamentoAtual = await _context.DiaApontamentos.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
@@ -42,7 +45,6 @@ namespace HP.Data.Repository
             }
             return diaApontamentoAtual;
         }
-
         public async Task<IReadOnlyCollection<DiaApontamento>> ObterPorPessoaEPeriodoAsync(int pessoaId, DateOnly dataInicio, DateOnly dataFim, CancellationToken cancellationToken)
         {
             return await _context.DiaApontamentos.AsNoTracking()
@@ -50,7 +52,6 @@ namespace HP.Data.Repository
                 .OrderBy(x => x.DataApontamento)
                 .ToListAsync(cancellationToken);
         }
-
         public async Task<HashSet<DateOnly>?> ObterPorPessoaIdAsync(int PessoaId, CancellationToken cancellationToken)
         {
             var diasApontamentos = await _context.DiaApontamentos
@@ -66,7 +67,6 @@ namespace HP.Data.Repository
             }
             return datasExistentesSet;
         }
-
         public async Task<bool> RemoverAsync(int PessoaId, IEnumerable<DateOnly> DiasDelete, CancellationToken cancellationToken)
         {
             var diaApontamentoAtual = await _context.DiaApontamentos

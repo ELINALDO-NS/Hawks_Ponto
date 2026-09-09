@@ -8,7 +8,7 @@ using MapsterMapper;
 
 namespace HP.Manager.Implementation
 {
-    public class PessoaManager(IPessoaRepository _repository, IMapper _mapper) : IPessoaManager
+    public class PessoaManager(IPessoaRepository _repository, IMapper _mapper,ICalculaAtrasosExtraFaltasManager _calculaFaltas) : IPessoaManager
     {
         public async Task<PessoaDto> AdicionarAsync(AdicionaPessoaDto pessoa, CancellationToken cancellationToken)
         {
@@ -51,7 +51,6 @@ namespace HP.Manager.Implementation
             await _repository.AdicionarAsync(novapessoa, cancellationToken);
             return _mapper.Map<PessoaDto>(novapessoa);
         }
-
         public async Task<PessoaDto?> AtualizarAsync(AtualizaPessoaDto pessoa, CancellationToken cancellationToken)
         {
             var pessoadto = _mapper.Map<Pessoa>(pessoa);
@@ -98,13 +97,13 @@ namespace HP.Manager.Implementation
         public async Task<PessoaDto?> ObterPorIdAsync(int id, CancellationToken cancellationToken)
         {
             var pessoa = await _repository.ObterPorIdAsync(id, cancellationToken);
+            var inicio = new DateTimeOffset(new DateTime(2026, 09, 01), TimeSpan.FromHours(-3));           
             if (pessoa is null)
             {
                 return null;
             }
             return _mapper.Map<PessoaDto>(pessoa);
         }
-
         public async Task<PessoaDto?> ObterPorMatriculaAsync(int Matricula, CancellationToken cancellationToken)
         {
             var pessoa = await _repository.ObterPorMatriculaAsync(Matricula, cancellationToken);
@@ -114,7 +113,6 @@ namespace HP.Manager.Implementation
             }
             return _mapper.Map<PessoaDto>(pessoa);
         }
-
         public async Task<IEnumerable<PessoaDto>> ObterTodosAsync(CancellationToken cancellationToken)
         {
             var pessoas = await _repository.ObterTodosAsync(cancellationToken);
@@ -127,7 +125,6 @@ namespace HP.Manager.Implementation
             }).ToList();
             return pessoasDto;
         }
-
         public async Task<bool> RemoverAsync(int id, CancellationToken cancellationToken)
         {
             var excluido = await _repository.RemoverAsync(id, cancellationToken);

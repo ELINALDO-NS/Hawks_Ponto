@@ -13,6 +13,7 @@ namespace HP.Core.Entities
         public TimeOnly? Saida2 { get; set; }
         public TimeOnly? Entrada3 { get; set; }
         public TimeOnly? Saida3 { get; set; }
+        public int MinutosCargaHoraria { get; set; }
 
     }
 }

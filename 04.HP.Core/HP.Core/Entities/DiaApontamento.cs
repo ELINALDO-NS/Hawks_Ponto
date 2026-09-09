@@ -11,6 +11,8 @@ namespace HP.Core.Entities
         public DateOnly DataApontamento { get; set; }
         public int? PessoaId { get; set; }
         public Pessoa? Pessoa { get; set; }
+        public int? HorarioId { get; set; }
+        public Horario? Horario { get; set; }
         public int MinutosTrabalhados { get; set; }
         public int MinutosAtraso { get; set; }
         public int MinutosFalta { get; set; }
