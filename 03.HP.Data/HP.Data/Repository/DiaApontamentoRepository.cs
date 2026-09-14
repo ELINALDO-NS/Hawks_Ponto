@@ -1,4 +1,5 @@
 ﻿using HP.Core.Entities;
+using HP.Core.Enums;
 using HP.Core.Interfaces;
 using HP.Data.Context;
 using Microsoft.EntityFrameworkCore;
@@ -30,9 +31,9 @@ namespace HP.Data.Repository
             _context.Update(diaApontamentoAtual);
             await _context.SaveChangesAsync(cancellationToken);
         }
-        public async Task AtualizarDiasAsync(IReadOnlyCollection< DiaApontamento> diasApontamentos, CancellationToken cancellationToken)
+        public async Task AtualizarDiasAsync(IReadOnlyCollection<DiaApontamento> diasApontamentos, CancellationToken cancellationToken)
         {
-            diasApontamentos.ToList().ForEach(d => d.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime());            
+            diasApontamentos.ToList().ForEach(d => d.DataUltAtualizacao = DateTimeOffset.Now.ToLocalTime());
             _context.UpdateRange(diasApontamentos);
             await _context.SaveChangesAsync(cancellationToken);
         }
@@ -48,7 +49,19 @@ namespace HP.Data.Repository
         public async Task<IReadOnlyCollection<DiaApontamento>> ObterPorPessoaEPeriodoAsync(int pessoaId, DateOnly dataInicio, DateOnly dataFim, CancellationToken cancellationToken)
         {
             return await _context.DiaApontamentos.AsNoTracking()
-                .Where(x => x.PessoaId == pessoaId && x.DataApontamento >= dataInicio && x.DataApontamento <= dataFim)
+                .Where(x => x.PessoaId == pessoaId
+                && x.DataApontamento >= dataInicio
+                && x.DataApontamento <= dataFim)
+                .OrderBy(x => x.DataApontamento)
+                .ToListAsync(cancellationToken);
+        }
+        public async Task<IReadOnlyCollection<DiaApontamento>> ObterdiasStatusCalculoAsync(int pessoaId, DateOnly dataInicio, DateOnly dataFim, StatusCalculo status, CancellationToken cancellationToken)
+        {
+            return await _context.DiaApontamentos.AsNoTracking()
+                .Where(x => x.PessoaId == pessoaId
+                && x.DataApontamento >= dataInicio
+                && x.DataApontamento <= dataFim
+                && x.StatusCalculo == status)
                 .OrderBy(x => x.DataApontamento)
                 .ToListAsync(cancellationToken);
         }

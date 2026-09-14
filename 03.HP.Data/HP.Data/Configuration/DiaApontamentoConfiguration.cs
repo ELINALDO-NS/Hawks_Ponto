@@ -1,4 +1,5 @@
 ﻿using HP.Core.Entities;
+using HP.Core.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -47,6 +48,23 @@ namespace HP.Data.Configuration
 
             builder.HasIndex(d => d.PessoaId);
             builder.HasIndex(d => d.DataApontamento);
+
+            builder.Property(x => x.StatusCalculo)
+                   .HasColumnType("tinyint")
+                   .IsRequired()
+                   .HasDefaultValue(StatusCalculo.Pendente);
+
+            builder.HasIndex(x => x.StatusCalculo)
+           .HasDatabaseName("IX_DiaApontamento_StatusCalculo");
+
+            builder.HasIndex(x => new { x.PessoaId, x.DataApontamento })
+                   .HasDatabaseName("IX_DiaApontamento_Pessoa_Data")
+                   .IncludeProperties(x => new {
+                       x.MinutosTrabalhados,
+                       x.MinutosExtra,
+                       x.MinutosAtraso,
+                       x.StatusCalculo
+                   });
         }
     }
 }

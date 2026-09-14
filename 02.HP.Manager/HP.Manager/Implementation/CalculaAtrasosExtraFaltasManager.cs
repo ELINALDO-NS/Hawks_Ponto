@@ -1,4 +1,5 @@
 ﻿using HP.Core.Entities;
+using HP.Core.Enums;
 using HP.Core.Interfaces;
 using HP.Manager.Interfaces;
 
@@ -88,7 +89,7 @@ namespace HP.Manager.Implementation
             var inicioDateOnly = DateOnly.FromDateTime(dataInicio.DateTime);
             var fimDateOnly = DateOnly.FromDateTime(dataFim.DateTime);
 
-            var diaApontamentos = await _DiaApontamentoRepository.ObterPorPessoaEPeriodoAsync(pessoa.Id, inicioDateOnly, fimDateOnly, cancellationToken);
+            var diaApontamentos = await _DiaApontamentoRepository.ObterdiasStatusCalculoAsync(pessoa.Id, inicioDateOnly, fimDateOnly, StatusCalculo.Pendente, cancellationToken);
             var marcacoes = await _MarcacaoRepository.ObterPorCpfEPeriodoAsync(pessoa.Cpf, dataInicio, dataFim, cancellationToken);
 
             var horarioPessoa = pessoa.Horarios?.FirstOrDefault(x => x.DataFim is null);
@@ -172,8 +173,8 @@ namespace HP.Manager.Implementation
                         diaApontamento.MinutosExtra = totalTrabalhado;
                     }
                     await CalculaAdicionalNoturno(diaApontamentos, marcacoes, horario, pessoa, cancellationToken);
+                    diaApontamento.StatusCalculo = StatusCalculo.Finalizado;
                 }
-
                 await _DiaApontamentoRepository.AtualizarDiasAsync(lote, cancellationToken);
             }
         }

@@ -76,9 +76,9 @@ namespace HP.Data.Repository
             await _context.SaveChangesAsync(cancellationToken);
 
             return pessoaAtual;
-            
+
         }
-        private async Task AdicionaDiaApontamentoAsync(Pessoa pessoa, CancellationToken cancellationToken)
+        public async Task AdicionaDiaApontamentoAsync(Pessoa pessoa, CancellationToken cancellationToken)
         {
             var dataAdmissao = DateOnly.FromDateTime(pessoa.DataAdmissao.Date);
             var dataAtual = DateOnly.FromDateTime(DateTime.Now.Date);
@@ -113,7 +113,6 @@ namespace HP.Data.Repository
             }
 
         }
-
         private void AtualizarEndereco(Pessoa pessoaAtual, Endereco? enderecoNovo)
         {
             if (pessoaAtual.Endereco is not null && enderecoNovo is not null)
@@ -236,7 +235,6 @@ namespace HP.Data.Repository
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-
         public async Task<Pessoa?> ObterPorMatriculaAsync(int Matricula, CancellationToken cancellationToken)
         {
             var Pessoa = await _context.Pessoas

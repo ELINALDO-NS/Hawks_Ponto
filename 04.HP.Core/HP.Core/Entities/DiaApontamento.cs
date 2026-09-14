@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HP.Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,5 +22,6 @@ namespace HP.Core.Entities
         public int MinutosDebito { get; set; }
         public int MinutosAdicionalNoturno { get; set; }
         public int MinutosDSR { get; set; }
+        public StatusCalculo StatusCalculo { get; set; }
     }
 }

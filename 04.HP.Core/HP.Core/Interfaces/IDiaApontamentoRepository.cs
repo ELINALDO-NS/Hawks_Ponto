@@ -1,4 +1,5 @@
 ﻿using HP.Core.Entities;
+using HP.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,5 +16,6 @@ namespace HP.Core.Interfaces
         Task<DiaApontamento?> ObterPorIdAsync(long id, CancellationToken cancellationToken);
         Task<HashSet<DateOnly>?> ObterPorPessoaIdAsync(int PessoaId, CancellationToken cancellationToken);
         Task<IReadOnlyCollection<DiaApontamento>> ObterPorPessoaEPeriodoAsync(int pessoaId, DateOnly dataInicio, DateOnly dataFim, CancellationToken cancellationToken);
+        Task<IReadOnlyCollection<DiaApontamento>> ObterdiasStatusCalculoAsync(int pessoaId, DateOnly dataInicio, DateOnly dataFim, StatusCalculo status, CancellationToken cancellationToken);
     }
 }
