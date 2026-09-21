@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\03.hp.data\\hp.data\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5DA27B0C-36FB-0CC3-4D58-4C039B026E9A}|03.HP.Data\\HP.Data\\HP.Data.csproj|solutionrelative:03.hp.data\\hp.data\\repository\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\implementation\\periodomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\implementation\\periodomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\implementation\\pessoamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\implementation\\pessoamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|c:\\users\\suporte\\documents\\projetos\\csharp\\hawks_ponto\\02.hp.manager\\hp.manager\\validator\\periodo\\fechaperiodovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90676F7B-BF5D-B560-6877-C2115F08A511}|02.HP.Manager\\HP.Manager\\HP.Manager.csproj|solutionrelative:02.hp.manager\\hp.manager\\validator\\periodo\\fechaperiodovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,33 +21,29 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PessoaRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
-              "RelativeDocumentMoniker": "03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
-              "RelativeToolTip": "03.HP.Data\\HP.Data\\Repository\\PessoaRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "FechaPeriodoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Validator\\Periodo\\FechaPeriodoValidator.cs",
+              "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Validator\\Periodo\\FechaPeriodoValidator.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Validator\\Periodo\\FechaPeriodoValidator.cs",
+              "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Validator\\Periodo\\FechaPeriodoValidator.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wBUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-14T13:06:43.279Z",
+              "WhenOpened": "2026-09-21T17:17:03.545Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PessoaManager.cs",
-              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
-              "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
-              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
-              "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Implementation\\PessoaManager.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwGIAAABSAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PeriodoManager.cs",
+              "DocumentMoniker": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\PeriodoManager.cs",
+              "RelativeDocumentMoniker": "02.HP.Manager\\HP.Manager\\Implementation\\PeriodoManager.cs",
+              "ToolTip": "C:\\Users\\Suporte\\Documents\\Projetos\\CSHARP\\Hawks_Ponto\\02.HP.Manager\\HP.Manager\\Implementation\\PeriodoManager.cs",
+              "RelativeToolTip": "02.HP.Manager\\HP.Manager\\Implementation\\PeriodoManager.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA1wCQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-14T13:05:38.079Z",
+              "WhenOpened": "2026-09-21T17:14:41.131Z",
               "EditorCaption": ""
             }
           ]

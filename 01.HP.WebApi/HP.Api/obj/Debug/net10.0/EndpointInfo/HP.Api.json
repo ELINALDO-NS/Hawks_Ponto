@@ -780,6 +780,176 @@
         }
       }
     },
+    "/Periodo/Fechar": {
+      "post": {
+        "tags": [
+          "Periodo"
+        ],
+        "summary": "Adiciona um fechamento de perido",
+        "description": "Adiciona um fechamento de periodo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FechaPeriodoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CargoDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/Periodo": {
+      "get": {
+        "tags": [
+          "Periodo"
+        ],
+        "summary": "Obtem todos os Periodos.",
+        "description": "Retorna uma lista contendo todos os Periodos cadastrados na Empresa. Caso não existam registros, retorna uma lista vazia.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PeriodoDto"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/Periodo/{id}": {
+      "get": {
+        "tags": [
+          "Periodo"
+        ],
+        "summary": "Obtem um periodo por id",
+        "description": "Retorna um periodo específico com base no identificador único informado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodoDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Periodo"
+        ],
+        "summary": "Remove um Periodo",
+        "description": "Exclui o registro de um perido do sistema permanentemente a partir do seu identificador único.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Periodo/Reabrir": {
+      "post": {
+        "tags": [
+          "Periodo"
+        ],
+        "summary": "Reabre um periodo fechado",
+        "description": "Reabre um periodo fechado específico com base no identificador único informado.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReabriPeridoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodoDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/Pessoa": {
       "post": {
         "tags": [
@@ -1000,6 +1170,10 @@
           "tipoEmpresa": {
             "type": "string",
             "nullable": true
+          },
+          "aberturaPeriodo": {
+            "type": "string",
+            "format": "date"
           },
           "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
@@ -1553,6 +1727,10 @@
             "type": "string",
             "nullable": true
           },
+          "aberturaPeriodo": {
+            "type": "string",
+            "format": "date"
+          },
           "dataCadastro": {
             "type": "string",
             "format": "date-time",
@@ -1677,6 +1855,24 @@
             "type": "string",
             "format": "date",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FechaPeriodoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataInicio": {
+            "type": "string",
+            "format": "date"
+          },
+          "dataFim": {
+            "type": "string",
+            "format": "date"
           }
         },
         "additionalProperties": false
@@ -1877,6 +2073,32 @@
         "description": "Origem Marcacao: 1 = REPC, 2 = REPP, 3 = REPA, 4 = ImportacaoTxt, 5 = Manual.",
         "format": "int32"
       },
+      "PeriodoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataInicio": {
+            "type": "string",
+            "format": "date"
+          },
+          "dataFim": {
+            "type": "string",
+            "format": "date"
+          },
+          "aberto": {
+            "type": "boolean"
+          },
+          "dataUltAtualizacao": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-08-21T14:19:53-03:00"
+          }
+        },
+        "additionalProperties": false
+      },
       "PessoaDto": {
         "type": "object",
         "properties": {
@@ -1982,6 +2204,24 @@
         },
         "additionalProperties": false
       },
+      "ReabriPeridoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataInicio": {
+            "type": "string",
+            "format": "date"
+          },
+          "dataFim": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
       "Sexo": {
         "enum": [
           1,
@@ -2033,6 +2273,9 @@
     },
     {
       "name": "Marcacao"
+    },
+    {
+      "name": "Periodo"
     },
     {
       "name": "Pessoa"

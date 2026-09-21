@@ -13,6 +13,7 @@ namespace HP.Manager.DTOs.Empresa
         string CnpjCpf,
         string Telefone,
         string TipoEmpresa,
+        DateOnly AberturaPeriodo,
         DateTimeOffset DataCadastro,
         bool Portaria1510,
         EnderecoDto Endereco,

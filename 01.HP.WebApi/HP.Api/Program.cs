@@ -51,6 +51,7 @@ app.MapCargoEndpoint();
 app.MapPessoaEndpoint();
 app.MapHorarioEndpoint();
 app.MapMarcacaoEndpoint();
+app.MapPeriodoEndpoint();
 
 try
 {

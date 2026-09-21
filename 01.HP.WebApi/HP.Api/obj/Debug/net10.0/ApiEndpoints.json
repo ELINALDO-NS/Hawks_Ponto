@@ -768,6 +768,172 @@
     "Summary": "Obtem Marca\u00E7\u00F5es de uma pessoa por periodo"
   },
   {
+    "ContainingType": "HP.Api.Endpoints.PeriodoEndpoin\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPeriodoEndpoint\u003Eb__0_1",
+    "RelativePath": "Periodo/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[HP.Manager.DTOs.Periodo.PeriodoDto, HP.Manager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
+    "Tags": [
+      "Periodo"
+    ],
+    "Description": "Retorna uma lista contendo todos os Periodos cadastrados na Empresa. Caso n\u00E3o existam registros, retorna uma lista vazia.",
+    "Summary": "Obtem todos os Periodos."
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PeriodoEndpoin\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPeriodoEndpoint\u003Eb__0_2",
+    "RelativePath": "Periodo/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Periodo.PeriodoDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Periodo"
+    ],
+    "Description": "Retorna um periodo espec\u00EDfico com base no identificador \u00FAnico informado.",
+    "Summary": "Obtem um periodo por id"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PeriodoEndpoin\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPeriodoEndpoint\u003Eb__0_4",
+    "RelativePath": "Periodo/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Periodo"
+    ],
+    "Description": "Exclui o registro de um perido do sistema permanentemente a partir do seu identificador \u00FAnico.",
+    "Summary": "Remove um Periodo"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PeriodoEndpoin\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPeriodoEndpoint\u003Eb__0_0",
+    "RelativePath": "Periodo/Fechar",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fechaPeriodo",
+        "Type": "HP.Manager.DTOs.Periodo.FechaPeriodoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Cargo.CargoDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Periodo"
+    ],
+    "Description": "Adiciona um fechamento de periodo",
+    "Summary": "Adiciona um fechamento de perido"
+  },
+  {
+    "ContainingType": "HP.Api.Endpoints.PeriodoEndpoin\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPeriodoEndpoint\u003Eb__0_3",
+    "RelativePath": "Periodo/Reabrir",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "periodoDto",
+        "Type": "HP.Manager.DTOs.Periodo.ReabriPeridoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "HP.Manager.DTOs.Periodo.PeriodoDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Periodo"
+    ],
+    "Description": "Reabre um periodo fechado espec\u00EDfico com base no identificador \u00FAnico informado.",
+    "Summary": "Reabre um periodo fechado"
+  },
+  {
     "ContainingType": "HP.Api.Endpoints.PessoaEndpoint\u002B\u003C\u003Ec",
     "Method": "\u003CMapPessoaEndpoint\u003Eb__0_0",
     "RelativePath": "Pessoa/",

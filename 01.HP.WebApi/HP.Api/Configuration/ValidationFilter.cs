@@ -6,7 +6,7 @@ namespace HP.Api.Configuration
     {
         public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
         {
-            
+
             var validator = context.HttpContext.RequestServices.GetService<IValidator<T>>();
             if (validator is not null)
             {               

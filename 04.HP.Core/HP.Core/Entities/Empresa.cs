@@ -21,6 +21,7 @@ namespace HP.Core.Entities
         public string Telefone { get; set; } = null!;
         public string? Site { get; set; }
         public string? Email { get; set; }
+        public DateOnly AberturaPeriodo { get; set; } = DateOnly.FromDateTime(DateTime.Now);
         public string TipoEmpresa { get; set; } = null!;
         public DateTimeOffset DataCadastro { get; set; } = DateTimeOffset.Now.ToLocalTime();
         public  DateTimeOffset? DataUltAtualizacao { get; set; }
@@ -28,7 +29,7 @@ namespace HP.Core.Entities
         public Endereco Endereco { get; set; } = null!;
         public bool Portaria1510 { get; set; }
         public bool Portaria671 { get; set; } = true;
-
+        public ICollection<Periodo> Periodos { get; set; }
 
     }
 }

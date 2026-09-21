@@ -4,18 +4,28 @@ using HP.Core.Interfaces.Repository;
 using MapsterMapper;
 using HP.Core.Extentions;
 using HP.Manager.Interfaces;
+using HP.Core.Interfaces;
 
 
 namespace HP.Manager.Implementation
 {
-    public class EmpresaManager(IEmpresaRepository _repository, IMapper _mapper) : IEmpresaManager
+    public class EmpresaManager(IEmpresaRepository _repository, IPeriodoRepository _periodoRepository, IMapper _mapper) : IEmpresaManager
     {
         public async Task<EmpresaDto> AdicionarAsync(AdicionaEmpresaDto empresa, CancellationToken cancellationToken)
         {
 
             var novaempresa = _mapper.Map<Empresa>(empresa);
             novaempresa.CnpjCpf = novaempresa.CnpjCpf.RemoveFormatacao();
+
             await _repository.AdicionarAsync(novaempresa, cancellationToken);
+            var periodoInicial = new Periodo
+            {
+                Aberto = true,
+                DataInicio = novaempresa.AberturaPeriodo,
+                DataFim = new DateOnly(2099, 12, 31),
+                EmpresaId = novaempresa.Id
+            };
+            await _periodoRepository.AdicionarAsync(periodoInicial, cancellationToken);
             novaempresa.CnpjCpf = novaempresa.CnpjCpf.FormatarCPF_CNPJ();
             return _mapper.Map<EmpresaDto>(novaempresa);
 
@@ -47,15 +57,17 @@ namespace HP.Manager.Implementation
         {
             var empresas = await _repository.ObterTodosAsync(cancellationToken);
 
-            var empresasDto = empresas.Select(x => {
+            var empresasDto = empresas.Select(x =>
+            {
                 x.CnpjCpf = x.CnpjCpf.FormatarCPF_CNPJ();
-              return  _mapper.Map<EmpresaDto>(x); }).ToList();
+                return _mapper.Map<EmpresaDto>(x);
+            }).ToList();
             return empresasDto;
         }
 
         public async Task<bool> RemoverAsync(int id, CancellationToken cancellationToken)
         {
-          var excluido =  await _repository.RemoverAsync(id, cancellationToken);
+            var excluido = await _repository.RemoverAsync(id, cancellationToken);
             return excluido;
         }
     }

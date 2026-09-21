@@ -18,7 +18,8 @@ namespace HP.Api.Configuration
                 new PessoaMapping(),
                 new JornadaMapping(),
                 new HorarioMapping(),
-                new MarcacaoMapping()
+                new MarcacaoMapping(),
+                new PeriodoMapping()
 
             );
             try

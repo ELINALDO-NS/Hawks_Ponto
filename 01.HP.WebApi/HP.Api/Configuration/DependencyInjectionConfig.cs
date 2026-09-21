@@ -17,6 +17,7 @@ namespace HP.Api.Configuration
             services.AddScoped<IHorarioRepository, HorarioRepository>();
             services.AddScoped<IMarcacaoRepository, MarcacaoRepository>();
             services.AddScoped<IDiaApontamentoRepository, DiaApontamentoRepository>();
+            services.AddScoped<IPeriodoRepository, PeriodoRepository>();
 
 
             services.AddScoped<IEmpresaManager, EmpresaManager>();
@@ -26,6 +27,7 @@ namespace HP.Api.Configuration
             services.AddScoped<IHorarioManager, HorarioManager>();
             services.AddScoped<IMarcacaoManager, MarcacaoManager>();
             services.AddScoped<ICalculaAtrasosExtraFaltasManager, CalculaAtrasosExtraFaltasManager>();
+            services.AddScoped<IPeriodoManager, PeriodoManager>();
 
             
             
